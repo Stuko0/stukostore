@@ -1,0 +1,134 @@
+---
+import Base from '../layouts/Base.astro';
+import TierDemo from '../components/TierDemo.tsx';
+import { TIERS } from '../lib/tiers';
+---
+
+<Base
+  title="Precios — StukoStore"
+  description="Comparación completa de los cuatro planes de StukoStore en bolivianos: catálogo, inventario, sucursales, automatizaciones, API e IA."
+>
+  <section class="shell head">
+    <p class="eyebrow">Precios</p>
+    <h1 class="h2 head__title">Cuatro planes. Todo en bolivianos.</h1>
+    <p class="head__lede">
+      Facturación mensual, sin contrato mínimo. El pago anual equivale a diez
+      meses: dos meses de regalo. Los precios se ajustan a la cotización del
+      dólar solo una vez al año.
+    </p>
+    <div class="head__grid">
+      {
+        TIERS.map((t) => (
+          <div class="head__cell">
+            <p class="eyebrow">{t.name}</p>
+            <p class="head__amount">
+              Bs. {t.bob}
+              <span class="caption"> / mes</span>
+            </p>
+            <p class="caption">
+              ≈ USD {t.usd} · anual Bs. {t.annualBob}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section shell">
+    <div class="section__head">
+      <h2 class="h2">Comparación completa</h2>
+      <p class="caption">
+        Cambia el plan en la barra inferior para ver qué se desbloquea.
+      </p>
+    </div>
+    <TierDemo client:load variant="full" />
+  </section>
+
+  <section class="section shell">
+    <div class="section__head">
+      <h2 class="h2">Cómo se cobra</h2>
+    </div>
+    <div class="grid-3">
+      <article>
+        <h3 class="h3">Moneda</h3>
+        <p>
+          Los precios se publican en bolivianos. La referencia usada es 1 USD =
+          11,8 Bs; el plan más alto equivale al 24 % de un sueldo mínimo
+          (3.300 Bs).
+        </p>
+      </article>
+      <article>
+        <h3 class="h3">Medio de pago</h3>
+        <p>
+          Cobro con Merchant of Record para emitir factura y resolver impuestos
+          sin depender de una pasarela local, más transferencia y QR para
+          clientes que facturan en Bolivia.
+        </p>
+      </article>
+      <article>
+        <h3 class="h3">Qué no incluye</h3>
+        <p>
+          Dominio (se paga aparte al registrador), comisión de la pasarela de
+          pago de cada tienda y el costo del envío, que cada comercio define.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <style>
+    .head {
+      padding: var(--space-72) 0 var(--space-40);
+      border-bottom: 1px solid var(--color-ink-black);
+    }
+
+    .head__title {
+      font-size: var(--text-heading-lg);
+      letter-spacing: var(--tracking-heading-lg);
+      margin: var(--space-16) 0;
+    }
+
+    .head__lede {
+      max-width: 62ch;
+      font-size: var(--text-body);
+    }
+
+    .head__grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-12);
+      margin-top: var(--space-40);
+    }
+
+    .head__cell {
+      border-top: 1px solid var(--color-ink-black);
+      padding-top: var(--space-12);
+    }
+
+    .head__amount {
+      font-size: var(--text-heading);
+      font-weight: var(--weight-bold);
+      line-height: 1.1;
+      margin: var(--space-4) 0;
+    }
+
+    .head__amount .caption {
+      font-weight: var(--weight-regular);
+    }
+
+    .grid-3 p {
+      margin-top: var(--space-12);
+    }
+
+    @media (max-width: 900px) {
+      .head__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .head__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</Base>

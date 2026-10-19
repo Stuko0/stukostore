@@ -1,0 +1,242 @@
+---
+import Base from '../layouts/Base.astro';
+import TierDemo from '../components/TierDemo.tsx';
+import { TIERS } from '../lib/tiers';
+---
+
+<Base
+  title="StukoStore — ecommerce por suscripción para tiendas bolivianas"
+  description="StukoStore convierte el catálogo de tu tienda en un ecommerce con inventario, pedidos, pagos y automatizaciones. Cuatro planes en bolivianos."
+>
+  <section class="shell hero">
+    <p class="eyebrow">Ecommerce por suscripción</p>
+    <h1 class="wm">StukoStore</h1>
+    <div class="hero__row">
+      <p class="hero__lede">
+        El sistema que reemplaza tu página de Google Sites. Catálogo, inventario,
+        pedidos, pagos y automatizaciones en una sola tienda, sin depender de
+        mensajes sueltos por WhatsApp.
+      </p>
+      <div class="hero__actions">
+        <a class="ghost" href="#planes">Ver planes <span aria-hidden="true">→</span></a>
+        <a class="ghost" href={`${import.meta.env.BASE_URL}precios/`}>
+          Comparar en detalle <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shell" id="producto">
+    <div class="section__head">
+      <h2 class="h2">Lo que una página de Sites no resuelve</h2>
+      <p class="caption">Medido sobre una tienda real en Google Sites.</p>
+    </div>
+    <div class="grid-3">
+      <article>
+        <p class="eyebrow">01 — Cobro</p>
+        <p class="problem__number">0</p>
+        <h3 class="h3">botones de compra</h3>
+        <p>
+          Ocho productos publicados, ningún enlace, ningún carrito, ningún botón.
+          El recorrido del cliente termina en el precio. StukoStore cierra la
+          venta con carrito, checkout y confirmación.
+        </p>
+      </article>
+      <article>
+        <p class="eyebrow">02 — Gestión</p>
+        <p class="problem__number">0</p>
+        <h3 class="h3">inventario y pedidos</h3>
+        <p>
+          Sin stock, sin estados, sin historial: cada venta se administra a mano.
+          StukoStore lleva inventario por variante, pedidos con estados y
+          comprobantes.
+        </p>
+      </article>
+      <article>
+        <p class="eyebrow">03 — Peso</p>
+        <p class="problem__number">8,5</p>
+        <h3 class="h3">MB de imágenes</h3>
+        <p>
+          Para 127 palabras de contenido, con el aviso de envío a 1,33:1 de
+          contraste. StukoStore comprime, precarga y mantiene el texto en un
+          mínimo legible.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section shell">
+    <div class="section__head">
+      <h2 class="h2">Tres ejes, un solo sistema</h2>
+    </div>
+    <div class="grid-3">
+      <article>
+        <h3 class="h3">Gestión</h3>
+        <ul class="list">
+          <li>Productos con variantes y SKU</li>
+          <li>Stock por sucursal</li>
+          <li>Pedidos con estados y devoluciones</li>
+          <li>Equipo con roles y permisos</li>
+          <li>Clientes con historial de compra</li>
+        </ul>
+      </article>
+      <article>
+        <h3 class="h3">Personalización</h3>
+        <ul class="list">
+          <li>Editor de tema en vivo</li>
+          <li>Bloques de portada</li>
+          <li>Dominio propio</li>
+          <li>Contraste validado en cada cambio</li>
+          <li>CSS propio en el plan alto</li>
+        </ul>
+      </article>
+      <article>
+        <h3 class="h3">Automatización</h3>
+        <ul class="list">
+          <li>Aviso de stock bajo</li>
+          <li>Recuperación de carrito</li>
+          <li>Notificaciones de pedido</li>
+          <li>Reportes por periodo y ciudad</li>
+          <li>Webhooks y API</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section shell" id="planes">
+    <div class="section__head">
+      <h2 class="h2">Cuatro planes, un selector</h2>
+      <p class="caption">
+        Referencia: sueldo mínimo nacional 3.300 Bs. El plan más alto equivale al
+        24 % de un sueldo.
+      </p>
+    </div>
+
+    <div class="prices">
+      {
+        TIERS.map((t) => (
+          <article class="price">
+            <p class="eyebrow">{t.name}</p>
+            <p class="price__amount">
+              Bs. {t.bob}
+              <span class="caption"> / mes</span>
+            </p>
+            <p class="caption">≈ USD {t.usd}</p>
+            <p class="price__pitch">{t.pitch}</p>
+            <p class="caption">{t.forWho}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="demo">
+      <TierDemo client:load variant="compact" />
+    </div>
+  </section>
+
+  <style>
+    .hero {
+      padding: var(--space-72) 0 var(--space-64);
+      border-bottom: 1px solid var(--color-ink-black);
+    }
+
+    .hero .eyebrow {
+      color: var(--color-pewter-caption);
+      margin-bottom: var(--space-16);
+    }
+
+    .hero__row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: var(--space-40);
+      align-items: end;
+      margin-top: var(--space-28);
+    }
+
+    .hero__lede {
+      font-size: var(--text-heading-sm);
+      line-height: 1.4;
+      max-width: 46ch;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: var(--space-12);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .problem__number {
+      font-size: var(--text-display);
+      line-height: 1;
+      font-weight: var(--weight-bold);
+      letter-spacing: -0.02em;
+      margin: var(--space-12) 0 var(--space-4);
+    }
+
+    .grid-3 p {
+      margin-top: var(--space-12);
+      font-size: var(--text-body);
+    }
+
+    .list {
+      margin-top: var(--space-16);
+      display: grid;
+      gap: var(--space-8);
+      font-size: var(--text-body);
+    }
+
+    .list li {
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid var(--color-ash-border);
+    }
+
+    .prices {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-12);
+      margin-bottom: var(--space-24);
+    }
+
+    .price {
+      border: 1px solid var(--color-ash-border);
+      border-radius: var(--radius);
+      padding: var(--card-padding);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+      background: var(--color-gallery-white);
+    }
+
+    .price__amount {
+      font-size: var(--text-heading);
+      font-weight: var(--weight-bold);
+      letter-spacing: var(--tracking-heading);
+      line-height: 1.1;
+    }
+
+    .price__amount .caption {
+      font-weight: var(--weight-regular);
+    }
+
+    .price__pitch {
+      font-size: var(--text-small);
+      line-height: 1.45;
+    }
+
+    .demo {
+      margin-top: var(--space-24);
+    }
+
+    @media (max-width: 900px) {
+      .hero__row,
+      .prices {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__actions {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</Base>

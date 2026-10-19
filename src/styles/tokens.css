@@ -1,0 +1,82 @@
+/* StukoStore — design tokens
+   Derived from the Acme Cups editorial reference (monochrome, hairline
+   structure, 3px radius, no shadows) merged with the Tienda Express
+   identity (full-black brand bar, white wordmark, monogram in a double
+   square, Bs. price formatting). */
+
+:root {
+  /* Color */
+  --color-ink-black: #000000;
+  --color-gallery-white: #fefefe;
+  --color-concrete-canvas: #e3e2e2;
+  --color-ash-border: #c3c3c3;
+  --color-steel-mute: #aeaaaa;
+  --color-pewter-caption: #5c5c5c; /* #666666 of the reference is 4.44:1 on the
+     canvas — below AA. Darkened to hold 5.1:1 without leaving the grayscale. */
+  --color-terracotta-alert: #9b1b01;
+
+  /* Surfaces */
+  --surface-canvas: var(--color-concrete-canvas);
+  --surface-card: var(--color-gallery-white);
+  --surface-soft: #eceeee;
+  --surface-inverse: var(--color-ink-black);
+
+  /* Type */
+  --font-sans: "Helvetica Neue", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --text-caption: 10px;
+  --leading-caption: 1.4;
+  --tracking-caption: 0.2px;
+
+  --text-label: 11px;
+  --text-small: 12px;
+  --text-ui: 13px;
+  --text-body: 15px;
+  --leading-body: 1.55;
+
+  --text-heading-sm: 20px;
+  --leading-heading-sm: 1.3;
+  --text-heading: 26px;
+  --leading-heading: 1.2;
+  --tracking-heading: -0.23px;
+  --text-heading-lg: 30px;
+  --leading-heading-lg: 1.15;
+  --tracking-heading-lg: -0.27px;
+  --text-display: 48px;
+  --leading-display: 1.04;
+  --tracking-display: -0.43px;
+  --text-wordmark: clamp(44px, 12.5vw, 148px);
+  --leading-wordmark: 1;
+  --tracking-wordmark: -0.009em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-36: 36px;
+  --space-40: 40px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-104: 104px;
+
+  /* Layout */
+  --page-max: 1440px;
+  --section-gap: 64px;
+  --card-padding: 24px;
+  --element-gap: 8px;
+  --radius: 3px;
+
+  /* Tenant overrides (default = StukoStore platform) */
+  --brand-bar-bg: var(--color-ink-black);
+  --brand-bar-fg: var(--color-gallery-white);
+  --tenant-accent: var(--color-ink-black);
+}

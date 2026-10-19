@@ -1,0 +1,206 @@
+/* Tier demo: comparison matrix + collapsible dock.
+   Monochrome, hairline structure, 3px radius, no shadows. */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.tierdemo {
+  border: 1px solid var(--color-ink-black);
+  border-radius: var(--radius);
+  background: var(--color-gallery-white);
+  padding: var(--space-24);
+}
+
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-small);
+}
+
+.matrix th,
+.matrix td {
+  text-align: left;
+  padding: var(--space-12) var(--space-12);
+  border-bottom: 1px solid var(--color-ash-border);
+  vertical-align: top;
+}
+
+.matrix thead th {
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: var(--weight-bold);
+  border-bottom: 1px solid var(--color-ink-black);
+  white-space: nowrap;
+}
+
+.matrix tbody th {
+  font-weight: var(--weight-medium);
+  color: var(--color-ink-black);
+}
+
+.matrix td {
+  color: var(--color-pewter-caption);
+  white-space: nowrap;
+}
+
+.matrix__group th {
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-pewter-caption);
+  font-weight: var(--weight-bold);
+  padding-top: var(--space-20);
+  background: var(--surface-soft);
+}
+
+.matrix .is-current {
+  background: #f4f4f4;
+}
+
+/* Locked rows stay legible: de-emphasis comes from the muted weight of the
+   ink, never from dropping below AA contrast. */
+.matrix tr.is-locked th,
+.matrix tr.is-locked td {
+  color: var(--color-pewter-caption);
+}
+
+.matrix__note {
+  color: var(--color-pewter-caption);
+  font-weight: var(--weight-regular);
+}
+
+.matrix__count {
+  font-weight: var(--weight-bold);
+  color: var(--color-ink-black);
+}
+
+.matrix__locked {
+  color: var(--color-pewter-caption);
+}
+
+.tierdemo__hint {
+  margin-top: var(--space-20);
+  max-width: 68ch;
+}
+
+/* ---------- dock ---------- */
+
+.dock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background: var(--color-gallery-white);
+  border-top: 1px solid var(--color-ink-black);
+}
+
+.dock__bar {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-24);
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.dock__label {
+  color: var(--color-pewter-caption);
+}
+
+.dock__current {
+  font-size: var(--text-ui);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.015em;
+}
+
+.dock__price {
+  color: var(--color-pewter-caption);
+}
+
+.dock__toggle {
+  margin-left: auto;
+}
+
+.dock__panel {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--space-24) var(--space-20);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-12);
+}
+
+.dock__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  text-align: left;
+  border: 1px solid var(--color-ash-border);
+  border-radius: var(--radius);
+  padding: var(--space-16);
+  background: var(--color-gallery-white);
+}
+
+.dock__card[aria-pressed='true'] {
+  border-color: var(--color-ink-black);
+}
+
+.dock__card:hover,
+.dock__card:focus-visible {
+  border-color: var(--color-ink-black);
+}
+
+.dock__amount {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--weight-bold);
+  line-height: 1.1;
+}
+
+.dock__amount .caption {
+  font-weight: var(--weight-regular);
+}
+
+.dock__pitch {
+  font-size: var(--text-small);
+  line-height: 1.45;
+}
+
+.dock__who {
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .dock__panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-height: 54vh;
+    overflow-y: auto;
+  }
+
+  .matrix {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .dock__panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+body:has(.dock) {
+  padding-bottom: 120px;
+}
