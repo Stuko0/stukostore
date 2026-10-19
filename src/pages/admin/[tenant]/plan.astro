@@ -1,0 +1,15 @@
+---
+import Admin from '../../../layouts/Admin.astro';
+import PlanUsage from '../../../components/admin/PlanUsage.tsx';
+import { tenantBySlug, tenantsPathParams } from '../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenantsPathParams();
+}
+
+const tenant = tenantBySlug(Astro.params.tenant!);
+---
+
+<Admin tenant={tenant} title={`Plan y uso — ${tenant.name}`} section="plan">
+  <PlanUsage client:load tenant={tenant} />
+</Admin>

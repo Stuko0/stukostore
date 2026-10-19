@@ -1,0 +1,15 @@
+---
+import Admin from '../../../../layouts/Admin.astro';
+import ProductEditor from '../../../../components/admin/ProductEditor.tsx';
+import { tenantBySlug, tenantsPathParams } from '../../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenantsPathParams();
+}
+
+const tenant = tenantBySlug(Astro.params.tenant!);
+---
+
+<Admin tenant={tenant} title={`Editar producto — ${tenant.name}`} section="productos">
+  <ProductEditor client:load tenant={tenant} />
+</Admin>

@@ -1,0 +1,15 @@
+---
+import Admin from '../../../layouts/Admin.astro';
+import InventoryTable from '../../../components/admin/InventoryTable.tsx';
+import { tenantBySlug, tenantsPathParams } from '../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenantsPathParams();
+}
+
+const tenant = tenantBySlug(Astro.params.tenant!);
+---
+
+<Admin tenant={tenant} title={`Inventario — ${tenant.name}`} section="inventario">
+  <InventoryTable client:load tenant={tenant} />
+</Admin>

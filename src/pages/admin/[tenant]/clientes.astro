@@ -1,0 +1,15 @@
+---
+import Admin from '../../../layouts/Admin.astro';
+import AdminLists from '../../../components/admin/AdminLists.tsx';
+import { tenantBySlug, tenantsPathParams } from '../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenantsPathParams();
+}
+
+const tenant = tenantBySlug(Astro.params.tenant!);
+---
+
+<Admin tenant={tenant} title={`Clientes — ${tenant.name}`} section="clientes">
+  <AdminLists client:load tenant={tenant} mode="clientes" />
+</Admin>
