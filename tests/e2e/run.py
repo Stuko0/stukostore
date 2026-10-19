@@ -246,8 +246,20 @@ def main() -> int:
         mpage.wait_for_timeout(1500)
         check("QA", "sin scroll horizontal en 390", mpage.evaluate("document.documentElement.scrollWidth - innerWidth") == 0)
         mpage.screenshot(path="/tmp/qa_mobile_store.png")
-        console_errors = [e for e in errors if "favicon" not in e]
-        check("QA", "sin errores de consola", len(console_errors) == 0, str(console_errors[:2]))
+        # Cloudflare inyecta su beacon de Web Analytics en el borde para todo el
+        # dominio; la CSP del sitio lo bloquea a propósito. No es código nuestro.
+        console_errors = [
+            e for e in errors
+            if "favicon" not in e and "cloudflareinsights.com" not in e
+        ]
+        check("QA", "sin errores de consola propios", len(console_errors) == 0, str(console_errors[:2]))
+        edge_blocked = [e for e in errors if "cloudflareinsights.com" in e]
+        check(
+            "QA",
+            "la CSP bloquea el script de terceros del borde",
+            bool(edge_blocked) or BASE.startswith("http://localhost"),
+            "no se inyectó beacon en esta ejecución",
+        )
 
         page.goto(f"{BASE}/admin/tienda-express/?tier=comercio", wait_until="networkidle")
         page.wait_for_timeout(2000)

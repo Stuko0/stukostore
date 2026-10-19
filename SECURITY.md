@@ -57,3 +57,10 @@ GitHub Pages no permite enviar cabeceras HTTP propias. Por eso la CSP viaja como
 de Astro. Cuando el sitio pase a un origen con control de cabeceras (Cloudflare o
 k3s), la política se mueve a cabecera real y se elimina `'unsafe-inline'`
 mediante hashes de los scripts en línea.
+
+El dominio está detrás de Cloudflare y la zona tiene Web Analytics activado: el
+borde inyecta un beacon de `static.cloudflareinsights.com` en cada respuesta. La
+CSP del sitio lo bloquea, así que la consola del navegador muestra ese bloqueo.
+Es el comportamiento buscado —ningún script de terceros corre en la demo—; el
+aviso desaparece si se desactiva Web Analytics para la zona desde el panel de
+Cloudflare.
