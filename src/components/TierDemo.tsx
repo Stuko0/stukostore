@@ -60,19 +60,6 @@ export default function TierDemo(props: { variant?: 'compact' | 'full' }) {
     onCleanup(() => window.removeEventListener('keydown', onKey));
   });
 
-  const cellState = (feature: FeatureId) => {
-    if (!can(tier(), feature)) return 'locked';
-    const limit = limitFor(tier(), feature);
-    return Number.isFinite(limit) ? 'limited' : 'included';
-  };
-
-  const cellText = (feature: FeatureId) => {
-    const state = cellState(feature);
-    if (state === 'locked') return '—';
-    if (state === 'included') return 'Sí';
-    return `Hasta ${limitFor(tier(), feature)}`;
-  };
-
   const groupSummary = (group: (typeof GROUPS)[number]) => {
     const rows = FEATURES.filter((f) => f.group === group);
     const included = rows.filter((f) => can(tier(), f.id)).length;
