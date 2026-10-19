@@ -1,0 +1,44 @@
+[
+  {
+    "id": "te",
+    "slug": "tienda-express",
+    "name": "Tienda Express",
+    "monogram": "T",
+    "tagline": "Botellas térmicas, tazas y accesorios de café",
+    "city": "Cochabamba",
+    "whatsapp": "59170000001",
+    "taxRate": 0.13,
+    "domain": null,
+    "plan": "comercio",
+    "theme": { "barBg": "#000000", "barFg": "#fefefe", "accent": "#2b2b2b", "font": "sans" },
+    "footerBrand": true
+  },
+  {
+    "id": "co",
+    "slug": "cafe-origen",
+    "name": "Café Origen",
+    "monogram": "C",
+    "tagline": "Café de altura tostado en La Paz",
+    "city": "La Paz",
+    "whatsapp": "59170000002",
+    "taxRate": 0.13,
+    "domain": null,
+    "plan": "tienda",
+    "theme": { "barBg": "#2f2418", "barFg": "#fefefe", "accent": "#6b4a2f", "font": "sans" },
+    "footerBrand": true
+  },
+  {
+    "id": "mo",
+    "slug": "mundo-outdoor",
+    "name": "Mundo Outdoor",
+    "monogram": "M",
+    "tagline": "Equipo para campamento y trekking",
+    "city": "Santa Cruz",
+    "whatsapp": "59170000003",
+    "taxRate": 0.13,
+    "domain": null,
+    "plan": "escaparate",
+    "theme": { "barBg": "#1d2a22", "barFg": "#fefefe", "accent": "#3c5748", "font": "sans" },
+    "footerBrand": true
+  }
+]

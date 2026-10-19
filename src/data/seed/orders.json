@@ -1,0 +1,886 @@
+[
+ {
+  "id": "te-o1",
+  "tenantId": "te",
+  "code": "TE-1000",
+  "customerId": "te-cu1",
+  "customer": {
+   "name": "Mariana Quiroga",
+   "phone": "59171234501",
+   "email": "mariana.quiroga@correo.bo",
+   "city": "Cochabamba",
+   "address": {
+    "line1": "Calle Los Alcornoques 145",
+    "city": "Cochabamba",
+    "zone": "Cochabamba",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "te-p1-v1",
+    "productId": "te-p1",
+    "title": "Botella Bubba Trailblazer Straw Licorice 40oz",
+    "sku": "BUBBA-40-LIC",
+    "options": {
+     "Color": "Licorice"
+    },
+    "qty": 1,
+    "price": 349
+   },
+   {
+    "variantId": "te-p5-v1",
+    "productId": "te-p5",
+    "title": "Molino 11 Clicks Cuerpo de Acero Inoxidable",
+    "sku": "MOL-11-AC",
+    "options": {},
+    "qty": 1,
+    "price": 449
+   }
+  ],
+  "subtotal": 798,
+  "discount": 79.8,
+  "couponCode": "BIENVENIDA10",
+  "shipping": 20,
+  "tax": 93.37,
+  "total": 738.2,
+  "status": "entregado",
+  "paymentMethod": "qr",
+  "paymentProof": "comprobante-te-o1.jpg",
+  "shippingMethod": "local",
+  "internalNotes": [],
+  "returns": [],
+  "events": [
+   {
+    "at": "2026-10-07T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde local"
+   },
+   {
+    "at": "2026-10-07T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "pago",
+    "message": "Pago confirmado (qr)"
+   },
+   {
+    "at": "2026-10-07T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "envio",
+    "message": "Pedido despachado"
+   },
+   {
+    "at": "2026-10-07T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "entrega",
+    "message": "Entregado al cliente"
+   }
+  ],
+  "createdAt": "2026-10-07T09:30:00-04:00",
+  "updatedAt": "2026-10-07T09:30:00-04:00"
+ },
+ {
+  "id": "te-o2",
+  "tenantId": "te",
+  "code": "TE-1001",
+  "customerId": "te-cu2",
+  "customer": {
+   "name": "Jorge Terrazas",
+   "phone": "59171234502",
+   "email": "jorge.terrazas@correo.bo",
+   "city": "Quillacollo",
+   "address": {
+    "line1": "Av. Busch 1200",
+    "city": "Quillacollo",
+    "zone": "Cochabamba",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "te-p3-v1",
+    "productId": "te-p3",
+    "title": "Taza Contigo Streeterville Mug 14oz Stainless Steel",
+    "sku": "MUG-14-LIC",
+    "options": {
+     "Color": "Licorice"
+    },
+    "qty": 2,
+    "price": 299
+   }
+  ],
+  "subtotal": 598,
+  "discount": 0,
+  "couponCode": null,
+  "shipping": 20,
+  "tax": 77.74,
+  "total": 618,
+  "status": "enviado",
+  "paymentMethod": "contra-entrega",
+  "paymentProof": null,
+  "shippingMethod": "local",
+  "internalNotes": [],
+  "returns": [],
+  "events": [
+   {
+    "at": "2026-10-14T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde local"
+   },
+   {
+    "at": "2026-10-14T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "pago",
+    "message": "Pago confirmado (contra-entrega)"
+   },
+   {
+    "at": "2026-10-14T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "envio",
+    "message": "Pedido despachado"
+   }
+  ],
+  "createdAt": "2026-10-14T09:30:00-04:00",
+  "updatedAt": "2026-10-14T09:30:00-04:00"
+ },
+ {
+  "id": "te-o3",
+  "tenantId": "te",
+  "code": "TE-1002",
+  "customerId": "te-cu3",
+  "customer": {
+   "name": "Sinclair Ltda.",
+   "phone": "59171234503",
+   "email": "compras@sinclair.bo",
+   "city": "Cochabamba",
+   "address": {
+    "line1": "Calle Los Alcornoques 145",
+    "city": "Cochabamba",
+    "zone": "Cochabamba",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "te-p2-v1",
+    "productId": "te-p2",
+    "title": "Botella Contigo Autospout Fit Straw 32oz",
+    "sku": "CONTIGO-32-LIC",
+    "options": {
+     "Color": "Licorice"
+    },
+    "qty": 12,
+    "price": 399
+   },
+   {
+    "variantId": "te-p4-v1",
+    "productId": "te-p4",
+    "title": "Botella Contigo Snapseal Huron 2.0 16oz 473 ml Blue Corn",
+    "sku": "SNAP-16-BLC",
+    "options": {
+     "Color": "Blue Corn"
+    },
+    "qty": 6,
+    "price": 249
+   }
+  ],
+  "subtotal": 6282,
+  "discount": 0,
+  "couponCode": null,
+  "shipping": 20,
+  "tax": 816.66,
+  "total": 6302,
+  "status": "preparando",
+  "paymentMethod": "transferencia",
+  "paymentProof": "comprobante-te-o3.jpg",
+  "shippingMethod": "local",
+  "internalNotes": [
+   "Cliente mayorista, facturar con NIT."
+  ],
+  "returns": [],
+  "events": [
+   {
+    "at": "2026-10-16T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde local"
+   },
+   {
+    "at": "2026-10-16T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "pago",
+    "message": "Pago confirmado (transferencia)"
+   }
+  ],
+  "createdAt": "2026-10-16T09:30:00-04:00",
+  "updatedAt": "2026-10-16T09:30:00-04:00"
+ },
+ {
+  "id": "te-o4",
+  "tenantId": "te",
+  "code": "TE-1003",
+  "customerId": "te-cu1",
+  "customer": {
+   "name": "Mariana Quiroga",
+   "phone": "59171234501",
+   "email": "mariana.quiroga@correo.bo",
+   "city": "Cochabamba",
+   "address": {
+    "line1": "Calle Los Alcornoques 145",
+    "city": "Cochabamba",
+    "zone": "Cochabamba",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "te-p8-v1",
+    "productId": "te-p8",
+    "title": "V60 Diamond Juego Completo de Vidrio 500ml",
+    "sku": "V60-DIA-500",
+    "options": {},
+    "qty": 1,
+    "price": 399
+   },
+   {
+    "variantId": "te-p6-v1",
+    "productId": "te-p6",
+    "title": "Origami de Porcelana \"M\" Base de Madera",
+    "sku": "ORIG-M-MAD",
+    "options": {},
+    "qty": 2,
+    "price": 199
+   }
+  ],
+  "subtotal": 797,
+  "discount": 0,
+  "couponCode": null,
+  "shipping": 0,
+  "tax": 103.61,
+  "total": 797,
+  "status": "pagado",
+  "paymentMethod": "pasarela",
+  "paymentProof": null,
+  "shippingMethod": "retiro",
+  "internalNotes": [],
+  "returns": [],
+  "events": [
+   {
+    "at": "2026-10-17T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde retiro"
+   },
+   {
+    "at": "2026-10-17T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "pago",
+    "message": "Pago confirmado (pasarela)"
+   }
+  ],
+  "createdAt": "2026-10-17T09:30:00-04:00",
+  "updatedAt": "2026-10-17T09:30:00-04:00"
+ },
+ {
+  "id": "te-o5",
+  "tenantId": "te",
+  "code": "TE-1004",
+  "customerId": "te-cu2",
+  "customer": {
+   "name": "Jorge Terrazas",
+   "phone": "59171234502",
+   "email": "jorge.terrazas@correo.bo",
+   "city": "Quillacollo",
+   "address": {
+    "line1": "Av. Busch 1200",
+    "city": "Quillacollo",
+    "zone": "Cochabamba",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "te-p7-v1",
+    "productId": "te-p7",
+    "title": "Tetera Cuello de Cisne 1,5 Lts",
+    "sku": "TET-CISNE-15",
+    "options": {},
+    "qty": 1,
+    "price": 249
+   }
+  ],
+  "subtotal": 249,
+  "discount": 0,
+  "couponCode": null,
+  "shipping": 20,
+  "tax": 32.37,
+  "total": 269,
+  "status": "pendiente",
+  "paymentMethod": "qr",
+  "paymentProof": "comprobante-te-o5.jpg",
+  "shippingMethod": "local",
+  "internalNotes": [],
+  "returns": [],
+  "events": [
+   {
+    "at": "2026-10-18T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde local"
+   }
+  ],
+  "createdAt": "2026-10-18T09:30:00-04:00",
+  "updatedAt": "2026-10-18T09:30:00-04:00"
+ },
+ {
+  "id": "te-o6",
+  "tenantId": "te",
+  "code": "TE-1005",
+  "customerId": "te-cu3",
+  "customer": {
+   "name": "Sinclair Ltda.",
+   "phone": "59171234503",
+   "email": "compras@sinclair.bo",
+   "city": "Cochabamba",
+   "address": {
+    "line1": "Calle Los Alcornoques 145",
+    "city": "Cochabamba",
+    "zone": "Cochabamba",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "te-p5-v1",
+    "productId": "te-p5",
+    "title": "Molino 11 Clicks Cuerpo de Acero Inoxidable",
+    "sku": "MOL-11-AC",
+    "options": {},
+    "qty": 1,
+    "price": 449
+   }
+  ],
+  "subtotal": 449,
+  "discount": 0,
+  "couponCode": null,
+  "shipping": 20,
+  "tax": 58.37,
+  "total": 469,
+  "status": "devuelto",
+  "paymentMethod": "transferencia",
+  "paymentProof": "comprobante-te-o6.jpg",
+  "shippingMethod": "local",
+  "internalNotes": [
+   "Cliente mayorista, facturar con NIT."
+  ],
+  "returns": [
+   {
+    "id": "te-o6-r1",
+    "at": "2026-10-10T09:30:00-04:00",
+    "items": [
+     {
+      "variantId": "te-p5-v1",
+      "qty": 1
+     }
+    ],
+    "reason": "Producto con detalle en la tapa",
+    "refund": 449,
+    "restocked": true
+   }
+  ],
+  "events": [
+   {
+    "at": "2026-10-10T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde local"
+   },
+   {
+    "at": "2026-10-10T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "pago",
+    "message": "Pago confirmado (transferencia)"
+   },
+   {
+    "at": "2026-10-10T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "envio",
+    "message": "Pedido despachado"
+   },
+   {
+    "at": "2026-10-10T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "devolucion",
+    "message": "Devuelto: producto con detalle en la tapa"
+   }
+  ],
+  "createdAt": "2026-10-10T09:30:00-04:00",
+  "updatedAt": "2026-10-10T09:30:00-04:00"
+ },
+ {
+  "id": "co-o1",
+  "tenantId": "co",
+  "code": "CO-1006",
+  "customerId": "co-cu1",
+  "customer": {
+   "name": "Ana Belén Ríos",
+   "phone": "59171234504",
+   "email": "ana.rios@correo.bo",
+   "city": "La Paz",
+   "address": {
+    "line1": "Av. Busch 1200",
+    "city": "La Paz",
+    "zone": "La Paz",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "co-p1-v1",
+    "productId": "co-p1",
+    "title": "Café de Altura Caranavi 250 g",
+    "sku": "CAR-250-GRA",
+    "options": {
+     "Molido": "Grano"
+    },
+    "qty": 2,
+    "price": 65
+   },
+   {
+    "variantId": "co-p3-v1",
+    "productId": "co-p3",
+    "title": "Prensa Francesa 600 ml",
+    "sku": "PRE-600",
+    "options": {},
+    "qty": 1,
+    "price": 190
+   }
+  ],
+  "subtotal": 320,
+  "discount": 32.0,
+  "couponCode": "BIENVENIDA10",
+  "shipping": 20,
+  "tax": 37.44,
+  "total": 308.0,
+  "status": "entregado",
+  "paymentMethod": "qr",
+  "paymentProof": "comprobante-co-o1.jpg",
+  "shippingMethod": "local",
+  "internalNotes": [],
+  "returns": [],
+  "events": [
+   {
+    "at": "2026-10-09T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde local"
+   },
+   {
+    "at": "2026-10-09T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "pago",
+    "message": "Pago confirmado (qr)"
+   },
+   {
+    "at": "2026-10-09T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "envio",
+    "message": "Pedido despachado"
+   },
+   {
+    "at": "2026-10-09T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "entrega",
+    "message": "Entregado al cliente"
+   }
+  ],
+  "createdAt": "2026-10-09T09:30:00-04:00",
+  "updatedAt": "2026-10-09T09:30:00-04:00"
+ },
+ {
+  "id": "co-o2",
+  "tenantId": "co",
+  "code": "CO-1007",
+  "customerId": "co-cu2",
+  "customer": {
+   "name": "Cafetería El Mirador",
+   "phone": "59171234505",
+   "email": "hola@elmirador.bo",
+   "city": "La Paz",
+   "address": {
+    "line1": "Av. Busch 1200",
+    "city": "La Paz",
+    "zone": "La Paz",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "co-p1-v2",
+    "productId": "co-p1",
+    "title": "Café de Altura Caranavi 250 g",
+    "sku": "CAR-250-MOL",
+    "options": {
+     "Molido": "Molido"
+    },
+    "qty": 20,
+    "price": 65
+   }
+  ],
+  "subtotal": 1300,
+  "discount": 0,
+  "couponCode": null,
+  "shipping": 20,
+  "tax": 169.0,
+  "total": 1320,
+  "status": "preparando",
+  "paymentMethod": "transferencia",
+  "paymentProof": "comprobante-co-o2.jpg",
+  "shippingMethod": "local",
+  "internalNotes": [],
+  "returns": [],
+  "events": [
+   {
+    "at": "2026-10-15T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde local"
+   },
+   {
+    "at": "2026-10-15T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "pago",
+    "message": "Pago confirmado (transferencia)"
+   }
+  ],
+  "createdAt": "2026-10-15T09:30:00-04:00",
+  "updatedAt": "2026-10-15T09:30:00-04:00"
+ },
+ {
+  "id": "co-o3",
+  "tenantId": "co",
+  "code": "CO-1008",
+  "customerId": "co-cu1",
+  "customer": {
+   "name": "Ana Belén Ríos",
+   "phone": "59171234504",
+   "email": "ana.rios@correo.bo",
+   "city": "La Paz",
+   "address": {
+    "line1": "Av. Busch 1200",
+    "city": "La Paz",
+    "zone": "La Paz",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "co-p7-v1",
+    "productId": "co-p7",
+    "title": "Dripper Cerámico 02",
+    "sku": "DRIP-02",
+    "options": {},
+    "qty": 1,
+    "price": 150
+   },
+   {
+    "variantId": "co-p2-v1",
+    "productId": "co-p2",
+    "title": "Café Molido Tarqui 250 g",
+    "sku": "TAR-250",
+    "options": {},
+    "qty": 1,
+    "price": 58
+   }
+  ],
+  "subtotal": 208,
+  "discount": 0,
+  "couponCode": null,
+  "shipping": 0,
+  "tax": 27.04,
+  "total": 208,
+  "status": "pagado",
+  "paymentMethod": "pasarela",
+  "paymentProof": null,
+  "shippingMethod": "retiro",
+  "internalNotes": [],
+  "returns": [],
+  "events": [
+   {
+    "at": "2026-10-18T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde retiro"
+   },
+   {
+    "at": "2026-10-18T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "pago",
+    "message": "Pago confirmado (pasarela)"
+   }
+  ],
+  "createdAt": "2026-10-18T09:30:00-04:00",
+  "updatedAt": "2026-10-18T09:30:00-04:00"
+ },
+ {
+  "id": "co-o4",
+  "tenantId": "co",
+  "code": "CO-1009",
+  "customerId": "co-cu2",
+  "customer": {
+   "name": "Cafetería El Mirador",
+   "phone": "59171234505",
+   "email": "hola@elmirador.bo",
+   "city": "Cochabamba",
+   "address": {
+    "line1": "Calle Los Alcornoques 145",
+    "city": "Cochabamba",
+    "zone": "Resto",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "co-p4-v1",
+    "productId": "co-p4",
+    "title": "Cafetera de Vidrio 6 Tazas",
+    "sku": "CAF-6T",
+    "options": {},
+    "qty": 1,
+    "price": 380
+   }
+  ],
+  "subtotal": 380,
+  "discount": 0,
+  "couponCode": null,
+  "shipping": 45,
+  "tax": 49.4,
+  "total": 425,
+  "status": "enviado",
+  "paymentMethod": "contra-entrega",
+  "paymentProof": null,
+  "shippingMethod": "nacional",
+  "internalNotes": [],
+  "returns": [],
+  "events": [
+   {
+    "at": "2026-10-13T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde nacional"
+   },
+   {
+    "at": "2026-10-13T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "pago",
+    "message": "Pago confirmado (contra-entrega)"
+   },
+   {
+    "at": "2026-10-13T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "envio",
+    "message": "Pedido despachado"
+   }
+  ],
+  "createdAt": "2026-10-13T09:30:00-04:00",
+  "updatedAt": "2026-10-13T09:30:00-04:00"
+ },
+ {
+  "id": "mo-o1",
+  "tenantId": "mo",
+  "code": "MO-1010",
+  "customerId": "mo-cu1",
+  "customer": {
+   "name": "Diego Salvatierra",
+   "phone": "59171234506",
+   "email": "diego.salva@correo.bo",
+   "city": "Santa Cruz",
+   "address": {
+    "line1": "Av. Busch 1200",
+    "city": "Santa Cruz",
+    "zone": "Santa Cruz",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "mo-p1-v2",
+    "productId": "mo-p1",
+    "title": "Mochila de Trekking 45 L",
+    "sku": "MOCH-45-L",
+    "options": {
+     "Talla": "L"
+    },
+    "qty": 1,
+    "price": 480
+   },
+   {
+    "variantId": "mo-p3-v1",
+    "productId": "mo-p3",
+    "title": "Linterna Frontal 400 lúmenes",
+    "sku": "LINF-400",
+    "options": {},
+    "qty": 1,
+    "price": 220
+   }
+  ],
+  "subtotal": 700,
+  "discount": 0,
+  "couponCode": null,
+  "shipping": 20,
+  "tax": 91.0,
+  "total": 720,
+  "status": "entregado",
+  "paymentMethod": "qr",
+  "paymentProof": "comprobante-mo-o1.jpg",
+  "shippingMethod": "local",
+  "internalNotes": [],
+  "returns": [],
+  "events": [
+   {
+    "at": "2026-10-11T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde local"
+   },
+   {
+    "at": "2026-10-11T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "pago",
+    "message": "Pago confirmado (qr)"
+   },
+   {
+    "at": "2026-10-11T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "envio",
+    "message": "Pedido despachado"
+   },
+   {
+    "at": "2026-10-11T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "entrega",
+    "message": "Entregado al cliente"
+   }
+  ],
+  "createdAt": "2026-10-11T09:30:00-04:00",
+  "updatedAt": "2026-10-11T09:30:00-04:00"
+ },
+ {
+  "id": "mo-o2",
+  "tenantId": "mo",
+  "code": "MO-1011",
+  "customerId": "mo-cu1",
+  "customer": {
+   "name": "Diego Salvatierra",
+   "phone": "59171234506",
+   "email": "diego.salva@correo.bo",
+   "city": "Santa Cruz",
+   "address": {
+    "line1": "Av. Busch 1200",
+    "city": "Santa Cruz",
+    "zone": "Santa Cruz",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "mo-p5-v1",
+    "productId": "mo-p5",
+    "title": "Carpa 2 Personas",
+    "sku": "CARPA-2P",
+    "options": {},
+    "qty": 1,
+    "price": 890
+   }
+  ],
+  "subtotal": 890,
+  "discount": 0,
+  "couponCode": null,
+  "shipping": 20,
+  "tax": 115.7,
+  "total": 910,
+  "status": "pendiente",
+  "paymentMethod": "pasarela",
+  "paymentProof": null,
+  "shippingMethod": "local",
+  "internalNotes": [],
+  "returns": [],
+  "events": [
+   {
+    "at": "2026-10-18T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde local"
+   }
+  ],
+  "createdAt": "2026-10-18T09:30:00-04:00",
+  "updatedAt": "2026-10-18T09:30:00-04:00"
+ },
+ {
+  "id": "mo-o3",
+  "tenantId": "mo",
+  "code": "MO-1012",
+  "customerId": "mo-cu1",
+  "customer": {
+   "name": "Diego Salvatierra",
+   "phone": "59171234506",
+   "email": "diego.salva@correo.bo",
+   "city": "Cochabamba",
+   "address": {
+    "line1": "Calle Los Alcornoques 145",
+    "city": "Cochabamba",
+    "zone": "Resto",
+    "reference": "Portón negro, timbre 2"
+   }
+  },
+  "items": [
+   {
+    "variantId": "mo-p4-v1",
+    "productId": "mo-p4",
+    "title": "Saco de Dormir -5 °C",
+    "sku": "SACO-M5",
+    "options": {},
+    "qty": 1,
+    "price": 550
+   },
+   {
+    "variantId": "mo-p6-v1",
+    "productId": "mo-p6",
+    "title": "Cantimplora de Aluminio 1 L",
+    "sku": "CANT-1L",
+    "options": {},
+    "qty": 2,
+    "price": 95
+   }
+  ],
+  "subtotal": 740,
+  "discount": 0,
+  "couponCode": null,
+  "shipping": 45,
+  "tax": 96.2,
+  "total": 785,
+  "status": "pagado",
+  "paymentMethod": "transferencia",
+  "paymentProof": "comprobante-mo-o3.jpg",
+  "shippingMethod": "nacional",
+  "internalNotes": [],
+  "returns": [],
+  "events": [
+   {
+    "at": "2026-10-16T09:30:00-04:00",
+    "actor": "sistema",
+    "type": "creado",
+    "message": "Pedido creado desde nacional"
+   },
+   {
+    "at": "2026-10-16T09:30:00-04:00",
+    "actor": "equipo",
+    "type": "pago",
+    "message": "Pago confirmado (transferencia)"
+   }
+  ],
+  "createdAt": "2026-10-16T09:30:00-04:00",
+  "updatedAt": "2026-10-16T09:30:00-04:00"
+ }
+]

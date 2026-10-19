@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import TenantPicker from '../components/demo/TenantPicker.tsx';
+---
+
+<Base
+  title="Demo — StukoStore"
+  description="Tres tiendas de demostración con catálogo, inventario y pedidos reales guardados en el navegador. Cambia de plan y mira qué se desbloquea."
+>
+  <section class="shell head">
+    <p class="eyebrow">Demo navegable</p>
+    <h1 class="h2 head__title">Tres tiendas, cuatro planes, cero backend.</h1>
+    <p class="head__lede">
+      Todo lo que ves se guarda en este navegador: puedes crear productos, cambiar
+      precios, registrar pedidos y reiniciar la demo cuando quieras. No hace falta
+      registrarse y no se envía nada a ningún servidor.
+    </p>
+  </section>
+
+  <section class="section shell">
+    <TenantPicker client:load />
+  </section>
+
+  <section class="section shell">
+    <div class="section__head">
+      <h2 class="h2">Cómo leer la demo</h2>
+    </div>
+    <div class="grid-3">
+      <article>
+        <h3 class="h3">Datos reales, no maquetas</h3>
+        <p>
+          El catálogo de Tienda Express es el suyo: ocho productos con precios en
+          bolivianos. Los otros dos comercios muestran que la plataforma es
+          multi-tienda.
+        </p>
+      </article>
+      <article>
+        <h3 class="h3">Cache del navegador</h3>
+        <p>
+          Las escrituras quedan en IndexedDB. Si cambias un precio y recargas, el
+          cambio sigue ahí. El botón de reinicio vuelve a los datos de fábrica.
+        </p>
+      </article>
+      <article>
+        <h3 class="h3">Sin servidor</h3>
+        <p>
+          La demo no envía datos a ningún lado. La misma interfaz de datos se
+          conectará a Go y SQLite cuando el producto real salga del piloto.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <style>
+    .head {
+      padding: var(--space-72) 0 var(--space-40);
+      border-bottom: 1px solid var(--color-ink-black);
+    }
+
+    .head__title {
+      font-size: var(--text-heading-lg);
+      letter-spacing: var(--tracking-heading-lg);
+      margin: var(--space-16) 0;
+    }
+
+    .head__lede {
+      max-width: 62ch;
+    }
+
+    .grid-3 p {
+      margin-top: var(--space-12);
+    }
+  </style>
+</Base>

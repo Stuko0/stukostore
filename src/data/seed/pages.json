@@ -1,0 +1,72 @@
+[
+ {
+  "id": "te-pg1",
+  "tenantId": "te",
+  "slug": "envios",
+  "title": "Envíos y entregas",
+  "body": "Entregamos en Cochabamba el mismo día si el pedido entra antes de las 14:00. Al interior del país sale por flota y llega en 2 a 4 días. El envío es gratis en Cochabamba desde Bs.- 299 y a nivel nacional desde Bs.- 499."
+ },
+ {
+  "id": "te-pg2",
+  "tenantId": "te",
+  "slug": "devoluciones",
+  "title": "Cambios y devoluciones",
+  "body": "Aceptamos cambios dentro de los 7 días posteriores a la entrega, con el producto sin uso y en su empaque original. Si el producto llega dañado, reponemos el envío sin costo."
+ },
+ {
+  "id": "te-pg3",
+  "tenantId": "te",
+  "slug": "preguntas-frecuentes",
+  "title": "Preguntas frecuentes",
+  "body": "¿Cómo pago? Por QR, transferencia, contra entrega o con tarjeta en el checkout. ¿Emiten factura? Sí, con NIT al momento del pedido. ¿Hacen ventas por mayor? Sí, desde 12 unidades con precio especial."
+ },
+ {
+  "id": "te-pg4",
+  "tenantId": "te",
+  "slug": "sobre-nosotros",
+  "title": "Sobre nosotros",
+  "body": "Tienda Express nació en Cochabamba para acercar botellas térmicas y equipo de café a quien quiere dejar de comprar descartables."
+ },
+ {
+  "id": "co-pg1",
+  "tenantId": "co",
+  "slug": "envios",
+  "title": "Envíos",
+  "body": "En La Paz entregamos en el día. Al resto del país enviamos por flota asegurada."
+ },
+ {
+  "id": "co-pg2",
+  "tenantId": "co",
+  "slug": "devoluciones",
+  "title": "Devoluciones",
+  "body": "Si el café no es de tu agrado, cambiamos el lote dentro de los 5 días."
+ },
+ {
+  "id": "co-pg3",
+  "tenantId": "co",
+  "slug": "preguntas-frecuentes",
+  "title": "Preguntas frecuentes",
+  "body": "Tostamos cada semana. El molido se ajusta al método que uses."
+ },
+ {
+  "id": "mo-pg1",
+  "tenantId": "mo",
+  "slug": "envios",
+  "title": "Envíos",
+  "body": "Despachamos desde Santa Cruz y el envío nacional demora de 3 a 5 días."
+ },
+ {
+  "id": "mo-pg2",
+  "tenantId": "mo",
+  "slug": "devoluciones",
+  "title": "Devoluciones",
+  "body": "Los equipos tienen garantía de fábrica. Gestionamos el reclamo con el proveedor."
+ },
+ {
+  "id": "mo-pg3",
+  "tenantId": "mo",
+  "slug": "preguntas-frecuentes",
+  "title": "Preguntas frecuentes",
+  "body": "¿Alquilan equipos? Sí, carpas y sacos por temporada."
+ }
+]

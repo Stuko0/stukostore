@@ -1,0 +1,112 @@
+[
+ {
+  "id": "te-b1",
+  "tenantId": "te",
+  "type": "hero",
+  "title": "Botellas que duran todo el día",
+  "body": "Térmicas de acero inoxidable, tazas y accesorios de café en Cochabamba.",
+  "collectionId": null,
+  "image": "/img/termo-40oz.jpg",
+  "alt": "Botellas térmicas de acero alineadas",
+  "visible": true
+ },
+ {
+  "id": "te-b2",
+  "tenantId": "te",
+  "type": "grilla",
+  "title": "Nuestra sugerencia",
+  "body": "",
+  "collectionId": "te-c-outdoor",
+  "image": null,
+  "alt": "",
+  "visible": true
+ },
+ {
+  "id": "te-b3",
+  "tenantId": "te",
+  "type": "grilla",
+  "title": "Accesorios de café",
+  "body": "",
+  "collectionId": "te-c-cafe",
+  "image": null,
+  "alt": "",
+  "visible": true
+ },
+ {
+  "id": "te-b4",
+  "tenantId": "te",
+  "type": "texto",
+  "title": "Envío gratis en Cochabamba",
+  "body": "Sobre Bs.- 299 la entrega en la ciudad corre por nuestra cuenta. Al interior del país, sobre Bs.- 499.",
+  "collectionId": null,
+  "image": null,
+  "alt": "",
+  "visible": true
+ },
+ {
+  "id": "co-b1",
+  "tenantId": "co",
+  "type": "hero",
+  "title": "Café de altura, tostado cada semana",
+  "body": "Microlotes de Caranavi y los Yungas, molidos al método que uses.",
+  "collectionId": null,
+  "image": "/img/cafe-grano.jpg",
+  "alt": "Granos de café tostado",
+  "visible": true
+ },
+ {
+  "id": "co-b2",
+  "tenantId": "co",
+  "type": "grilla",
+  "title": "Microlotes",
+  "body": "",
+  "collectionId": "co-c-origen",
+  "image": null,
+  "alt": "",
+  "visible": true
+ },
+ {
+  "id": "co-b3",
+  "tenantId": "co",
+  "type": "grilla",
+  "title": "Métodos de preparación",
+  "body": "",
+  "collectionId": "co-c-metodos",
+  "image": null,
+  "alt": "",
+  "visible": true
+ },
+ {
+  "id": "mo-b1",
+  "tenantId": "mo",
+  "type": "hero",
+  "title": "Equipo para salir y no volver tan rápido",
+  "body": "Mochilas, carpas y todo lo que hace falta para el fin de semana.",
+  "collectionId": null,
+  "image": "/img/carpa.jpg",
+  "alt": "Carpa armada en el campo",
+  "visible": true
+ },
+ {
+  "id": "mo-b2",
+  "tenantId": "mo",
+  "type": "grilla",
+  "title": "Campamento",
+  "body": "",
+  "collectionId": "mo-c-campamento",
+  "image": null,
+  "alt": "",
+  "visible": true
+ },
+ {
+  "id": "mo-b3",
+  "tenantId": "mo",
+  "type": "grilla",
+  "title": "Hidratación",
+  "body": "",
+  "collectionId": "mo-c-hidratacion",
+  "image": null,
+  "alt": "",
+  "visible": true
+ }
+]

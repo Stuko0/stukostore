@@ -1,0 +1,68 @@
+[
+ {
+  "id": "te-d1",
+  "tenantId": "te",
+  "code": "BIENVENIDA10",
+  "type": "porcentaje",
+  "value": 10,
+  "minSubtotal": 200,
+  "active": true,
+  "used": 12,
+  "limit": null
+ },
+ {
+  "id": "te-d2",
+  "tenantId": "te",
+  "code": "ENVIOGRATIS",
+  "type": "envio",
+  "value": 0,
+  "minSubtotal": 299,
+  "active": true,
+  "used": 31,
+  "limit": null
+ },
+ {
+  "id": "co-d1",
+  "tenantId": "co",
+  "code": "CAFE5",
+  "type": "porcentaje",
+  "value": 5,
+  "minSubtotal": 100,
+  "active": true,
+  "used": 8,
+  "limit": null
+ },
+ {
+  "id": "co-d2",
+  "tenantId": "co",
+  "code": "DOCENA20",
+  "type": "monto",
+  "value": 120,
+  "minSubtotal": 600,
+  "active": true,
+  "used": 3,
+  "limit": null
+ },
+ {
+  "id": "mo-d1",
+  "tenantId": "mo",
+  "code": "CAMPAMENTO15",
+  "type": "porcentaje",
+  "value": 15,
+  "minSubtotal": 500,
+  "active": true,
+  "used": 5,
+  "limit": null
+ },
+ {
+  "id": "mo-d2",
+  "tenantId": "mo",
+  "code": "MOCHILA50",
+  "type": "monto",
+  "value": 50,
+  "minSubtotal": 400,
+  "active": false,
+  "used": 0,
+  "limit": null
+ }
+]

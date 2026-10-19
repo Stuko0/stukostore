@@ -1,0 +1,83 @@
+[
+ {
+  "id": "te-c-outdoor",
+  "tenantId": "te",
+  "slug": "outdoor",
+  "title": "Outdoor",
+  "description": "Botellas y tazas térmicas para el día a día",
+  "automatic": false,
+  "rule": null
+ },
+ {
+  "id": "te-c-cafe",
+  "tenantId": "te",
+  "slug": "accesorios-de-cafe",
+  "title": "Accesorios de café",
+  "description": "Métodos de preparación manual",
+  "automatic": false,
+  "rule": null
+ },
+ {
+  "id": "te-c-salud",
+  "tenantId": "te",
+  "slug": "salud-y-bienestar",
+  "title": "Salud y bienestar",
+  "description": "Hidratación y rutinas saludables",
+  "automatic": false,
+  "rule": null
+ },
+ {
+  "id": "co-c-origen",
+  "tenantId": "co",
+  "slug": "cafes-de-origen",
+  "title": "Cafés de origen",
+  "description": "Microlotes de Yungas y Caranavi",
+  "automatic": false,
+  "rule": null
+ },
+ {
+  "id": "co-c-metodos",
+  "tenantId": "co",
+  "slug": "metodos",
+  "title": "Métodos",
+  "description": "Prensa, goteo y cafetera de vidrio",
+  "automatic": false,
+  "rule": null
+ },
+ {
+  "id": "co-c-accesorios",
+  "tenantId": "co",
+  "slug": "accesorios",
+  "title": "Accesorios",
+  "description": "Tazas, hervidores y molinos",
+  "automatic": false,
+  "rule": null
+ },
+ {
+  "id": "mo-c-mochilas",
+  "tenantId": "mo",
+  "slug": "mochilas",
+  "title": "Mochilas",
+  "description": "Mochilas y bolsos de trekking",
+  "automatic": false,
+  "rule": null
+ },
+ {
+  "id": "mo-c-campamento",
+  "tenantId": "mo",
+  "slug": "campamento",
+  "title": "Campamento",
+  "description": "Carpa, saco de dormir e iluminación",
+  "automatic": false,
+  "rule": null
+ },
+ {
+  "id": "mo-c-hidratacion",
+  "tenantId": "mo",
+  "slug": "hidratacion",
+  "title": "Hidratación",
+  "description": "Botellas, termos y cantimploras",
+  "automatic": false,
+  "rule": null
+ }
+]

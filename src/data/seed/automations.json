@@ -1,0 +1,156 @@
+[
+ {
+  "id": "te-a1",
+  "tenantId": "te",
+  "name": "Aviso de stock bajo",
+  "trigger": "stock_bajo",
+  "condition": "qty <= umbral",
+  "action": "notificar_equipo",
+  "template": "Stock bajo: {{producto}} ({{sku}}) quedan {{qty}} unidades.",
+  "enabled": true,
+  "runs": [
+   {
+    "at": "2026-09-04T10:00:00-04:00",
+    "result": "ejecutada",
+    "detail": "Ejecución de prueba"
+   },
+   {
+    "at": "2026-09-05T10:00:00-04:00",
+    "result": "ejecutada",
+    "detail": "Ejecución de prueba"
+   }
+  ]
+ },
+ {
+  "id": "te-a2",
+  "tenantId": "te",
+  "name": "Confirmación de pedido",
+  "trigger": "pedido_creado",
+  "condition": "siempre",
+  "action": "avisar_cliente",
+  "template": "Hola {{cliente}}, recibimos tu pedido {{pedido}} por {{total}}. Te avisamos cuando salga.",
+  "enabled": true,
+  "runs": [
+   {
+    "at": "2026-09-04T10:00:00-04:00",
+    "result": "ejecutada",
+    "detail": "Ejecución de prueba"
+   },
+   {
+    "at": "2026-09-05T10:00:00-04:00",
+    "result": "ejecutada",
+    "detail": "Ejecución de prueba"
+   }
+  ]
+ },
+ {
+  "id": "te-a3",
+  "tenantId": "te",
+  "name": "Carrito abandonado",
+  "trigger": "carrito_abandonado",
+  "condition": "2 horas sin completar",
+  "action": "avisar_cliente",
+  "template": "{{cliente}}, dejaste {{producto}} en tu carrito. ¿Seguimos con el pedido?",
+  "enabled": false,
+  "runs": []
+ },
+ {
+  "id": "co-a1",
+  "tenantId": "co",
+  "name": "Reposición de microlote",
+  "trigger": "stock_bajo",
+  "condition": "qty <= 5",
+  "action": "notificar_equipo",
+  "template": "Reponer {{producto}}: quedan {{qty}} bolsas.",
+  "enabled": true,
+  "runs": [
+   {
+    "at": "2026-09-04T10:00:00-04:00",
+    "result": "ejecutada",
+    "detail": "Ejecución de prueba"
+   },
+   {
+    "at": "2026-09-05T10:00:00-04:00",
+    "result": "ejecutada",
+    "detail": "Ejecución de prueba"
+   }
+  ]
+ },
+ {
+  "id": "co-a2",
+  "tenantId": "co",
+  "name": "Clientes mayoristas",
+  "trigger": "cliente_nuevo",
+  "condition": "etiqueta=mayorista",
+  "action": "etiquetar_cliente",
+  "template": "Enviar lista de precios por volumen a {{cliente}}.",
+  "enabled": true,
+  "runs": [
+   {
+    "at": "2026-09-04T10:00:00-04:00",
+    "result": "ejecutada",
+    "detail": "Ejecución de prueba"
+   },
+   {
+    "at": "2026-09-05T10:00:00-04:00",
+    "result": "ejecutada",
+    "detail": "Ejecución de prueba"
+   }
+  ]
+ },
+ {
+  "id": "mo-a1",
+  "tenantId": "mo",
+  "name": "Pedido entregado",
+  "trigger": "pedido_entregado",
+  "condition": "siempre",
+  "action": "avisar_cliente",
+  "template": "{{cliente}}, tu pedido {{pedido}} fue entregado. ¡Buen viaje!",
+  "enabled": true,
+  "runs": [
+   {
+    "at": "2026-09-04T10:00:00-04:00",
+    "result": "ejecutada",
+    "detail": "Ejecución de prueba"
+   },
+   {
+    "at": "2026-09-05T10:00:00-04:00",
+    "result": "ejecutada",
+    "detail": "Ejecución de prueba"
+   }
+  ]
+ },
+ {
+  "id": "mo-a2",
+  "tenantId": "mo",
+  "name": "Alerta de devolución",
+  "trigger": "devolucion_creada",
+  "condition": "monto >= 300",
+  "action": "notificar_equipo",
+  "template": "Devolución de {{cliente}} por {{total}}: revisar estado del producto.",
+  "enabled": true,
+  "runs": [
+   {
+    "at": "2026-09-04T10:00:00-04:00",
+    "result": "ejecutada",
+    "detail": "Ejecución de prueba"
+   },
+   {
+    "at": "2026-09-05T10:00:00-04:00",
+    "result": "ejecutada",
+    "detail": "Ejecución de prueba"
+   }
+  ]
+ },
+ {
+  "id": "mo-a3",
+  "tenantId": "mo",
+  "name": "Pago confirmado",
+  "trigger": "pago_confirmado",
+  "condition": "siempre",
+  "action": "notificar_equipo",
+  "template": "Pago confirmado del pedido {{pedido}} de {{cliente}}.",
+  "enabled": false,
+  "runs": []
+ }
+]

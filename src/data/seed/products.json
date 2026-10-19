@@ -1,0 +1,1047 @@
+[
+ {
+  "id": "te-p1",
+  "tenantId": "te",
+  "slug": "botella-bubba-trailblazer-straw-licorice-40oz",
+  "title": "Botella Bubba Trailblazer Straw Licorice 40oz",
+  "description": "Botella térmica de 1,2 litros con sorbete y asa; mantiene el frío hasta 24 horas.",
+  "status": "activo",
+  "collectionIds": [
+   "te-c-outdoor",
+   "te-c-salud"
+  ],
+  "tags": [
+   "botellas",
+   "termos",
+   "outdoor"
+  ],
+  "options": [
+   {
+    "name": "Color",
+    "values": [
+     "Licorice",
+     "Blue Corn"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "id": "te-p1-v1",
+    "sku": "BUBBA-40-LIC",
+    "options": {
+     "Color": "Licorice"
+    },
+    "price": 349,
+    "compareAt": 399,
+    "cost": 215,
+    "barcode": "772636103522",
+    "active": true
+   },
+   {
+    "id": "te-p1-v2",
+    "sku": "BUBBA-40-BLC",
+    "options": {
+     "Color": "Blue Corn"
+    },
+    "price": 349,
+    "compareAt": 399,
+    "cost": 215,
+    "barcode": "771080203122",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/termo-40oz.jpg",
+    "alt": "Botellas térmicas de acero inoxidable alineadas sobre una mesa"
+   }
+  ],
+  "seo": {
+   "title": "Botella Bubba Trailblazer Straw Licorice 40oz | TE",
+   "description": "Botella térmica de 1,2 litros con sorbete y asa; mantiene el frío hasta 24 horas."
+  },
+  "createdAt": "2026-08-02T10:00:00-04:00",
+  "updatedAt": "2026-10-02T10:00:00-04:00"
+ },
+ {
+  "id": "te-p2",
+  "tenantId": "te",
+  "slug": "botella-contigo-autospout-fit-straw-32oz",
+  "title": "Botella Contigo Autospout Fit Straw 32oz",
+  "description": "Botella de 946 ml con boquilla automática y sorbete integrado.",
+  "status": "activo",
+  "collectionIds": [
+   "te-c-outdoor"
+  ],
+  "tags": [
+   "botellas",
+   "termos"
+  ],
+  "options": [
+   {
+    "name": "Color",
+    "values": [
+     "Licorice"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "id": "te-p2-v1",
+    "sku": "CONTIGO-32-LIC",
+    "options": {
+     "Color": "Licorice"
+    },
+    "price": 399,
+    "compareAt": null,
+    "cost": 250,
+    "barcode": "770045471196",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/termo-32oz.jpg",
+    "alt": "Botella de acero inoxidable con tapa y pico bebible"
+   }
+  ],
+  "seo": {
+   "title": "Botella Contigo Autospout Fit Straw 32oz | TE",
+   "description": "Botella de 946 ml con boquilla automática y sorbete integrado."
+  },
+  "createdAt": "2026-08-03T10:00:00-04:00",
+  "updatedAt": "2026-10-03T10:00:00-04:00"
+ },
+ {
+  "id": "te-p3",
+  "tenantId": "te",
+  "slug": "taza-contigo-streeterville-mug-14oz",
+  "title": "Taza Contigo Streeterville Mug 14oz Stainless Steel",
+  "description": "Taza térmica de 414 ml con tapa de rosca, apta para café de oficina.",
+  "status": "activo",
+  "collectionIds": [
+   "te-c-outdoor",
+   "te-c-salud"
+  ],
+  "tags": [
+   "tazas",
+   "termos"
+  ],
+  "options": [
+   {
+    "name": "Color",
+    "values": [
+     "Licorice"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "id": "te-p3-v1",
+    "sku": "MUG-14-LIC",
+    "options": {
+     "Color": "Licorice"
+    },
+    "price": 299,
+    "compareAt": null,
+    "cost": 190,
+    "barcode": "775445584848",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/taza-14oz.jpg",
+    "alt": "Taza de cerámica esmaltada sobre superficie clara"
+   }
+  ],
+  "seo": {
+   "title": "Taza Contigo Streeterville Mug 14oz Stainless Steel | TE",
+   "description": "Taza térmica de 414 ml con tapa de rosca, apta para café de oficina."
+  },
+  "createdAt": "2026-08-04T10:00:00-04:00",
+  "updatedAt": "2026-10-04T10:00:00-04:00"
+ },
+ {
+  "id": "te-p4",
+  "tenantId": "te",
+  "slug": "botella-contigo-snapseal-huron-20-16oz",
+  "title": "Botella Contigo Snapseal Huron 2.0 16oz 473 ml Blue Corn",
+  "description": "Botella de 473 ml con tapa a presión; cierre a prueba de derrames.",
+  "status": "activo",
+  "collectionIds": [
+   "te-c-outdoor"
+  ],
+  "tags": [
+   "botellas"
+  ],
+  "options": [
+   {
+    "name": "Color",
+    "values": [
+     "Blue Corn"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "id": "te-p4-v1",
+    "sku": "SNAP-16-BLC",
+    "options": {
+     "Color": "Blue Corn"
+    },
+    "price": 249,
+    "compareAt": null,
+    "cost": 150,
+    "barcode": "774943465219",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/termo-16oz.jpg",
+    "alt": "Botella de acero inoxidable con tapa azul sobre una mesa"
+   }
+  ],
+  "seo": {
+   "title": "Botella Contigo Snapseal Huron 2.0 16oz 473 ml Blue Corn | TE",
+   "description": "Botella de 473 ml con tapa a presión; cierre a prueba de derrames."
+  },
+  "createdAt": "2026-08-05T10:00:00-04:00",
+  "updatedAt": "2026-10-05T10:00:00-04:00"
+ },
+ {
+  "id": "te-p5",
+  "tenantId": "te",
+  "slug": "molino-11-clicks-acero-inoxidable",
+  "title": "Molino 11 Clicks Cuerpo de Acero Inoxidable",
+  "description": "Molino manual con regulación de 11 clics y cuerpo de acero inoxidable.",
+  "status": "activo",
+  "collectionIds": [
+   "te-c-cafe"
+  ],
+  "tags": [
+   "cafe",
+   "molinos"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "te-p5-v1",
+    "sku": "MOL-11-AC",
+    "options": {},
+    "price": 449,
+    "compareAt": null,
+    "cost": 280,
+    "barcode": "776780004289",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/molino-cafe.jpg",
+    "alt": "Molino manual de café con manivela"
+   }
+  ],
+  "seo": {
+   "title": "Molino 11 Clicks Cuerpo de Acero Inoxidable | TE",
+   "description": "Molino manual con regulación de 11 clics y cuerpo de acero inoxidable."
+  },
+  "createdAt": "2026-08-06T10:00:00-04:00",
+  "updatedAt": "2026-10-06T10:00:00-04:00"
+ },
+ {
+  "id": "te-p6",
+  "tenantId": "te",
+  "slug": "origami-porcelana-m-base-madera",
+  "title": "Origami de Porcelana \"M\" Base de Madera",
+  "description": "Dripper de porcelana con 20 estrías y base de madera.",
+  "status": "activo",
+  "collectionIds": [
+   "te-c-cafe"
+  ],
+  "tags": [
+   "cafe",
+   "drippers"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "te-p6-v1",
+    "sku": "ORIG-M-MAD",
+    "options": {},
+    "price": 199,
+    "compareAt": null,
+    "cost": 120,
+    "barcode": "773692474469",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/dripper-porcelana.jpg",
+    "alt": "Dripper de porcelana blanca sobre base de madera"
+   }
+  ],
+  "seo": {
+   "title": "Origami de Porcelana \"M\" Base de Madera | TE",
+   "description": "Dripper de porcelana con 20 estrías y base de madera."
+  },
+  "createdAt": "2026-08-07T10:00:00-04:00",
+  "updatedAt": "2026-10-07T10:00:00-04:00"
+ },
+ {
+  "id": "te-p7",
+  "tenantId": "te",
+  "slug": "tetera-cuello-de-cisne-15-lts",
+  "title": "Tetera Cuello de Cisne 1,5 Lts",
+  "description": "Hervidor de cuello de cisne para vertido controlado.",
+  "status": "activo",
+  "collectionIds": [
+   "te-c-cafe"
+  ],
+  "tags": [
+   "cafe",
+   "hervidores"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "te-p7-v1",
+    "sku": "TET-CISNE-15",
+    "options": {},
+    "price": 249,
+    "compareAt": null,
+    "cost": 160,
+    "barcode": "774070948366",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/tetera-cisne.jpg",
+    "alt": "Hervidor de cuello largo sobre una hornilla"
+   }
+  ],
+  "seo": {
+   "title": "Tetera Cuello de Cisne 1,5 Lts | TE",
+   "description": "Hervidor de cuello de cisne para vertido controlado."
+  },
+  "createdAt": "2026-08-08T10:00:00-04:00",
+  "updatedAt": "2026-10-08T10:00:00-04:00"
+ },
+ {
+  "id": "te-p8",
+  "tenantId": "te",
+  "slug": "v60-diamond-vidrio-500ml",
+  "title": "V60 Diamond Juego Completo de Vidrio 500ml",
+  "description": "Dripper de vidrio con base y jarra de 500 ml; incluye filtros.",
+  "status": "activo",
+  "collectionIds": [
+   "te-c-cafe"
+  ],
+  "tags": [
+   "cafe",
+   "drippers"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "te-p8-v1",
+    "sku": "V60-DIA-500",
+    "options": {},
+    "price": 399,
+    "compareAt": null,
+    "cost": 240,
+    "barcode": "779180789780",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/chemex.jpg",
+    "alt": "Jarra y filtro de vidrio para café por goteo"
+   }
+  ],
+  "seo": {
+   "title": "V60 Diamond Juego Completo de Vidrio 500ml | TE",
+   "description": "Dripper de vidrio con base y jarra de 500 ml; incluye filtros."
+  },
+  "createdAt": "2026-08-09T10:00:00-04:00",
+  "updatedAt": "2026-10-09T10:00:00-04:00"
+ },
+ {
+  "id": "co-p1",
+  "tenantId": "co",
+  "slug": "cafe-altura-caranavi-250g",
+  "title": "Café de Altura Caranavi 250 g",
+  "description": "Microlote lavado de Caranavi, tueste medio, notas a panela y naranja.",
+  "status": "activo",
+  "collectionIds": [
+   "co-c-origen"
+  ],
+  "tags": [
+   "cafe",
+   "microlote"
+  ],
+  "options": [
+   {
+    "name": "Molido",
+    "values": [
+     "Grano",
+     "Molido"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "id": "co-p1-v1",
+    "sku": "CAR-250-GRA",
+    "options": {
+     "Molido": "Grano"
+    },
+    "price": 65,
+    "compareAt": null,
+    "cost": 38,
+    "barcode": "775268164784",
+    "active": true
+   },
+   {
+    "id": "co-p1-v2",
+    "sku": "CAR-250-MOL",
+    "options": {
+     "Molido": "Molido"
+    },
+    "price": 65,
+    "compareAt": null,
+    "cost": 38,
+    "barcode": "777246865619",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/cafe-grano.jpg",
+    "alt": "Granos de café tostado en primer plano"
+   }
+  ],
+  "seo": {
+   "title": "Café de Altura Caranavi 250 g | CO",
+   "description": "Microlote lavado de Caranavi, tueste medio, notas a panela y naranja."
+  },
+  "createdAt": "2026-08-02T10:00:00-04:00",
+  "updatedAt": "2026-10-02T10:00:00-04:00"
+ },
+ {
+  "id": "co-p2",
+  "tenantId": "co",
+  "slug": "cafe-molido-tarqui-250g",
+  "title": "Café Molido Tarqui 250 g",
+  "description": "Mezcla de la zona de Tarqui con tueste oscuro para prensa y cafetera.",
+  "status": "activo",
+  "collectionIds": [
+   "co-c-origen"
+  ],
+  "tags": [
+   "cafe"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "co-p2-v1",
+    "sku": "TAR-250",
+    "options": {},
+    "price": 58,
+    "compareAt": null,
+    "cost": 34,
+    "barcode": "774379932273",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/cafe-molido.jpg",
+    "alt": "Café molido sobre una superficie oscura"
+   }
+  ],
+  "seo": {
+   "title": "Café Molido Tarqui 250 g | CO",
+   "description": "Mezcla de la zona de Tarqui con tueste oscuro para prensa y cafetera."
+  },
+  "createdAt": "2026-08-03T10:00:00-04:00",
+  "updatedAt": "2026-10-03T10:00:00-04:00"
+ },
+ {
+  "id": "co-p3",
+  "tenantId": "co",
+  "slug": "prensa-francesa-600ml",
+  "title": "Prensa Francesa 600 ml",
+  "description": "Prensa de vidrio templado con filtro de acero de cuatro piezas.",
+  "status": "activo",
+  "collectionIds": [
+   "co-c-metodos"
+  ],
+  "tags": [
+   "cafe",
+   "prensas"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "co-p3-v1",
+    "sku": "PRE-600",
+    "options": {},
+    "price": 190,
+    "compareAt": 220,
+    "cost": 110,
+    "barcode": "770935035000",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/prensa-francesa.jpg",
+    "alt": "Prensa francesa de vidrio con café preparado"
+   }
+  ],
+  "seo": {
+   "title": "Prensa Francesa 600 ml | CO",
+   "description": "Prensa de vidrio templado con filtro de acero de cuatro piezas."
+  },
+  "createdAt": "2026-08-04T10:00:00-04:00",
+  "updatedAt": "2026-10-04T10:00:00-04:00"
+ },
+ {
+  "id": "co-p4",
+  "tenantId": "co",
+  "slug": "cafetera-vidrio-6-tazas",
+  "title": "Cafetera de Vidrio 6 Tazas",
+  "description": "Jarra de vidrio borosilicato para goteo manual, 800 ml.",
+  "status": "activo",
+  "collectionIds": [
+   "co-c-metodos"
+  ],
+  "tags": [
+   "cafe"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "co-p4-v1",
+    "sku": "CAF-6T",
+    "options": {},
+    "price": 380,
+    "compareAt": null,
+    "cost": 230,
+    "barcode": "779710171840",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/chemex.jpg",
+    "alt": "Jarra de vidrio con filtro cónico y café"
+   }
+  ],
+  "seo": {
+   "title": "Cafetera de Vidrio 6 Tazas | CO",
+   "description": "Jarra de vidrio borosilicato para goteo manual, 800 ml."
+  },
+  "createdAt": "2026-08-05T10:00:00-04:00",
+  "updatedAt": "2026-10-05T10:00:00-04:00"
+ },
+ {
+  "id": "co-p5",
+  "tenantId": "co",
+  "slug": "molino-manual-cafe",
+  "title": "Molino Manual de Café",
+  "description": "Molino de muelas cónicas con 18 pasos de molienda.",
+  "status": "activo",
+  "collectionIds": [
+   "co-c-metodos",
+   "co-c-accesorios"
+  ],
+  "tags": [
+   "cafe",
+   "molinos"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "co-p5-v1",
+    "sku": "MOL-MAN",
+    "options": {},
+    "price": 320,
+    "compareAt": 360,
+    "cost": 190,
+    "barcode": "773151307563",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/molino-cafe.jpg",
+    "alt": "Molino de café con manivela y depósito de madera"
+   }
+  ],
+  "seo": {
+   "title": "Molino Manual de Café | CO",
+   "description": "Molino de muelas cónicas con 18 pasos de molienda."
+  },
+  "createdAt": "2026-08-06T10:00:00-04:00",
+  "updatedAt": "2026-10-06T10:00:00-04:00"
+ },
+ {
+  "id": "co-p6",
+  "tenantId": "co",
+  "slug": "taza-ceramica-250ml",
+  "title": "Taza de Cerámica 250 ml",
+  "description": "Taza de gres esmaltado, apta para microondas y lavavajillas.",
+  "status": "activo",
+  "collectionIds": [
+   "co-c-accesorios"
+  ],
+  "tags": [
+   "tazas"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "co-p6-v1",
+    "sku": "TAZ-250",
+    "options": {},
+    "price": 70,
+    "compareAt": null,
+    "cost": 32,
+    "barcode": "771267438136",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/taza-14oz.jpg",
+    "alt": "Taza de cerámica clara vista desde arriba"
+   }
+  ],
+  "seo": {
+   "title": "Taza de Cerámica 250 ml | CO",
+   "description": "Taza de gres esmaltado, apta para microondas y lavavajillas."
+  },
+  "createdAt": "2026-08-07T10:00:00-04:00",
+  "updatedAt": "2026-10-07T10:00:00-04:00"
+ },
+ {
+  "id": "co-p7",
+  "tenantId": "co",
+  "slug": "dripper-ceramico-02",
+  "title": "Dripper Cerámico 02",
+  "description": "Dripper de gres para filtros cónicos tamaño 02.",
+  "status": "activo",
+  "collectionIds": [
+   "co-c-metodos"
+  ],
+  "tags": [
+   "cafe",
+   "drippers"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "co-p7-v1",
+    "sku": "DRIP-02",
+    "options": {},
+    "price": 150,
+    "compareAt": null,
+    "cost": 80,
+    "barcode": "774881842987",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/dripper-porcelana.jpg",
+    "alt": "Dripper de cerámica blanca con filtro de papel"
+   }
+  ],
+  "seo": {
+   "title": "Dripper Cerámico 02 | CO",
+   "description": "Dripper de gres para filtros cónicos tamaño 02."
+  },
+  "createdAt": "2026-08-08T10:00:00-04:00",
+  "updatedAt": "2026-10-08T10:00:00-04:00"
+ },
+ {
+  "id": "co-p8",
+  "tenantId": "co",
+  "slug": "hervidor-1l",
+  "title": "Hervidor 1 L",
+  "description": "Hervidor de acero con base plana para inducción.",
+  "status": "activo",
+  "collectionIds": [
+   "co-c-accesorios"
+  ],
+  "tags": [
+   "hervidores"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "co-p8-v1",
+    "sku": "HERV-1L",
+    "options": {},
+    "price": 230,
+    "compareAt": null,
+    "cost": 140,
+    "barcode": "774151831981",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/tetera-cisne.jpg",
+    "alt": "Hervidor metálico sobre una superficie de madera"
+   }
+  ],
+  "seo": {
+   "title": "Hervidor 1 L | CO",
+   "description": "Hervidor de acero con base plana para inducción."
+  },
+  "createdAt": "2026-08-09T10:00:00-04:00",
+  "updatedAt": "2026-10-09T10:00:00-04:00"
+ },
+ {
+  "id": "mo-p1",
+  "tenantId": "mo",
+  "slug": "mochila-trekking-45l",
+  "title": "Mochila de Trekking 45 L",
+  "description": "Mochila de 45 litros con espaldar ventilado y cubre lluvia incluido.",
+  "status": "activo",
+  "collectionIds": [
+   "mo-c-mochilas"
+  ],
+  "tags": [
+   "mochilas",
+   "trekking"
+  ],
+  "options": [
+   {
+    "name": "Talla",
+    "values": [
+     "M",
+     "L"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "id": "mo-p1-v1",
+    "sku": "MOCH-45-M",
+    "options": {
+     "Talla": "M"
+    },
+    "price": 480,
+    "compareAt": null,
+    "cost": 300,
+    "barcode": "770506458773",
+    "active": true
+   },
+   {
+    "id": "mo-p1-v2",
+    "sku": "MOCH-45-L",
+    "options": {
+     "Talla": "L"
+    },
+    "price": 480,
+    "compareAt": null,
+    "cost": 300,
+    "barcode": "772996415632",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/mochila-outdoor.jpg",
+    "alt": "Mochila de excursionista apoyada en una roca"
+   }
+  ],
+  "seo": {
+   "title": "Mochila de Trekking 45 L | MO",
+   "description": "Mochila de 45 litros con espaldar ventilado y cubre lluvia incluido."
+  },
+  "createdAt": "2026-08-02T10:00:00-04:00",
+  "updatedAt": "2026-10-02T10:00:00-04:00"
+ },
+ {
+  "id": "mo-p2",
+  "tenantId": "mo",
+  "slug": "botella-plegable-750ml",
+  "title": "Botella Plegable 750 ml",
+  "description": "Botella de silicona plegable, libre de BPA, para viaje.",
+  "status": "activo",
+  "collectionIds": [
+   "mo-c-hidratacion"
+  ],
+  "tags": [
+   "botellas"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "mo-p2-v1",
+    "sku": "PLEG-750",
+    "options": {},
+    "price": 85,
+    "compareAt": null,
+    "cost": 42,
+    "barcode": "779657493201",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/botella-outdoor.jpg",
+    "alt": "Botella de agua junto a equipo de senderismo"
+   }
+  ],
+  "seo": {
+   "title": "Botella Plegable 750 ml | MO",
+   "description": "Botella de silicona plegable, libre de BPA, para viaje."
+  },
+  "createdAt": "2026-08-03T10:00:00-04:00",
+  "updatedAt": "2026-10-03T10:00:00-04:00"
+ },
+ {
+  "id": "mo-p3",
+  "tenantId": "mo",
+  "slug": "linterna-frontal-400lm",
+  "title": "Linterna Frontal 400 lúmenes",
+  "description": "Linterna recargable con tres modos y sensor de movimiento.",
+  "status": "activo",
+  "collectionIds": [
+   "mo-c-campamento"
+  ],
+  "tags": [
+   "iluminacion"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "mo-p3-v1",
+    "sku": "LINF-400",
+    "options": {},
+    "price": 220,
+    "compareAt": null,
+    "cost": 130,
+    "barcode": "777714384707",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/linterna.jpg",
+    "alt": "Linterna frontal encendida en la oscuridad"
+   }
+  ],
+  "seo": {
+   "title": "Linterna Frontal 400 lúmenes | MO",
+   "description": "Linterna recargable con tres modos y sensor de movimiento."
+  },
+  "createdAt": "2026-08-04T10:00:00-04:00",
+  "updatedAt": "2026-10-04T10:00:00-04:00"
+ },
+ {
+  "id": "mo-p4",
+  "tenantId": "mo",
+  "slug": "saco-dormir-menos5",
+  "title": "Saco de Dormir -5 °C",
+  "description": "Saco de dormir de fibra hueca para clima frío, con capucha ajustable.",
+  "status": "activo",
+  "collectionIds": [
+   "mo-c-campamento"
+  ],
+  "tags": [
+   "dormir"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "mo-p4-v1",
+    "sku": "SACO-M5",
+    "options": {},
+    "price": 550,
+    "compareAt": null,
+    "cost": 340,
+    "barcode": "779381100390",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/saco-dormir.jpg",
+    "alt": "Saco de dormir extendido sobre el pasto"
+   }
+  ],
+  "seo": {
+   "title": "Saco de Dormir -5 °C | MO",
+   "description": "Saco de dormir de fibra hueca para clima frío, con capucha ajustable."
+  },
+  "createdAt": "2026-08-05T10:00:00-04:00",
+  "updatedAt": "2026-10-05T10:00:00-04:00"
+ },
+ {
+  "id": "mo-p5",
+  "tenantId": "mo",
+  "slug": "carpa-2-personas",
+  "title": "Carpa 2 Personas",
+  "description": "Carpa de doble techo con armazón de aluminio y funda de transporte.",
+  "status": "activo",
+  "collectionIds": [
+   "mo-c-campamento"
+  ],
+  "tags": [
+   "carpas"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "mo-p5-v1",
+    "sku": "CARPA-2P",
+    "options": {},
+    "price": 890,
+    "compareAt": 990,
+    "cost": 560,
+    "barcode": "778377274458",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/carpa.jpg",
+    "alt": "Carpa de dos personas armada en el campo"
+   }
+  ],
+  "seo": {
+   "title": "Carpa 2 Personas | MO",
+   "description": "Carpa de doble techo con armazón de aluminio y funda de transporte."
+  },
+  "createdAt": "2026-08-06T10:00:00-04:00",
+  "updatedAt": "2026-10-06T10:00:00-04:00"
+ },
+ {
+  "id": "mo-p6",
+  "tenantId": "mo",
+  "slug": "cantimplora-aluminio-1l",
+  "title": "Cantimplora de Aluminio 1 L",
+  "description": "Cantimplora liviana con tapa de rosca y mosquetón.",
+  "status": "activo",
+  "collectionIds": [
+   "mo-c-hidratacion"
+  ],
+  "tags": [
+   "cantimploras"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "mo-p6-v1",
+    "sku": "CANT-1L",
+    "options": {},
+    "price": 95,
+    "compareAt": null,
+    "cost": 48,
+    "barcode": "777551382757",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/cantimplora.jpg",
+    "alt": "Cantimplora metálica colgada de una rama"
+   }
+  ],
+  "seo": {
+   "title": "Cantimplora de Aluminio 1 L | MO",
+   "description": "Cantimplora liviana con tapa de rosca y mosquetón."
+  },
+  "createdAt": "2026-08-07T10:00:00-04:00",
+  "updatedAt": "2026-10-07T10:00:00-04:00"
+ },
+ {
+  "id": "mo-p7",
+  "tenantId": "mo",
+  "slug": "termo-acero-1l",
+  "title": "Termo de Acero 1 L",
+  "description": "Termo de doble pared con pico vertedor y asa plegable.",
+  "status": "activo",
+  "collectionIds": [
+   "mo-c-hidratacion"
+  ],
+  "tags": [
+   "termos"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "mo-p7-v1",
+    "sku": "TERM-1L",
+    "options": {},
+    "price": 210,
+    "compareAt": null,
+    "cost": 120,
+    "barcode": "773765056867",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/termo-32oz.jpg",
+    "alt": "Termo de acero inoxidable sobre una superficie de piedra"
+   }
+  ],
+  "seo": {
+   "title": "Termo de Acero 1 L | MO",
+   "description": "Termo de doble pared con pico vertedor y asa plegable."
+  },
+  "createdAt": "2026-08-08T10:00:00-04:00",
+  "updatedAt": "2026-10-08T10:00:00-04:00"
+ },
+ {
+  "id": "mo-p8",
+  "tenantId": "mo",
+  "slug": "botella-termica-500ml",
+  "title": "Botella Térmica 500 ml",
+  "description": "Botella de acero cepillado que mantiene la temperatura seis horas.",
+  "status": "activo",
+  "collectionIds": [
+   "mo-c-hidratacion"
+  ],
+  "tags": [
+   "botellas"
+  ],
+  "options": [],
+  "variants": [
+   {
+    "id": "mo-p8-v1",
+    "sku": "BOT-500",
+    "options": {},
+    "price": 165,
+    "compareAt": null,
+    "cost": 90,
+    "barcode": "777278069783",
+    "active": true
+   }
+  ],
+  "images": [
+   {
+    "src": "/img/termo-16oz.jpg",
+    "alt": "Botella térmica de acero con tapa negra"
+   }
+  ],
+  "seo": {
+   "title": "Botella Térmica 500 ml | MO",
+   "description": "Botella de acero cepillado que mantiene la temperatura seis horas."
+  },
+  "createdAt": "2026-08-09T10:00:00-04:00",
+  "updatedAt": "2026-10-09T10:00:00-04:00"
+ }
+]

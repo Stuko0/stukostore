@@ -1,0 +1,81 @@
+[
+ {
+  "id": "te-cu1",
+  "tenantId": "te",
+  "name": "Mariana Quiroga",
+  "phone": "59171234501",
+  "email": "mariana.quiroga@correo.bo",
+  "city": "Cochabamba",
+  "tags": [
+   "recurrente"
+  ],
+  "notes": "Prefiere entrega en la mañana.",
+  "createdAt": "2026-06-01T10:00:00-04:00"
+ },
+ {
+  "id": "te-cu2",
+  "tenantId": "te",
+  "name": "Jorge Terrazas",
+  "phone": "59171234502",
+  "email": "jorge.terrazas@correo.bo",
+  "city": "Quillacollo",
+  "tags": [
+   "nuevo"
+  ],
+  "notes": "",
+  "createdAt": "2026-06-01T10:00:00-04:00"
+ },
+ {
+  "id": "te-cu3",
+  "tenantId": "te",
+  "name": "Sinclair Ltda.",
+  "phone": "59171234503",
+  "email": "compras@sinclair.bo",
+  "city": "Cochabamba",
+  "tags": [
+   "mayorista"
+  ],
+  "notes": "Compra por volumen para regalos de empresa.",
+  "createdAt": "2026-06-01T10:00:00-04:00"
+ },
+ {
+  "id": "co-cu1",
+  "tenantId": "co",
+  "name": "Ana Belén Ríos",
+  "phone": "59171234504",
+  "email": "ana.rios@correo.bo",
+  "city": "La Paz",
+  "tags": [
+   "recurrente"
+  ],
+  "notes": "Toma el café en grano.",
+  "createdAt": "2026-06-01T10:00:00-04:00"
+ },
+ {
+  "id": "co-cu2",
+  "tenantId": "co",
+  "name": "Cafetería El Mirador",
+  "phone": "59171234505",
+  "email": "hola@elmirador.bo",
+  "city": "La Paz",
+  "tags": [
+   "mayorista",
+   "recurrente"
+  ],
+  "notes": "Pide 10 kg por mes.",
+  "createdAt": "2026-06-01T10:00:00-04:00"
+ },
+ {
+  "id": "mo-cu1",
+  "tenantId": "mo",
+  "name": "Diego Salvatierra",
+  "phone": "59171234506",
+  "email": "diego.salva@correo.bo",
+  "city": "Santa Cruz",
+  "tags": [
+   "nuevo"
+  ],
+  "notes": "",
+  "createdAt": "2026-06-01T10:00:00-04:00"
+ }
+]

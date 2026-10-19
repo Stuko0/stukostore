@@ -1,0 +1,74 @@
+[
+ {
+  "id": "te-z1",
+  "tenantId": "te",
+  "name": "Cochabamba ciudad",
+  "cities": [
+   "Cochabamba",
+   "Quillacollo",
+   "Tiquipaya"
+  ],
+  "rate": 20,
+  "freeAbove": 299
+ },
+ {
+  "id": "te-z2",
+  "tenantId": "te",
+  "name": "Interior del país",
+  "cities": [
+   "La Paz",
+   "Santa Cruz",
+   "Oruro",
+   "Potosí",
+   "Sucre"
+  ],
+  "rate": 45,
+  "freeAbove": 499
+ },
+ {
+  "id": "co-z1",
+  "tenantId": "co",
+  "name": "La Paz ciudad",
+  "cities": [
+   "La Paz",
+   "El Alto"
+  ],
+  "rate": 15,
+  "freeAbove": 250
+ },
+ {
+  "id": "co-z2",
+  "tenantId": "co",
+  "name": "Resto de Bolivia",
+  "cities": [
+   "Cochabamba",
+   "Santa Cruz",
+   "Sucre"
+  ],
+  "rate": 40,
+  "freeAbove": 450
+ },
+ {
+  "id": "mo-z1",
+  "tenantId": "mo",
+  "name": "Santa Cruz ciudad",
+  "cities": [
+   "Santa Cruz",
+   "Warnes"
+  ],
+  "rate": 25,
+  "freeAbove": 400
+ },
+ {
+  "id": "mo-z2",
+  "tenantId": "mo",
+  "name": "Resto de Bolivia",
+  "cities": [
+   "Cochabamba",
+   "La Paz",
+   "Sucre"
+  ],
+  "rate": 50,
+  "freeAbove": 700
+ }
+]

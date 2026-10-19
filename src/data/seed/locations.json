@@ -1,0 +1,58 @@
+[
+ {
+  "id": "te-l1",
+  "tenantId": "te",
+  "name": "Cochabamba Centro",
+  "city": "Cochabamba",
+  "address": "Av. Heroínas 456",
+  "pickup": true
+ },
+ {
+  "id": "te-l2",
+  "tenantId": "te",
+  "name": "Quillacollo",
+  "city": "Quillacollo",
+  "address": "Av. Blanco Galindo km 12",
+  "pickup": true
+ },
+ {
+  "id": "te-l3",
+  "tenantId": "te",
+  "name": "Almacén central",
+  "city": "Cochabamba",
+  "address": "Parque Industrial, galpón 7",
+  "pickup": false
+ },
+ {
+  "id": "co-l1",
+  "tenantId": "co",
+  "name": "La Paz Sopocachi",
+  "city": "La Paz",
+  "address": "Av. 6 de Agosto 2170",
+  "pickup": true
+ },
+ {
+  "id": "co-l2",
+  "tenantId": "co",
+  "name": "Tostaduría",
+  "city": "La Paz",
+  "address": "Calle Murillo 1102",
+  "pickup": false
+ },
+ {
+  "id": "mo-l1",
+  "tenantId": "mo",
+  "name": "Santa Cruz Equipetrol",
+  "city": "Santa Cruz",
+  "address": "Av. San Martín 180",
+  "pickup": true
+ },
+ {
+  "id": "mo-l2",
+  "tenantId": "mo",
+  "name": "Depósito Norte",
+  "city": "Santa Cruz",
+  "address": "Av. Cristo Redentor km 6",
+  "pickup": false
+ }
+]
