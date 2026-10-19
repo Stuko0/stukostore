@@ -1,0 +1,32 @@
+---
+import Storefront from '../../../../layouts/Storefront.astro';
+import ProductGrid from '../../../../components/store/ProductGrid.tsx';
+import { collectionsOf, productsOf, tenantBySlug, tenants, collections } from '../../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenants.flatMap((tenant) =>
+    collections
+      .filter((c) => c.tenantId === tenant.id)
+      .map((collection) => ({ params: { tenant: tenant.slug, collection: collection.slug } })),
+  );
+}
+
+const { tenant: slug, collection: collectionSlug } = Astro.params;
+const tenant = tenantBySlug(slug!);
+const collection = collectionsOf(tenant.id).find((c) => c.slug === collectionSlug)!;
+const items = productsOf(tenant.id).filter((p) => p.collectionIds.includes(collection.id));
+---
+
+<Storefront
+  tenant={tenant}
+  collections={collectionsOf(tenant.id)}
+  title={`${collection.title} — ${tenant.name}`}
+  description={collection.description}
+>
+  <div class="shell" style="padding: var(--space-40) 0 0">
+    <p class="eyebrow">Categoría</p>
+    <h1 class="h2" style="margin-top: var(--space-8)">{collection.title}</h1>
+    <p class="caption" style="margin-top: var(--space-8); max-width: 62ch">{collection.description}</p>
+  </div>
+  <ProductGrid client:load tenant={tenant} products={items} title={collection.title} subtitle={`[${items.length}]`} />
+</Storefront>

@@ -1,0 +1,20 @@
+---
+import Storefront from '../../../layouts/Storefront.astro';
+import CartPage from '../../../components/store/CartPage.tsx';
+import { collectionsOf, tenantBySlug, tenantsPathParams } from '../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenantsPathParams();
+}
+
+const tenant = tenantBySlug(Astro.params.tenant!);
+---
+
+<Storefront
+  tenant={tenant}
+  collections={collectionsOf(tenant.id)}
+  title={`Carrito — ${tenant.name}`}
+  description="Revisá tu pedido antes de confirmar la compra."
+>
+  <CartPage client:load tenant={tenant} />
+</Storefront>

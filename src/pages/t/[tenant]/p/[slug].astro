@@ -1,0 +1,26 @@
+---
+import Storefront from '../../../../layouts/Storefront.astro';
+import ProductDetail from '../../../../components/store/ProductDetail.tsx';
+import { collectionsOf, products, tenantBySlug, tenants } from '../../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenants.flatMap((tenant) =>
+    products
+      .filter((p) => p.tenantId === tenant.id && p.status === 'activo')
+      .map((product) => ({ params: { tenant: tenant.slug, slug: product.slug } })),
+  );
+}
+
+const { tenant: tenantSlug, slug } = Astro.params;
+const tenant = tenantBySlug(tenantSlug!);
+const product = products.find((p) => p.tenantId === tenant.id && p.slug === slug)!;
+---
+
+<Storefront
+  tenant={tenant}
+  collections={collectionsOf(tenant.id)}
+  title={`${product.title} — ${tenant.name}`}
+  description={product.description}
+>
+  <ProductDetail client:load tenant={tenant} product={product} />
+</Storefront>

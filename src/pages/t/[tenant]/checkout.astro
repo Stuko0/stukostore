@@ -1,0 +1,20 @@
+---
+import Storefront from '../../../layouts/Storefront.astro';
+import Checkout from '../../../components/store/Checkout.tsx';
+import { collectionsOf, tenantBySlug, tenantsPathParams } from '../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenantsPathParams();
+}
+
+const tenant = tenantBySlug(Astro.params.tenant!);
+---
+
+<Storefront
+  tenant={tenant}
+  collections={collectionsOf(tenant.id)}
+  title={`Checkout — ${tenant.name}`}
+  description="Confirmá tus datos de entrega, cupón y forma de pago."
+>
+  <Checkout client:load tenant={tenant} />
+</Storefront>

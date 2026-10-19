@@ -1,0 +1,79 @@
+---
+// Marco del storefront de una tienda: barra de marca con el tema del tenant,
+// navegación por colecciones, carrito y la barra del selector de plan.
+import '../styles/global.css';
+import type { Collection, Tenant } from '../lib/types';
+import CartWidget from '../components/store/CartWidget.tsx';
+import BrandCredit from '../components/store/BrandCredit.tsx';
+import TierDock from '../components/tier/TierDock.tsx';
+
+interface Props {
+  tenant: Tenant;
+  collections: Collection[];
+  title: string;
+  description: string;
+}
+
+const { tenant, collections, title, description } = Astro.props;
+const themeStyle = [
+  `--brand-bar-bg:${tenant.theme.barBg}`,
+  `--brand-bar-fg:${tenant.theme.barFg}`,
+  `--tenant-accent:${tenant.theme.accent}`,
+].join(';');
+---
+
+<!doctype html>
+<html lang="es-BO">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+    <meta name="theme-color" content={tenant.theme.barBg} />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body style={themeStyle}>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+
+    <header class="bar">
+      <div class="shell bar__inner">
+        <a class="bar__brand" href={`/t/${tenant.slug}/`}>
+          <span class="mono" aria-hidden="true">{tenant.monogram}</span>
+          {tenant.name}
+        </a>
+        <nav class="bar__nav" aria-label="Categorías">
+          <a href={`/t/${tenant.slug}/`}>Inicio</a>
+          {
+            collections.slice(0, 5).map((c) => (
+              <a href={`/t/${tenant.slug}/c/${c.slug}/`}>{c.title}</a>
+            ))
+          }
+        </nav>
+        <CartWidget client:load tenantId={tenant.id} tenantSlug={tenant.slug} />
+      </div>
+    </header>
+
+    <main id="contenido">
+      <slot />
+    </main>
+
+    <footer class="foot">
+      <div class="shell foot__inner">
+        <span>{tenant.name} — {tenant.city}, Bolivia</span>
+        <span class="caption">
+          <a href={`/t/${tenant.slug}/paginas/envios/`}>Envíos</a> ·
+          <a href={`/t/${tenant.slug}/paginas/devoluciones/`}>Devoluciones</a> ·
+          <a href={`/t/${tenant.slug}/paginas/preguntas-frecuentes/`}>Preguntas frecuentes</a>
+        </span>
+        <BrandCredit client:load tenantSlug={tenant.slug} footerBrand={tenant.footerBrand} />
+      </div>
+    </footer>
+
+    <TierDock client:load />
+  </body>
+</html>

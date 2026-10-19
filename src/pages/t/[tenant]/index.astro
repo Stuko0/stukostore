@@ -1,0 +1,24 @@
+---
+import Storefront from '../../../layouts/Storefront.astro';
+import HomeBlocks from '../../../components/store/HomeBlocks.tsx';
+import { blocksOf, collectionsOf, productsOf, tenantBySlug, tenantsPathParams } from '../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenantsPathParams();
+}
+
+const { tenant: slug } = Astro.params;
+const tenant = tenantBySlug(slug!);
+const cols = collectionsOf(tenant.id);
+const prods = productsOf(tenant.id);
+const homeBlocks = blocksOf(tenant.id);
+---
+
+<Storefront
+  tenant={tenant}
+  collections={cols}
+  title={`${tenant.name} — ${tenant.tagline}`}
+  description={`${tenant.name} en ${tenant.city}. ${tenant.tagline}. Compra en línea con envío en Bolivia.`}
+>
+  <HomeBlocks client:load tenant={tenant} blocks={homeBlocks} products={prods} />
+</Storefront>

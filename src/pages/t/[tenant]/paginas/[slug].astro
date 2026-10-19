@@ -1,0 +1,34 @@
+---
+import Storefront from '../../../../layouts/Storefront.astro';
+import { collectionsOf, pages, tenantBySlug, tenants } from '../../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenants.flatMap((tenant) =>
+    pages
+      .filter((p) => p.tenantId === tenant.id)
+      .map((page) => ({ params: { tenant: tenant.slug, slug: page.slug } })),
+  );
+}
+
+const { tenant: tenantSlug, slug } = Astro.params;
+const tenant = tenantBySlug(tenantSlug!);
+const page = pages.find((p) => p.tenantId === tenant.id && p.slug === slug)!;
+---
+
+<Storefront
+  tenant={tenant}
+  collections={collectionsOf(tenant.id)}
+  title={`${page.title} — ${tenant.name}`}
+  description={page.body.slice(0, 150)}
+>
+  <article class="shell" style="padding: var(--space-40) 0 var(--space-64); max-width: 760px">
+    <p class="eyebrow">Información</p>
+    <h1 class="h2" style="margin: var(--space-8) 0 var(--space-16)">{page.title}</h1>
+    <p style="font-size: var(--text-heading-sm); line-height: 1.5">{page.body}</p>
+    <p style="margin-top: var(--space-40)">
+      <a class="ghost" href={`/t/${tenant.slug}/`}>
+        Volver a la tienda <span aria-hidden="true">→</span>
+      </a>
+    </p>
+  </article>
+</Storefront>

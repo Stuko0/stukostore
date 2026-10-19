@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Página no encontrada — StukoStore"
+  description="La dirección que buscaste no existe. Podés volver al inicio o entrar a la demo."
+>
+  <section class="shell notfound">
+    <p class="eyebrow">Error 404</p>
+    <h1 class="wm">404</h1>
+    <p class="notfound__text">
+      La dirección no existe o el producto se archivó. Probá desde el catálogo de una
+      de las tiendas de demostración.
+    </p>
+    <p class="notfound__actions">
+      <a class="ghost" href="/demo/">Ir a la demo <span aria-hidden="true">→</span></a>
+      <a class="ghost" href="/">Volver al inicio <span aria-hidden="true">→</span></a>
+    </p>
+  </section>
+
+  <style>
+    .notfound {
+      padding: var(--space-104) 0 var(--space-104);
+      border-bottom: 1px solid var(--color-ink-black);
+    }
+
+    .notfound__text {
+      max-width: 52ch;
+      margin-top: var(--space-16);
+      font-size: var(--text-heading-sm);
+    }
+
+    .notfound__actions {
+      display: flex;
+      gap: var(--space-12);
+      flex-wrap: wrap;
+      margin-top: var(--space-24);
+    }
+  </style>
+</Base>

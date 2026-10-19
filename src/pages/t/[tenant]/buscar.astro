@@ -1,0 +1,24 @@
+---
+import Storefront from '../../../layouts/Storefront.astro';
+import SearchStore from '../../../components/store/SearchStore.tsx';
+import { collectionsOf, productsOf, tenantBySlug, tenantsPathParams } from '../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenantsPathParams();
+}
+
+const tenant = tenantBySlug(Astro.params.tenant!);
+---
+
+<Storefront
+  tenant={tenant}
+  collections={collectionsOf(tenant.id)}
+  title={`Buscar — ${tenant.name}`}
+  description="Buscá productos por nombre, descripción o etiqueta."
+>
+  <SearchStore
+    client:load
+    tenant={tenant}
+    initialProducts={productsOf(tenant.id).filter((p) => p.status === 'activo')}
+  />
+</Storefront>

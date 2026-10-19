@@ -75,6 +75,41 @@ export type FeatureGroup =
   | 'AUTOMATIZACION'
   | 'ESCALA';
 
+export type FeatureId =
+  | 'products'
+  | 'variants'
+  | 'inventory'
+  | 'collections'
+  | 'search'
+  | 'locations'
+  | 'reviews'
+  | 'whatsapp_checkout'
+  | 'online_payments'
+  | 'taxes'
+  | 'coupons'
+  | 'order_lifecycle'
+  | 'shipping_zones'
+  | 'returns'
+  | 'customers'
+  | 'dashboard'
+  | 'roles'
+  | 'audit'
+  | 'exports'
+  | 'theme'
+  | 'home_blocks'
+  | 'domain'
+  | 'custom_css'
+  | 'multi_brand'
+  | 'automations'
+  | 'notifications'
+  | 'abandoned_cart'
+  | 'reports'
+  | 'api_read'
+  | 'webhooks'
+  | 'ai_catalog'
+  | 'ab_testing'
+  | 'sso';
+
 interface Feature {
   id: FeatureId;
   label: string;
@@ -84,7 +119,7 @@ interface Feature {
   note?: string;
 }
 
-export const FEATURES = [
+export const FEATURES: readonly Feature[] = [
   // Catálogo
   { id: 'products', label: 'Productos publicados', group: 'CATALOGO', min: 'escaparate', limit: { escaparate: 12, tienda: 300 } },
   { id: 'variants', label: 'Variantes con SKU propio', group: 'CATALOGO', min: 'tienda', note: 'talla, color, capacidad' },
@@ -129,9 +164,7 @@ export const FEATURES = [
   { id: 'ai_catalog', label: 'IA de catálogo: descripciones y precios', group: 'ESCALA', min: 'distribuidor' },
   { id: 'ab_testing', label: 'Pruebas A/B de portada y precios', group: 'ESCALA', min: 'distribuidor' },
   { id: 'sso', label: 'SSO y SLA con soporte dedicado', group: 'ESCALA', min: 'distribuidor' },
-] as const satisfies readonly Feature[];
-
-export type FeatureId = (typeof FEATURES)[number]['id'];
+];
 
 export const FEATURE_BY_ID = Object.fromEntries(
   FEATURES.map((f) => [f.id, f]),

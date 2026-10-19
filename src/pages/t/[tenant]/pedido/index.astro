@@ -1,0 +1,20 @@
+---
+import Storefront from '../../../../layouts/Storefront.astro';
+import OrderStatus from '../../../../components/store/OrderStatus.tsx';
+import { collectionsOf, tenantBySlug, tenantsPathParams } from '../../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenantsPathParams();
+}
+
+const tenant = tenantBySlug(Astro.params.tenant!);
+---
+
+<Storefront
+  tenant={tenant}
+  collections={collectionsOf(tenant.id)}
+  title={`Estado del pedido — ${tenant.name}`}
+  description="Consultá el estado de tu pedido con el código de compra."
+>
+  <OrderStatus client:load tenant={tenant} />
+</Storefront>
