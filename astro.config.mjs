@@ -1,12 +1,12 @@
 import { defineConfig } from 'astro/config';
 import solid from '@astrojs/solid-js';
 
-// GitHub Pages project site: https://stuko0.github.io/stukostore
-// `base` keeps every asset URL under the repository path. A custom domain
-// later only needs `site` changed and `base` removed.
+// Custom domain: https://store.stuko.dev (GitHub Pages project site behind the
+// domain root, so no `base` path). The repository is still served at
+// https://stuko0.github.io/stukostore/ as a fallback, but every canonical URL
+// points at the custom domain.
 export default defineConfig({
-  site: 'https://stuko0.github.io',
-  base: '/stukostore',
+  site: 'https://store.stuko.dev',
   integrations: [solid()],
   build: {
     inlineStylesheets: 'auto',
