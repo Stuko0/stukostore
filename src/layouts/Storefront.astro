@@ -66,6 +66,8 @@ const themeStyle = [
               <a href={`/t/${tenant.slug}/c/${c.slug}/`}>{c.title}</a>
             ))
           }
+          <a href={`/t/${tenant.slug}/buscar/`}>Buscar</a>
+          <a href={`/admin/${tenant.slug}/`}>Panel</a>
         </nav>
         <CartWidget client:load tenantId={tenant.id} tenantSlug={tenant.slug} />
       </div>

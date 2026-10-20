@@ -212,7 +212,7 @@ export default function Checkout(props: { tenant: Tenant }) {
           <fieldset class="checkout__field" style="border:0; padding:0">
             <legend class="detail__option-label">Entrega</legend>
             <div class="detail__values">
-              <For each={['retiro', 'local', 'nacional'] as const}>
+              <For each={['retiro', 'local'] as const}>
                 {(method) => (
                   <button
                     type="button"
@@ -220,10 +220,25 @@ export default function Checkout(props: { tenant: Tenant }) {
                     aria-pressed={shippingMethod() === method}
                     onClick={() => setShippingMethod(method)}
                   >
-                    {method === 'retiro' ? 'Retiro en tienda' : method === 'local' ? 'Envío local' : 'Envío nacional'}
+                    {method === 'retiro' ? 'Retiro en tienda' : 'Envío local'}
                   </button>
                 )}
               </For>
+              <Show
+                when={can(tier(), 'shipping_zones')}
+                fallback={
+                  <span class="caption">Envío nacional: disponible desde el plan COMERCIO</span>
+                }
+              >
+                <button
+                  type="button"
+                  class="detail__value"
+                  aria-pressed={shippingMethod() === 'nacional'}
+                  onClick={() => setShippingMethod('nacional')}
+                >
+                  Envío nacional
+                </button>
+              </Show>
             </div>
           </fieldset>
 

@@ -120,9 +120,14 @@ export default function TenantPicker() {
                 </div>
               </dl>
               <p class="caption">Atiende desde {row.tenant.city}</p>
-              <a class="ghost" href={`/t/${row.tenant.slug}/`}>
-                Abrir tienda <span aria-hidden="true">→</span>
-              </a>
+              <div class="picker__actions">
+                <a class="ghost" href={`/t/${row.tenant.slug}/`}>
+                  Abrir tienda <span aria-hidden="true">→</span>
+                </a>
+                <a class="ghost" href={`/admin/${row.tenant.slug}/`}>
+                  Abrir panel <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </article>
           )}
         </For>

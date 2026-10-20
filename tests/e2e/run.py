@@ -81,6 +81,56 @@ def main() -> int:
             f"{before_locked} → {after_locked}",
         )
 
+        # El plan también tiene que verse en la tienda, no solo en la barra.
+        page.goto(f"{BASE}/t/tienda-express/?tier=escaparate", wait_until="networkidle")
+        page.wait_for_timeout(1600)
+        bloques_bajo = page.locator(".hero-block, .grid-block, .text-block").count()
+        aviso = page.inner_text(".plan-notice")
+        page.goto(f"{BASE}/t/tienda-express/?tier=comercio", wait_until="networkidle")
+        page.wait_for_timeout(1600)
+        bloques_alto = page.locator(".hero-block, .grid-block, .text-block").count()
+        check(
+            "F3",
+            "el storefront publica menos bloques con un plan bajo",
+            bloques_bajo < bloques_alto,
+            f"{bloques_bajo} vs {bloques_alto}",
+        )
+        check("F3", "el aviso de plan explica la diferencia", "bloque" in aviso.lower(), aviso[:70])
+        check(
+            "F3",
+            "la tienda enlaza al panel",
+            page.locator('a[href="/admin/tienda-express/"]').count() >= 1,
+        )
+
+        # Stock por sucursal: función de COMERCIO.
+        product_path = "/t/tienda-express/p/botella-bubba-trailblazer-straw-licorice-40oz/"
+        page.goto(f"{BASE}{product_path}?tier=tienda", wait_until="networkidle")
+        page.wait_for_timeout(1600)
+        sucursales_tienda = page.locator(".detail__branches").count()
+        page.goto(f"{BASE}{product_path}?tier=comercio", wait_until="networkidle")
+        page.wait_for_timeout(1600)
+        sucursales_comercio = page.locator(".detail__branches").count()
+        check(
+            "F3",
+            "el stock por sucursal aparece solo en COMERCIO",
+            sucursales_tienda == 0 and sucursales_comercio == 1,
+            f"{sucursales_tienda} → {sucursales_comercio}",
+        )
+
+        # Envío nacional gateado en el checkout.
+        page.goto(f"{BASE}/t/tienda-express/checkout/?tier=tienda", wait_until="networkidle")
+        page.wait_for_timeout(1600)
+        envio_tienda = page.locator("button:has-text('Envío nacional')").count()
+        page.goto(f"{BASE}/t/tienda-express/checkout/?tier=comercio", wait_until="networkidle")
+        page.wait_for_timeout(1600)
+        envio_comercio = page.locator("button:has-text('Envío nacional')").count()
+        check(
+            "F3",
+            "el envío nacional se habilita en COMERCIO",
+            envio_tienda == 0 and envio_comercio == 1,
+            f"{envio_tienda} → {envio_comercio}",
+        )
+
         page.goto(f"{BASE}/t/tienda-express/?tier=distribuidor", wait_until="networkidle")
         page.wait_for_timeout(1200)
         page.click(".dock__toggle")
@@ -95,8 +145,9 @@ def main() -> int:
 
         # ---------------------------------------------------------------- fase 4
         section("Fase 4 — storefront")
-        page.goto(f"{BASE}/t/tienda-express/", wait_until="networkidle")
-        page.wait_for_timeout(1200)
+        # Plan alto para ver la portada completa: la cantidad de bloques depende del plan.
+        page.goto(f"{BASE}/t/tienda-express/?tier=comercio", wait_until="networkidle")
+        page.wait_for_timeout(1600)
         hero = page.inner_text(".hero-block__title")
         check("F4", "la portada muestra el bloque principal", len(hero) > 5, hero[:40])
         cards = page.locator(".product-card").count()

@@ -95,8 +95,14 @@
 }
 
 .picker__card .ghost {
-  margin-top: auto;
   align-self: flex-start;
+}
+
+.picker__actions {
+  margin-top: auto;
+  display: flex;
+  gap: var(--s-8);
+  flex-wrap: wrap;
 }
 
 @media (max-width: 900px) {

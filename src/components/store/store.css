@@ -231,6 +231,28 @@
   border-top: 1px solid var(--c-hairline);
 }
 
+/* Aviso de bloques no publicados por el plan: hace visible el cambio de plan
+   en la propia portada. */
+.plan-notice {
+  background: var(--c-cream);
+  border-top: 1px solid var(--c-hairline);
+  padding: var(--s-32) 0;
+}
+
+.plan-notice__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--s-24);
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.plan-notice__text {
+  flex: 1 1 320px;
+  font-size: var(--t-caption);
+  color: var(--c-ink-soft);
+}
+
 .grid-block__head {
   display: flex;
   align-items: end;
@@ -468,6 +490,28 @@
 
 .detail__feedback {
   margin-top: var(--s-12);
+  font-size: var(--t-caption);
+}
+
+.detail__branches {
+  margin-top: var(--s-24);
+  border-top: 1px solid var(--c-hairline);
+  padding-top: var(--s-24);
+}
+
+.detail__branch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: var(--s-12);
+}
+
+.detail__branch-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-12);
+  padding: var(--s-8) 0;
+  border-bottom: 1px solid var(--c-hairline);
   font-size: var(--t-caption);
 }
 

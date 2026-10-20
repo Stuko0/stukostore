@@ -2,9 +2,11 @@
 
 import { createSignal, onMount, For, Show } from 'solid-js';
 import { prepare } from '../../lib/api/mock';
+import { listLocations } from '../../lib/api/mock-inventory';
 import { bob, optionLabel } from '../../lib/format';
 import { addToCart, hydrateSession } from '../../lib/store';
-import type { Product, Tenant } from '../../lib/types';
+import type { InventoryLevel, Location, Product, Tenant } from '../../lib/types';
+import TierGate from '../tier/TierGate';
 import './store.css';
 
 export default function ProductDetail(props: { tenant: Tenant; product: Product }) {
@@ -14,12 +16,19 @@ export default function ProductDetail(props: { tenant: Tenant; product: Product 
   const [stock, setStock] = createSignal<number | null>(null);
   const [message, setMessage] = createSignal('');
   const [error, setError] = createSignal('');
+  const [locations, setLocations] = createSignal<Location[]>([]);
+  const [levels, setLevels] = createSignal<InventoryLevel[]>([]);
 
   onMount(async () => {
     hydrateSession();
     const api = await prepare();
-    const levels = await api.listInventory(props.tenant.id);
-    setStock(levels.filter((l) => l.variantId === selected().id).reduce((s, l) => s + l.qty, 0));
+    const [inventory, branches] = await Promise.all([
+      api.listInventory(props.tenant.id),
+      listLocations(props.tenant.id),
+    ]);
+    setLevels(inventory);
+    setLocations(branches);
+    setStock(inventory.filter((l) => l.variantId === selected().id).reduce((s, l) => s + l.qty, 0));
   });
 
   const pick = async (value: string) => {
@@ -135,6 +144,31 @@ export default function ProductDetail(props: { tenant: Tenant; product: Product 
           </p>
         </Show>
         <p class="detail__feedback" aria-live="polite">{message()}</p>
+
+        {/* Stock por sucursal: función del plan COMERCIO. En planes menores se
+            muestra el estado bloqueado con el plan que lo habilita. */}
+        <TierGate feature="locations">
+          <section class="detail__branches">
+            <p class="eyebrow">Disponible en sucursales</p>
+            <ul class="detail__branch-list">
+              <For each={locations()}>
+                {(location) => (
+                  <li>
+                    <span>{location.name}</span>
+                    <span class="caption">
+                      {(() => {
+                        const qty = levels()
+                          .filter((l) => l.variantId === selected().id && l.locationId === location.id)
+                          .reduce((sum, l) => sum + l.qty, 0);
+                        return qty > 0 ? `${qty} unidades` : 'Sin stock';
+                      })()}
+                    </span>
+                  </li>
+                )}
+              </For>
+            </ul>
+          </section>
+        </TierGate>
       </div>
     </article>
   );
