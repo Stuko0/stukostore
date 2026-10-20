@@ -319,6 +319,12 @@ def main() -> int:
         total = page.locator(".product-card").count()
         chips = page.locator(".filters__chips .tag")
         check("F7", "la colección ofrece filtros", chips.count() >= 2, f"{chips.count()} etiquetas")
+        # el nombre de la categoría no debe repetirse como título visible
+        titulos = page.evaluate("""() => [...document.querySelectorAll('h1,h2')]
+            .filter(h => h.getBoundingClientRect().width > 2 && !h.closest('.sr-only'))
+            .map(h => h.textContent.trim().toLowerCase())""")
+        repetidos = len([t for t in titulos if t == "accesorios de café"])
+        check("F7", "el título de la categoría no se duplica", repetidos == 1, f"{titulos}")
         chips.nth(1).click()
         page.wait_for_timeout(600)
         filtrado = page.locator(".product-card").count()

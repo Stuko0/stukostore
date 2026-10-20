@@ -80,6 +80,8 @@ export default function ProductGrid(props: {
   subtitle?: string;
   limit?: number;
   enableFilters?: boolean;
+  /** En páginas de categoría el título ya es el h1: no se repite. */
+  hideHeading?: boolean;
 }) {
   const [stock, setStock] = createSignal<Record<string, number>>({});
   const [message, setMessage] = createSignal('');
@@ -186,7 +188,10 @@ export default function ProductGrid(props: {
   return (
     <section class="grid-block">
       <div class="shell">
-        <header class="grid-block__head reveal">
+        {/* En categorías el título ya es el h1 de la página: el encabezado de la
+            grilla se mantiene en el árbol de accesibilidad pero no se muestra,
+            para no duplicar el nombre ni romper el orden de encabezados. */}
+        <header class="grid-block__head reveal" classList={{ 'sr-only': props.hideHeading }}>
           <h2 class="h2">{props.title}</h2>
           <p class="grid-block__count">{props.subtitle ?? `[${visible().length}]`}</p>
         </header>
