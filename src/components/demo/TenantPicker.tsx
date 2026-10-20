@@ -96,10 +96,10 @@ export default function TenantPicker() {
           {(row) => (
             <article class="picker__card">
               <p class="eyebrow">{row.tenant.plan}</p>
-              <h3 class="picker__name">
+              <h2 class="picker__name">
                 <span class="mono" aria-hidden="true">{row.tenant.monogram}</span>
                 {row.tenant.name}
-              </h3>
+              </h2>
               <p class="picker__tagline">{row.tenant.tagline}</p>
               <dl class="picker__stats">
                 <div>

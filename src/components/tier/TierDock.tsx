@@ -26,7 +26,7 @@ export default function TierDock() {
   };
 
   return (
-    <div class="dock" data-open={open()}>
+    <div class="dock" data-open={open()} role="region" aria-label="Selector de plan">
       <div class="dock__bar">
         <span class="eyebrow dock__label">Plan de la demo</span>
         <strong class="dock__current">{tierById(tier()).name}</strong>

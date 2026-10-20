@@ -120,8 +120,8 @@
 }
 
 .cart__qty button {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border: 1px solid var(--c-border);
   border-radius: var(--r-circle);
   line-height: 1;
@@ -401,6 +401,8 @@
 }
 
 .detail__crumbs a {
+  display: inline-block;
+  padding: 5px 0;
   border-bottom: 1px solid var(--c-border);
 }
 

@@ -73,6 +73,9 @@
 }
 
 .admin__store {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
   margin-top: auto;
   font-size: var(--t-caption);
   text-transform: uppercase;
@@ -303,6 +306,9 @@
 }
 
 .link-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
   font-size: var(--t-caption);
   text-transform: uppercase;
   letter-spacing: 0.015em;

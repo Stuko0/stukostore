@@ -66,6 +66,7 @@ export default function SearchStore(props: { tenant: Tenant; initialProducts: Pr
             {searched() ? `${results().length} resultados para "${query()}"` : 'Escribí para buscar.'}
           </p>
 
+          <h2 class="sr-only">Resultados de la búsqueda</h2>
           <div class="products" style="margin-top: var(--s-24)">
             <For each={results()}>
               {(product) => (

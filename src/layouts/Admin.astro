@@ -35,7 +35,7 @@ const { tenant, title, section } = Astro.props;
 
     <div class="admin">
       <aside class="admin__rail">
-        <a class="admin__brand" href="/admin/{tenant.slug}/">
+        <a class="admin__brand" href={`/admin/${tenant.slug}/`}>
           <span class="mono" aria-hidden="true">{tenant.monogram}</span>
           {tenant.name}
         </a>

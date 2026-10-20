@@ -92,7 +92,7 @@ def write_markdown(records: dict) -> None:
 def main() -> None:
     out = pathlib.Path("public/img")
     out.mkdir(parents=True, exist_ok=True)
-    sidecar = out / "attribution.json"
+    sidecar = pathlib.Path("scripts/attribution.json")
     records = json.loads(sidecar.read_text()) if sidecar.exists() else {}
     force = os.environ.get("FORCE") == "1"
     ok = 0
