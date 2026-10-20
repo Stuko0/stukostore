@@ -40,11 +40,15 @@ hallazgo que dependa de un navegador sin soporte.
   permisos mínimos por job (`contents: read` en el build) y
   `persist-credentials: false` en el checkout.
 - **Dependabot** activo para npm y GitHub Actions, con PRs semanales.
-- **Content Security Policy** emitida como meta tag en cada documento
-  (`default-src 'self'`, `object-src 'none'`, `base-uri 'none'`,
-  `form-action 'self'`). `frame-ancestors` no se declara en el meta porque los
-  navegadores lo ignoran ahí; la protección contra clickjacking se aplica como
-  cabecera cuando el sitio tenga control de cabeceras.
+- **Cabeceras de seguridad en el borde.** Una regla de transformación de
+  Cloudflare acotada a `store.stuko.dev` añade `Strict-Transport-Security`
+  (1 año, con subdominios), `X-Content-Type-Options: nosniff`,
+  `Referrer-Policy: strict-origin-when-cross-origin`, `X-Frame-Options: DENY`,
+  `Permissions-Policy` y la `Content-Security-Policy`. La CSP se envía también
+  como `meta` en cada documento: la cabecera manda y el `meta` queda como
+  defensa en profundidad si la regla de borde se retira.
+- **Clickjacking:** `frame-ancestors 'none'` en la cabecera, verificado
+  intentando enmarcar el sitio (el navegador bloquea la carga).
 - **Protección de rama** en `main`: force push y borrado bloqueados, historial
   lineal obligatorio, y las alertas de vulnerabilidades de Dependabot activadas.
 - **Sin formularios ni backend** en esta fase: no se recolectan datos

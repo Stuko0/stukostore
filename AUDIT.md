@@ -20,7 +20,7 @@
 | Rendimiento | Muy bueno | LCP 780 ms, CLS 0, 28 peticiones, 805 KB totales |
 | SEO técnico | Correcto tras correcciones | Sitemap y robots propios; canonical y metadatos presentes |
 
-**Hallazgos: 14. Corregidos durante la auditoría: 8. Pendientes que requieren tu decisión: 6.**
+**Hallazgos: 14. Corregidos: 11 (8 en el repositorio, 3 en el borde). Pendientes: 3.**
 
 ---
 
@@ -38,15 +38,15 @@
 | 6 | `robots.txt` del borde sin referencia al sitemap y sin bloquear `/admin/` | Baja (SEO) | Cloudflare inyectaba su robots de content signals | `robots.txt` propio con `Sitemap:` y `Disallow: /admin/` |
 | 7 | Sin `/.well-known/security.txt` | Baja | 404 | Publicado con contacto y política |
 | 8 | `img/attribution.json` (metadato interno) publicado en el sitio | Baja | 200 en el dominio | Movido fuera de `public/` |
+| 9 | Faltaban cabeceras de seguridad en el borde (HSTS, `nosniff`, `Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`) | **Alta** | `curl -I` sin ninguna de ellas | Transform Rule de Cloudflare acotada a `store.stuko.dev`; el resto del dominio queda intacto |
+| 10 | CSP solo por `meta`, sin `frame-ancestors` efectivo | **Alta** | `frame-ancestors` se ignora en `meta` | CSP en cabecera con `frame-ancestors 'none'` (probado: el navegador bloquea el enmarcado) y el `meta` se mantiene como defensa en profundidad |
+| 12 | SSL en modo `full` en lugar de `strict` | Media | `GET /zones/{zona}/settings/ssl` → `full` | Cambiado a `strict` y verificado con el sitio en línea |
 
 ### Pendientes (requieren decisión de infraestructura)
 
 | # | Hallazgo | Severidad | Detalle y propuesta |
 | --- | --- | --- | --- |
-| 9 | Faltan cabeceras de seguridad en el borde | **Alta** | Hoy no hay HSTS, `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options` ni `Permissions-Policy`. GitHub Pages no permite cabeceras propias, pero Cloudflare sí: una **Transform Rule** (Modify Response Header) acotada a `host eq "store.stuko.dev"` puede añadirlas sin tocar el resto del dominio. |
-| 10 | CSP entregada como `meta` y con `'unsafe-inline'` en `script-src` | **Alta** | La CSP actual mitiga pero no es equivalente a una cabecera: `frame-ancestors` no funciona en `meta` y `'unsafe-inline'` reduce la protección. Propuesta: mover la CSP a cabecera y sustituir `'unsafe-inline'` por hashes de los scripts en línea (Astro puede exportarlos). |
 | 11 | WAF gestionado sin reglas y DDoS L7 sin entrada configurada | **Alta** | `GET /zones/{zona}/rulesets`: `http_request_firewall_managed` con 0 reglas y `ddos_l7` con 0 reglas. Es una configuración **de toda la zona**, no solo de esta tienda: desplegar el Cloudflare Managed Ruleset endurece también tus otros subdominios. |
-| 12 | SSL en modo `full` en lugar de `strict` | Media | El origen (GitHub Pages) presenta certificado válido; `strict` evita aceptar un certificado inválido si el origen cambia. |
 | 13 | Escaneo de secretos parcial y sin revisiones obligatorias | Media | `secret_scanning` y push protection están activos, pero `non_provider_patterns` y `validity_checks` están apagados. La rama `main` no exige revisión (aceptable si sos el único mantenedor; conviene activarlo cuando entre alguien más). |
 | 14 | Dependencias con rangos `^` | Baja | `astro ^7.4.0`, `@astrojs/solid-js ^7.1.0`, `solid-js ^1.9.17`. Dependabot cubre el riesgo, pero fijar versión elimina la ventana entre publicación y actualización. |
 
