@@ -169,14 +169,14 @@ export default function AdminLists(props: { tenant: Tenant; mode: Mode }) {
                 </For>
               </tbody>
             </table>
-            <p class="caption" style="margin-top: var(--space-12)">
+            <p class="caption" style="margin-top: var(--s-12)">
               Plantilla de la primera regla: “{automations()[0]?.template}”
             </p>
           </Show>
         </Show>
 
         <Show when={props.mode === 'clientes'}>
-          <p class="caption" style="margin-top: var(--space-12)">
+          <p class="caption" style="margin-top: var(--s-12)">
             {customers().length} clientes registrados · el historial de compras se calcula desde los pedidos.
           </p>
         </Show>

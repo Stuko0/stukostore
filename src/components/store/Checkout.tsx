@@ -153,7 +153,7 @@ export default function Checkout(props: { tenant: Tenant }) {
           Total {bob(created()?.total ?? 0)}. Guardá este código para consultar el estado:
           en la tienda real el cliente lo recibe por WhatsApp al confirmar el pago.
         </p>
-        <p style="margin-top: var(--space-24)">
+        <p style="margin-top: var(--s-24)">
           <a class="ghost" href={`/t/${props.tenant.slug}/pedido/?code=${created()?.code ?? ''}`}>
             Ver seguimiento <span aria-hidden="true">→</span>
           </a>{' '}
@@ -170,7 +170,7 @@ export default function Checkout(props: { tenant: Tenant }) {
             void submit();
           }}
         >
-          <h1 class="h2" style="margin-bottom: var(--space-24)">Finalizar compra</h1>
+          <h1 class="h2" style="margin-bottom: var(--s-24)">Finalizar compra</h1>
 
           <Show when={error()}>
             <p class="checkout__error" role="alert">{error()}</p>
@@ -264,7 +264,7 @@ export default function Checkout(props: { tenant: Tenant }) {
           >
             <div class="checkout__field">
               <label for="coupon">Cupón</label>
-              <div style="display:flex; gap: var(--space-8)">
+              <div style="display:flex; gap: var(--s-8)">
                 <input
                   id="coupon"
                   value={couponInput()}
@@ -275,7 +275,7 @@ export default function Checkout(props: { tenant: Tenant }) {
                 </button>
               </div>
               <Show when={couponError()}>
-                <p class="caption" style="color: var(--color-terracotta-alert)">{couponError()}</p>
+                <p class="caption" style="color: var(--c-error)">{couponError()}</p>
               </Show>
               <Show when={discount()}>
                 <p class="caption">Cupón {discount()!.code} aplicado.</p>
@@ -285,7 +285,7 @@ export default function Checkout(props: { tenant: Tenant }) {
         </form>
 
         <aside class="checkout__summary">
-          <p class="eyebrow" style="margin-bottom: var(--space-16)">Resumen</p>
+          <p class="eyebrow" style="margin-bottom: var(--s-16)">Resumen</p>
           <ul class="checkout__lines" classList={{ 'is-hidden': !cart().length }}>
             <For each={cart()}>
               {(line) => (
@@ -319,7 +319,7 @@ export default function Checkout(props: { tenant: Tenant }) {
 
           <button
             class="ghost"
-            style="margin-top: var(--space-16); width:100%; justify-content:center"
+            style="margin-top: var(--s-16); width:100%; justify-content:center"
             classList={{ 'is-hidden': !cart().length }}
             disabled={busy()}
             onClick={() => void submit()}
@@ -327,7 +327,7 @@ export default function Checkout(props: { tenant: Tenant }) {
             {busy() ? 'Registrando pedido' : 'Confirmar pedido'} <span aria-hidden="true">→</span>
           </button>
 
-          <p class="caption" style="margin-top: var(--space-12)" classList={{ 'is-hidden': !cart().length }}>
+          <p class="caption" style="margin-top: var(--s-12)" classList={{ 'is-hidden': !cart().length }}>
             En la tienda real el pedido llega al WhatsApp del vendedor con este mismo detalle.
           </p>
         </aside>

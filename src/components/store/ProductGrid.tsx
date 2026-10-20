@@ -1,5 +1,6 @@
-// Grilla de productos con acción de compra. Es la corrección directa del
-// problema medido en la tienda original: ocho productos sin un solo botón.
+// Grilla de productos con acción de compra y hover con zoom.
+// Es la corrección directa del problema medido en la tienda original: ocho
+// productos sin un solo botón.
 
 import { createSignal, onMount, For, Show } from 'solid-js';
 import { bob } from '../../lib/format';
@@ -17,29 +18,41 @@ export function ProductCard(props: {
   product: Product;
   tenantSlug: string;
   stock: number | null;
+  index?: number;
   onAdd: (product: Product) => void;
 }) {
   const variant = () => props.product.variants.find((v) => v.active) ?? props.product.variants[0];
   const image = () => props.product.images[0];
+  const onSale = () => !!variant()?.compareAt;
 
   return (
-    <article class="product-card">
+    <article
+      class="product-card reveal"
+      style={`transition-delay: ${Math.min((props.index ?? 0) * 70, 280)}ms`}
+    >
       <a class="product-card__link" href={`/t/${props.tenantSlug}/p/${props.product.slug}/`}>
-        <Show when={image()}>
-          <img src={image()!.src} alt={image()!.alt} width="600" height="600" loading="lazy" />
-        </Show>
-        <h3 class="product-card__title">{props.product.title}</h3>
-        <p class="product-card__price">
-          {bob(variant()?.price ?? 0)}
-          <Show when={variant()?.compareAt}>
-            <span class="product-card__compare"> {bob(variant()!.compareAt!)}</span>
+        <div class="product-card__media">
+          <Show when={image()}>
+            <img src={image()!.src} alt={image()!.alt} width="600" height="600" loading="lazy" />
           </Show>
-        </p>
-        <Show when={props.stock !== null}>
-          <p class="product-card__stock">
-            {props.stock === 0 ? 'Sin stock' : `${props.stock} disponibles`}
+          <Show when={onSale()}>
+            <span class="tag tag--sale product-card__badge">Oferta</span>
+          </Show>
+        </div>
+        <div class="product-card__info">
+          <h3 class="product-card__title">{props.product.title}</h3>
+          <p classList={{ 'product-card__price': true, 'product-card__price--sale': onSale() }}>
+            {bob(variant()?.price ?? 0)}
+            <Show when={onSale()}>
+              <span class="product-card__compare">{bob(variant()!.compareAt!)}</span>
+            </Show>
           </p>
-        </Show>
+          <Show when={props.stock !== null}>
+            <p class="product-card__stock">
+              {props.stock === 0 ? 'Sin stock' : `${props.stock} disponibles`}
+            </p>
+          </Show>
+        </div>
       </a>
       <div class="product-card__actions">
         <button
@@ -103,19 +116,18 @@ export default function ProductGrid(props: {
   return (
     <section class="grid-block">
       <div class="shell">
-        <header class="grid-block__head">
+        <header class="grid-block__head reveal">
           <h2 class="h2">{props.title}</h2>
-          <p class="grid-block__count">
-            {props.subtitle ?? `[${shown().length}]`}
-          </p>
+          <p class="grid-block__count">{props.subtitle ?? `[${shown().length}]`}</p>
         </header>
         <div class="products">
           <For each={shown()}>
-            {(product) => (
+            {(product, index) => (
               <ProductCard
                 product={product}
                 tenantSlug={props.tenant.slug}
                 stock={available(product)}
+                index={index()}
                 onAdd={add}
               />
             )}

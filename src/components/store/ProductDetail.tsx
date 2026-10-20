@@ -130,7 +130,7 @@ export default function ProductDetail(props: { tenant: Tenant; product: Product 
         </div>
 
         <Show when={error()}>
-          <p class="detail__feedback" role="alert" style="color: var(--color-terracotta-alert)">
+          <p class="detail__feedback" role="alert" style="color: var(--c-error)">
             {error()}
           </p>
         </Show>

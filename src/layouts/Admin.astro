@@ -27,6 +27,8 @@ const { tenant, title, section } = Astro.props;
       content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'"
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/fonts/jost-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
     <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -49,5 +51,10 @@ const { tenant, title, section } = Astro.props;
     </div>
 
     <TierDock client:load />
+
+    <script>
+      import { initReveal } from '../lib/reveal';
+      initReveal();
+    </script>
   </body>
 </html>

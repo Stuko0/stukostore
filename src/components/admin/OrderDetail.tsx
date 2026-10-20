@@ -141,7 +141,7 @@ export default function OrderDetail(props: { tenant: Tenant; orderId?: string })
                   </div>
                 </div>
 
-                <table class="table" style="margin-top: var(--space-16)">
+                <table class="table" style="margin-top: var(--s-16)">
                   <thead>
                     <tr>
                       <th scope="col">Producto</th>
@@ -182,7 +182,7 @@ export default function OrderDetail(props: { tenant: Tenant; orderId?: string })
                   </tbody>
                 </table>
 
-                <div class="checkout__totals" style="margin-top: var(--space-16); max-width: 320px">
+                <div class="checkout__totals" style="margin-top: var(--s-16); max-width: 320px">
                   <p class="checkout__line"><span>Subtotal</span><span>{bob(current().subtotal)}</span></p>
                   <p class="checkout__line"><span>Descuento</span><span>− {bob(current().discount)}</span></p>
                   <p class="checkout__line"><span>Envío</span><span>{bob(current().shipping)}</span></p>
@@ -200,7 +200,7 @@ export default function OrderDetail(props: { tenant: Tenant; orderId?: string })
                   </div>
                   <div class="field">
                     <label for="restock">Reponer stock</label>
-                    <label class="caption" style="display:flex; gap: var(--space-8); align-items:center">
+                    <label class="caption" style="display:flex; gap: var(--s-8); align-items:center">
                       <input
                         id="restock"
                         type="checkbox"
@@ -212,12 +212,12 @@ export default function OrderDetail(props: { tenant: Tenant; orderId?: string })
                   </div>
                 </div>
                 <p class="caption">Reembolso calculado: {bob(refundTotal())}</p>
-                <button class="ghost" style="margin-top: var(--space-12)" onClick={() => void submitReturn()}>
+                <button class="ghost" style="margin-top: var(--s-12)" onClick={() => void submitReturn()}>
                   Registrar devolución <span aria-hidden="true">→</span>
                 </button>
 
                 <Show when={current().returns.length}>
-                  <div style="margin-top: var(--space-16)">
+                  <div style="margin-top: var(--s-16)">
                     <For each={current().returns}>
                       {(record) => (
                         <p class="caption">

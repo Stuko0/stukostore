@@ -14,18 +14,18 @@ export default function CartPage(props: { tenant: Tenant }) {
   });
 
   return (
-    <section class="shell" style="padding: var(--space-40) 0 var(--space-64)">
+    <section class="shell" style="padding: var(--s-40) 0 var(--s-64)">
       <h1 class="h2">Tu carrito</h1>
 
-      <p class="caption" style="margin-top: var(--space-8)" classList={{ 'is-hidden': !cart().length }}>
+      <p class="caption" style="margin-top: var(--s-8)" classList={{ 'is-hidden': !cart().length }}>
         {cartCount()} unidades
       </p>
 
-      <ul style="margin-top: var(--space-24)" classList={{ 'is-hidden': !cart().length }}>
+      <ul style="margin-top: var(--s-24)" classList={{ 'is-hidden': !cart().length }}>
         <For each={cart()}>
           {(line) => (
             <li
-              style="display:flex; gap: var(--space-16); align-items:center; border-bottom: 1px solid var(--color-ash-border); padding: var(--space-16) 0"
+              style="display:flex; gap: var(--s-16); align-items:center; border-bottom: 1px solid var(--c-border); padding: var(--s-16) 0"
             >
               <Show when={line.image}>
                 <img
@@ -33,7 +33,7 @@ export default function CartPage(props: { tenant: Tenant }) {
                   alt=""
                   width="72"
                   height="72"
-                  style="border:1px solid var(--color-ash-border); border-radius: var(--radius); object-fit: cover"
+                  style="border:1px solid var(--c-border); border-radius: var(--r-md); object-fit: cover"
                 />
               </Show>
               <div style="flex:1">
@@ -67,7 +67,7 @@ export default function CartPage(props: { tenant: Tenant }) {
       </ul>
 
       <div
-        style="display:flex; justify-content:space-between; align-items:center; margin-top: var(--space-24); flex-wrap: wrap; gap: var(--space-16)"
+        style="display:flex; justify-content:space-between; align-items:center; margin-top: var(--s-24); flex-wrap: wrap; gap: var(--s-16)"
         classList={{ 'is-hidden': !cart().length }}
       >
         <p class="h3">Subtotal {bob(cartSubtotal())}</p>
@@ -76,9 +76,9 @@ export default function CartPage(props: { tenant: Tenant }) {
         </a>
       </div>
 
-      <div classList={{ 'is-hidden': !!cart().length }} style="margin-top: var(--space-24)">
+      <div classList={{ 'is-hidden': !!cart().length }} style="margin-top: var(--s-24)">
         <p class="empty">El carrito está vacío.</p>
-        <p style="margin-top: var(--space-16)">
+        <p style="margin-top: var(--s-16)">
           <a class="ghost" href={`/t/${props.tenant.slug}/`}>
             Ver catálogo <span aria-hidden="true">→</span>
           </a>

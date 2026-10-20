@@ -283,7 +283,7 @@ export default function ProductEditor(props: { tenant: Tenant; productId?: strin
               </For>
             </tbody>
           </table>
-          <p class="caption" style="margin-top: var(--space-12)">
+          <p class="caption" style="margin-top: var(--s-12)">
             Margen sobre el primer precio: {bob(Math.max(0, product().variants[0].price - product().variants[0].cost))}
           </p>
         </section>

@@ -14,53 +14,53 @@
 }
 
 .tierdemo {
-  border: 1px solid var(--color-ink-black);
-  border-radius: var(--radius);
-  background: var(--color-gallery-white);
-  padding: var(--space-24);
+  border: 1px solid var(--c-ink);
+  border-radius: var(--r-md);
+  background: var(--c-neutral);
+  padding: var(--s-24);
 }
 
 .matrix {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--text-small);
+  font-size: var(--t-caption);
 }
 
 .matrix th,
 .matrix td {
   text-align: left;
-  padding: var(--space-12) var(--space-12);
-  border-bottom: 1px solid var(--color-ash-border);
+  padding: var(--s-12) var(--s-12);
+  border-bottom: 1px solid var(--c-border);
   vertical-align: top;
 }
 
 .matrix thead th {
-  font-size: var(--text-label);
+  font-size: var(--t-label);
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  font-weight: var(--weight-bold);
-  border-bottom: 1px solid var(--color-ink-black);
+  font-weight: var(--w-bold);
+  border-bottom: 1px solid var(--c-ink);
   white-space: nowrap;
 }
 
 .matrix tbody th {
-  font-weight: var(--weight-medium);
-  color: var(--color-ink-black);
+  font-weight: var(--w-medium);
+  color: var(--c-ink);
 }
 
 .matrix td {
-  color: var(--color-pewter-caption);
+  color: var(--c-muted);
   white-space: nowrap;
 }
 
 .matrix__group th {
-  font-size: var(--text-label);
+  font-size: var(--t-label);
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  color: var(--color-pewter-caption);
-  font-weight: var(--weight-bold);
-  padding-top: var(--space-20);
-  background: var(--surface-soft);
+  color: var(--c-muted);
+  font-weight: var(--w-bold);
+  padding-top: var(--s-20);
+  background: var(--c-cream);
 }
 
 .matrix .is-current {
@@ -71,25 +71,25 @@
    ink, never from dropping below AA contrast. */
 .matrix tr.is-locked th,
 .matrix tr.is-locked td {
-  color: var(--color-pewter-caption);
+  color: var(--c-muted);
 }
 
 .matrix__note {
-  color: var(--color-pewter-caption);
-  font-weight: var(--weight-regular);
+  color: var(--c-muted);
+  font-weight: var(--w-regular);
 }
 
 .matrix__count {
-  font-weight: var(--weight-bold);
-  color: var(--color-ink-black);
+  font-weight: var(--w-bold);
+  color: var(--c-ink);
 }
 
 .matrix__locked {
-  color: var(--color-pewter-caption);
+  color: var(--c-muted);
 }
 
 .tierdemo__hint {
-  margin-top: var(--space-20);
+  margin-top: var(--s-20);
   max-width: 68ch;
 }
 
@@ -101,32 +101,32 @@
   right: 0;
   bottom: 0;
   z-index: 50;
-  background: var(--color-gallery-white);
-  border-top: 1px solid var(--color-ink-black);
+  background: var(--c-neutral);
+  border-top: 1px solid var(--c-ink);
 }
 
 .dock__bar {
-  max-width: var(--page-max);
+  max-width: var(--site-width);
   margin: 0 auto;
-  padding: var(--space-12) var(--space-24);
+  padding: var(--s-12) var(--s-24);
   display: flex;
   align-items: center;
-  gap: var(--space-12);
+  gap: var(--s-12);
   flex-wrap: wrap;
 }
 
 .dock__label {
-  color: var(--color-pewter-caption);
+  color: var(--c-muted);
 }
 
 .dock__current {
-  font-size: var(--text-ui);
-  font-weight: var(--weight-bold);
+  font-size: var(--t-caption);
+  font-weight: var(--w-bold);
   letter-spacing: 0.015em;
 }
 
 .dock__price {
-  color: var(--color-pewter-caption);
+  color: var(--c-muted);
 }
 
 .dock__toggle {
@@ -134,46 +134,46 @@
 }
 
 .dock__panel {
-  max-width: var(--page-max);
+  max-width: var(--site-width);
   margin: 0 auto;
-  padding: 0 var(--space-24) var(--space-20);
+  padding: 0 var(--s-24) var(--s-20);
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--space-12);
+  gap: var(--s-12);
 }
 
 .dock__card {
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: var(--s-8);
   text-align: left;
-  border: 1px solid var(--color-ash-border);
-  border-radius: var(--radius);
-  padding: var(--space-16);
-  background: var(--color-gallery-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: var(--s-16);
+  background: var(--c-neutral);
 }
 
 .dock__card[aria-pressed='true'] {
-  border-color: var(--color-ink-black);
+  border-color: var(--c-ink);
 }
 
 .dock__card:hover,
 .dock__card:focus-visible {
-  border-color: var(--color-ink-black);
+  border-color: var(--c-ink);
 }
 
 .dock__amount {
-  font-size: var(--text-heading-sm);
-  font-weight: var(--weight-bold);
+  font-size: var(--t-lead);
+  font-weight: var(--w-bold);
   line-height: 1.1;
 }
 
 .dock__amount .caption {
-  font-weight: var(--weight-regular);
+  font-weight: var(--w-regular);
 }
 
 .dock__pitch {
-  font-size: var(--text-small);
+  font-size: var(--t-caption);
   line-height: 1.45;
 }
 

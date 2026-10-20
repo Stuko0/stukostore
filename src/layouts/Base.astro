@@ -4,11 +4,13 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
+  announcement?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, announcement } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const barra = announcement ?? 'Migración de catálogo incluida · Facturación en bolivianos · Sin contrato mínimo';
 
 // GitHub Pages cannot send response headers, so the policy ships as a meta tag.
 // 'unsafe-inline' is required for Astro's hydration bootstrap; the same policy
@@ -37,7 +39,7 @@ const csp = [
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#ffffff" />
     <meta http-equiv="Content-Security-Policy" content={csp} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_BO" />
@@ -45,15 +47,23 @@ const csp = [
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+    <link rel="preload" href={`${base}fonts/jost-600.woff2`} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={`${base}fonts/lato-400.woff2`} as="font" type="font/woff2" crossorigin />
   </head>
   <body>
     <a class="skip" href="#contenido">Saltar al contenido</a>
 
-    <header class="bar">
+    <div class="announce">
+      <div class="shell announce__inner">
+        <p>{barra}</p>
+      </div>
+    </div>
+
+    <header class="bar bar--light">
       <div class="shell bar__inner">
         <a class="bar__brand" href={base}>
           <span class="mono" aria-hidden="true">S</span>
-          STUKOSTORE
+          StukoStore
         </a>
         <nav class="bar__nav" aria-label="Navegación principal">
           <a href={`${base}#producto`}>Producto</a>
@@ -71,10 +81,13 @@ const csp = [
     <footer class="foot">
       <div class="shell foot__inner">
         <span>StukoStore — Cochabamba, Bolivia</span>
-        <span class="caption">
-          Precios en bolivianos. Referencia: 1 USD ≈ 11,8 Bs.
-        </span>
+        <span class="caption">Hecho por <a href="https://stuko.dev" target="_blank" rel="noopener noreferrer">Stuko</a></span>
+        <span class="caption">Precios en bolivianos · 1 USD ≈ 11,8 Bs</span>
       </div>
     </footer>
+    <script>
+      import { initReveal } from '../lib/reveal';
+      initReveal();
+    </script>
   </body>
 </html>

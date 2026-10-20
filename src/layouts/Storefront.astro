@@ -1,6 +1,6 @@
 ---
-// Marco del storefront de una tienda: barra de marca con el tema del tenant,
-// navegación por colecciones, carrito y la barra del selector de plan.
+// Marco del storefront de una tienda: barra de anuncios con el beneficio de la
+// tienda, encabezado con su tema, banda deslizante y pie con el crédito.
 import '../styles/global.css';
 import type { Collection, Tenant } from '../lib/types';
 import CartWidget from '../components/store/CartWidget.tsx';
@@ -12,18 +12,23 @@ interface Props {
   collections: Collection[];
   title: string;
   description: string;
+  announcement?: string;
 }
 
 const { tenant, collections, title, description } = Astro.props;
+const aviso =
+  Astro.props.announcement ??
+  `Envío gratis desde Bs.- 299 en ${tenant.city} · Cambios dentro de 7 días`;
+
 const themeStyle = [
   `--brand-bar-bg:${tenant.theme.barBg}`,
   `--brand-bar-fg:${tenant.theme.barFg}`,
-  `--tenant-accent:${tenant.theme.accent}`,
+  `--brand-accent:${tenant.theme.accent}`,
 ].join(';');
 ---
 
 <!doctype html>
-<html lang="es-BO">
+<html lang="es-BO" style={themeStyle}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,9 +41,17 @@ const themeStyle = [
       content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'"
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/fonts/jost-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body style={themeStyle}>
+  <body>
     <a class="skip" href="#contenido">Saltar al contenido</a>
+
+    <div class="announce">
+      <div class="shell announce__inner">
+        <p>{aviso}</p>
+      </div>
+    </div>
 
     <header class="bar">
       <div class="shell bar__inner">
@@ -62,6 +75,19 @@ const themeStyle = [
       <slot />
     </main>
 
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        {
+          [0, 1, 2, 3].map(() => (
+            <>
+              <span>{tenant.name}</span>
+              <span>{tenant.tagline}</span>
+            </>
+          ))
+        }
+      </div>
+    </div>
+
     <footer class="foot">
       <div class="shell foot__inner">
         <span>{tenant.name} — {tenant.city}, Bolivia</span>
@@ -75,5 +101,9 @@ const themeStyle = [
     </footer>
 
     <TierDock client:load />
+    <script>
+      import { initReveal } from '../lib/reveal';
+      initReveal();
+    </script>
   </body>
 </html>

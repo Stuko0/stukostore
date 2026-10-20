@@ -1,82 +1,135 @@
-/* StukoStore — design tokens
-   Derived from the Acme Cups editorial reference (monochrome, hairline
-   structure, 3px radius, no shadows) merged with the Tienda Express
-   identity (full-black brand bar, white wordmark, monogram in a double
-   square, Bs. price formatting). */
+/* StukoStore — tokens del sistema.
+   Valores extraídos de mhw3bomber.com (variables CSS reales del tema) y
+   documentados en DESIGN.md. Dos familias auto-alojadas, sin llamadas externas. */
+
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/jost-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/jost-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/jost-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/jost-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/lato-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/lato-700.woff2') format('woff2');
+}
 
 :root {
   /* Color */
-  --color-ink-black: #000000;
-  --color-gallery-white: #fefefe;
-  --color-concrete-canvas: #e3e2e2;
-  --color-ash-border: #c3c3c3;
-  --color-steel-mute: #aeaaaa;
-  --color-pewter-caption: #5c5c5c; /* #666666 of the reference is 4.44:1 on the
-     canvas — below AA. Darkened to hold 5.1:1 without leaving the grayscale. */
-  --color-terracotta-alert: #9b1b01;
+  --c-primary: #b21820;
+  --c-primary-hover: #8f1319;
+  --c-secondary: #0b0b0b;
+  --c-tertiary: #e9e5e5;
+  --c-neutral: #ffffff;
+  --c-cream: #fff7f2;
+  --c-ink: #0b0b0b;
+  --c-ink-soft: #3e3e3e;
+  --c-muted: #6b6b6b;
+  --c-border: #d3d3d3;
+  --c-hairline: #f0ecec;
+  --c-success: #56ad6a;
+  --c-error: #d02e2e;
+  --c-warn: #ecbd5e;
+  --c-sale: #b21820;
+  --c-overlay: rgba(11, 11, 11, 0.55);
 
-  /* Surfaces */
-  --surface-canvas: var(--color-concrete-canvas);
-  --surface-card: var(--color-gallery-white);
-  --surface-soft: #eceeee;
-  --surface-inverse: var(--color-ink-black);
+  /* Tipografía */
+  --f-heading: 'Jost', ui-sans-serif, system-ui, sans-serif;
+  --f-body: 'Lato', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* Type */
-  --font-sans: "Helvetica Neue", ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --w-regular: 400;
+  --w-medium: 500;
+  --w-semibold: 600;
+  --w-bold: 700;
 
-  --text-caption: 10px;
-  --leading-caption: 1.4;
-  --tracking-caption: 0.2px;
+  --t-label: 0.6875rem;   /* 11px */
+  --t-caption: 0.8125rem; /* 13px */
+  --t-body: 0.95rem;      /* 15.2px */
+  --t-lead: 1.125rem;     /* 18px */
+  --t-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --t-h2: clamp(1.6rem, 1.2rem + 1.6vw, 2.25rem);
+  --t-h1: clamp(2.1rem, 1.4rem + 3vw, 3rem);
+  --t-display: clamp(2.6rem, 1.6rem + 5vw, 4.75rem);
 
-  --text-label: 11px;
-  --text-small: 12px;
-  --text-ui: 13px;
-  --text-body: 15px;
-  --leading-body: 1.55;
+  --ls-label: 0.075em;
+  --ls-nav: 0.05em;
+  --ls-heading: -0.01em;
+  --lh-body: 1.6;
 
-  --text-heading-sm: 20px;
-  --leading-heading-sm: 1.3;
-  --text-heading: 26px;
-  --leading-heading: 1.2;
-  --tracking-heading: -0.23px;
-  --text-heading-lg: 30px;
-  --leading-heading-lg: 1.15;
-  --tracking-heading-lg: -0.27px;
-  --text-display: 48px;
-  --leading-display: 1.04;
-  --tracking-display: -0.43px;
-  --text-wordmark: clamp(44px, 12.5vw, 148px);
-  --leading-wordmark: 1;
-  --tracking-wordmark: -0.009em;
+  /* Espaciado y forma */
+  --s-4: 4px;
+  --s-8: 8px;
+  --s-12: 12px;
+  --s-16: 16px;
+  --s-2: 2px;
+  --s-20: 20px;
+  --s-28: 28px;
+  --s-36: 36px;
+  --s-48: 48px;
+  --s-72: 72px;
+  --s-80: 80px;
+  --s-104: 104px;
+  --s-120: 120px;
+  --s-24: 24px;
+  --s-32: 32px;
+  --s-40: 40px;
+  --s-56: 56px;
+  --s-64: 64px;
+  --s-96: 96px;
 
-  --weight-regular: 400;
-  --weight-medium: 500;
-  --weight-bold: 700;
+  --r-sm: 3px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-pill: 30px;
+  --r-circle: 50%;
 
-  /* Spacing */
-  --space-4: 4px;
-  --space-8: 8px;
-  --space-12: 12px;
-  --space-16: 16px;
-  --space-20: 20px;
-  --space-24: 24px;
-  --space-28: 28px;
-  --space-36: 36px;
-  --space-40: 40px;
-  --space-64: 64px;
-  --space-72: 72px;
-  --space-104: 104px;
-
-  /* Layout */
-  --page-max: 1440px;
+  --site-width: 1440px;
+  --reading-width: 840px;
   --section-gap: 64px;
-  --card-padding: 24px;
-  --element-gap: 8px;
-  --radius: 3px;
 
-  /* Tenant overrides (default = StukoStore platform) */
-  --brand-bar-bg: var(--color-ink-black);
-  --brand-bar-fg: var(--color-gallery-white);
-  --tenant-accent: var(--color-ink-black);
+  /* Movimiento: una sola curva para todo el sistema */
+  --ease: cubic-bezier(0.19, 1, 0.22, 1);
+  --dur-reveal: 1.1s;
+  --dur-ui: 0.3s;
+
+  /* Tema por tienda (lo sobreescribe el layout del storefront) */
+  --brand-bar-bg: var(--c-secondary);
+  --brand-bar-fg: var(--c-neutral);
+  --brand-accent: var(--c-primary);
+}
+
+/* No hay sombras en el sistema salvo el panel del carrito. */
+:root {
+  --shadow-drawer: 0 24px 60px rgba(11, 11, 11, 0.18);
 }

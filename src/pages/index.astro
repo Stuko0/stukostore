@@ -9,7 +9,7 @@ import { TIERS } from '../lib/tiers';
   description="StukoStore convierte el catálogo de tu tienda en un ecommerce con inventario, pedidos, pagos y automatizaciones. Cuatro planes en bolivianos."
 >
   <section class="shell hero">
-    <p class="eyebrow">Ecommerce por suscripción</p>
+    <p class="eyebrow">Ecommerce por suscripción · Cochabamba</p>
     <h1 class="wm">StukoStore</h1>
     <div class="hero__row">
       <p class="hero__lede">
@@ -18,104 +18,121 @@ import { TIERS } from '../lib/tiers';
         mensajes sueltos por WhatsApp.
       </p>
       <div class="hero__actions">
-        <a class="ghost" href="#planes">Ver planes <span aria-hidden="true">→</span></a>
-        <a class="ghost" href={`${import.meta.env.BASE_URL}precios/`}>
-          Comparar en detalle <span aria-hidden="true">→</span>
+        <a class="btn btn--primary" href="#planes">Ver planes <span aria-hidden="true">→</span></a>
+        <a class="ghost" href={`${import.meta.env.BASE_URL}demo/`}>
+          Entrar a la demo <span aria-hidden="true">→</span>
         </a>
       </div>
     </div>
   </section>
 
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      {
+        [0, 1, 2, 3].map(() => (
+          <>
+            <span>Catálogo real</span>
+            <span>Inventario por sucursal</span>
+            <span>Pedidos con estados</span>
+            <span>Facturación en bolivianos</span>
+          </>
+        ))
+      }
+    </div>
+  </div>
+
   <section class="section shell" id="producto">
-    <div class="section__head">
+    <div class="section__head reveal">
       <h2 class="h2">Lo que una página de Sites no resuelve</h2>
       <p class="caption">Medido sobre una tienda real en Google Sites.</p>
     </div>
     <div class="grid-3">
-      <article>
+      <article class="card-surface reveal">
         <p class="eyebrow">01 — Cobro</p>
-        <p class="problem__number">0</p>
+        <p class="stat">0</p>
         <h3 class="h3">botones de compra</h3>
-        <p>
+        <p class="card-text">
           Ocho productos publicados, ningún enlace, ningún carrito, ningún botón.
           El recorrido del cliente termina en el precio. StukoStore cierra la
           venta con carrito, checkout y confirmación.
         </p>
       </article>
-      <article>
+      <article class="card-surface reveal" style="transition-delay: 90ms">
         <p class="eyebrow">02 — Gestión</p>
-        <p class="problem__number">0</p>
+        <p class="stat">0</p>
         <h3 class="h3">inventario y pedidos</h3>
-        <p>
+        <p class="card-text">
           Sin stock, sin estados, sin historial: cada venta se administra a mano.
           StukoStore lleva inventario por variante, pedidos con estados y
           comprobantes.
         </p>
       </article>
-      <article>
+      <article class="card-surface reveal" style="transition-delay: 180ms">
         <p class="eyebrow">03 — Peso</p>
-        <p class="problem__number">8,5</p>
+        <p class="stat">8,5</p>
         <h3 class="h3">MB de imágenes</h3>
-        <p>
+        <p class="card-text">
           Para 127 palabras de contenido, con el aviso de envío a 1,33:1 de
-          contraste. StukoStore comprime, precarga y mantiene el texto en un
-          mínimo legible.
+          contraste. StukoStore comprime, precarga y mantiene el texto legible.
         </p>
       </article>
     </div>
   </section>
 
-  <section class="section shell">
-    <div class="section__head">
-      <h2 class="h2">Tres ejes, un solo sistema</h2>
-    </div>
-    <div class="grid-3">
-      <article>
-        <h3 class="h3">Gestión</h3>
-        <ul class="list">
-          <li>Productos con variantes y SKU</li>
-          <li>Stock por sucursal</li>
-          <li>Pedidos con estados y devoluciones</li>
-          <li>Equipo con roles y permisos</li>
-          <li>Clientes con historial de compra</li>
-        </ul>
-      </article>
-      <article>
-        <h3 class="h3">Personalización</h3>
-        <ul class="list">
-          <li>Editor de tema en vivo</li>
-          <li>Bloques de portada</li>
-          <li>Dominio propio</li>
-          <li>Contraste validado en cada cambio</li>
-          <li>CSS propio en el plan alto</li>
-        </ul>
-      </article>
-      <article>
-        <h3 class="h3">Automatización</h3>
-        <ul class="list">
-          <li>Aviso de stock bajo</li>
-          <li>Recuperación de carrito</li>
-          <li>Notificaciones de pedido</li>
-          <li>Reportes por periodo y ciudad</li>
-          <li>Webhooks y API</li>
-        </ul>
-      </article>
+  <section class="section section--cream">
+    <div class="shell">
+      <div class="section__head reveal">
+        <h2 class="h2">Tres ejes, un solo sistema</h2>
+        <p class="caption">Lo que cambia según el plan que elijas.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card-surface reveal">
+          <h3 class="h3">Gestión</h3>
+          <ul class="list">
+            <li>Productos con variantes y SKU</li>
+            <li>Stock por sucursal</li>
+            <li>Pedidos con estados y devoluciones</li>
+            <li>Equipo con roles y permisos</li>
+            <li>Clientes con historial de compra</li>
+          </ul>
+        </article>
+        <article class="card-surface reveal" style="transition-delay: 90ms">
+          <h3 class="h3">Personalización</h3>
+          <ul class="list">
+            <li>Editor de tema en vivo</li>
+            <li>Bloques de portada</li>
+            <li>Dominio propio</li>
+            <li>Contraste validado en cada cambio</li>
+            <li>CSS propio en el plan alto</li>
+          </ul>
+        </article>
+        <article class="card-surface reveal" style="transition-delay: 180ms">
+          <h3 class="h3">Automatización</h3>
+          <ul class="list">
+            <li>Aviso de stock bajo</li>
+            <li>Recuperación de carrito</li>
+            <li>Notificaciones de pedido</li>
+            <li>Reportes por periodo y ciudad</li>
+            <li>Webhooks y API</li>
+          </ul>
+        </article>
+      </div>
     </div>
   </section>
 
   <section class="section shell" id="planes">
-    <div class="section__head">
+    <div class="section__head reveal">
       <h2 class="h2">Cuatro planes, un selector</h2>
       <p class="caption">
         Referencia: sueldo mínimo nacional 3.300 Bs. El plan más alto equivale al
-        24 % de un sueldo.
+        30 % de un sueldo.
       </p>
     </div>
 
     <div class="prices">
       {
-        TIERS.map((t) => (
-          <article class="price">
+        TIERS.map((t, i) => (
+          <article class="price reveal" style={`transition-delay: ${i * 70}ms`}>
             <p class="eyebrow">{t.name}</p>
             <p class="price__amount">
               Bs. {t.bob}
@@ -136,96 +153,96 @@ import { TIERS } from '../lib/tiers';
 
   <style>
     .hero {
-      padding: var(--space-72) 0 var(--space-64);
-      border-bottom: 1px solid var(--color-ink-black);
+      padding: var(--s-72) 0 var(--s-56);
     }
 
     .hero .eyebrow {
-      color: var(--color-pewter-caption);
-      margin-bottom: var(--space-16);
+      margin-bottom: var(--s-16);
     }
 
     .hero__row {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: var(--space-40);
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: var(--s-40);
       align-items: end;
-      margin-top: var(--space-28);
+      margin-top: var(--s-32);
     }
 
     .hero__lede {
-      font-size: var(--text-heading-sm);
-      line-height: 1.4;
+      font-size: var(--t-lead);
+      line-height: 1.5;
       max-width: 46ch;
+      color: var(--c-ink-soft);
     }
 
     .hero__actions {
       display: flex;
-      gap: var(--space-12);
+      gap: var(--s-12);
       flex-wrap: wrap;
       justify-content: flex-end;
     }
 
-    .problem__number {
-      font-size: var(--text-display);
+    .stat {
+      font-family: var(--f-heading);
+      font-size: var(--t-h1);
+      font-weight: var(--w-semibold);
       line-height: 1;
-      font-weight: var(--weight-bold);
-      letter-spacing: -0.02em;
-      margin: var(--space-12) 0 var(--space-4);
+      margin: var(--s-12) 0 var(--s-8);
     }
 
-    .grid-3 p {
-      margin-top: var(--space-12);
-      font-size: var(--text-body);
+    .card-text {
+      margin-top: var(--s-12);
+      color: var(--c-ink-soft);
     }
 
     .list {
-      margin-top: var(--space-16);
+      margin-top: var(--s-16);
       display: grid;
-      gap: var(--space-8);
-      font-size: var(--text-body);
+      gap: 0;
+      font-size: var(--t-body);
     }
 
     .list li {
-      padding-bottom: var(--space-8);
-      border-bottom: 1px solid var(--color-ash-border);
+      padding: var(--s-12) 0;
+      border-bottom: 1px solid var(--c-hairline);
     }
 
     .prices {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: var(--space-12);
-      margin-bottom: var(--space-24);
+      gap: var(--s-16);
+      margin-bottom: var(--s-32);
     }
 
     .price {
-      border: 1px solid var(--color-ash-border);
-      border-radius: var(--radius);
-      padding: var(--card-padding);
+      border: 1px solid var(--c-hairline);
+      border-radius: var(--r-lg);
+      padding: var(--s-24);
       display: flex;
       flex-direction: column;
-      gap: var(--space-8);
-      background: var(--color-gallery-white);
+      gap: var(--s-8);
+      background: var(--c-neutral);
     }
 
     .price__amount {
-      font-size: var(--text-heading);
-      font-weight: var(--weight-bold);
-      letter-spacing: var(--tracking-heading);
+      font-family: var(--f-heading);
+      font-size: var(--t-h3);
+      font-weight: var(--w-semibold);
       line-height: 1.1;
     }
 
     .price__amount .caption {
-      font-weight: var(--weight-regular);
+      font-family: var(--f-body);
+      font-weight: var(--w-regular);
     }
 
     .price__pitch {
-      font-size: var(--text-small);
-      line-height: 1.45;
+      font-size: var(--t-caption);
+      line-height: 1.5;
     }
 
     .demo {
-      margin-top: var(--space-24);
+      margin-top: var(--s-32);
     }
 
     @media (max-width: 900px) {

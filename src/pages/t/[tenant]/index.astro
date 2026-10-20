@@ -20,5 +20,5 @@ const homeBlocks = blocksOf(tenant.id);
   title={`${tenant.name} — ${tenant.tagline}`}
   description={`${tenant.name} en ${tenant.city}. ${tenant.tagline}. Compra en línea con envío en Bolivia.`}
 >
-  <HomeBlocks client:load tenant={tenant} blocks={homeBlocks} products={prods} />
+  <HomeBlocks client:load tenant={tenant} blocks={homeBlocks} products={prods} collections={cols} />
 </Storefront>

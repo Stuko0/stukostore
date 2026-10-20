@@ -38,7 +38,7 @@ export default function OrderStatus(props: { tenant: Tenant }) {
   return (
     <section class="shell track">
       <h1 class="h2">Estado del pedido</h1>
-      <p class="caption" style="margin-top: var(--space-8)">
+      <p class="caption" style="margin-top: var(--s-8)">
         Escribí el código que te dimos al confirmar la compra, por ejemplo TE-1001.
       </p>
 
@@ -64,12 +64,12 @@ export default function OrderStatus(props: { tenant: Tenant }) {
 
       <Show when={order()}>
         {(current) => (
-          <article class="checkout__summary" style="border-color: var(--color-ash-border)">
+          <article class="checkout__summary" style="border-color: var(--c-border)">
             <p class="eyebrow">Pedido {current().code}</p>
-            <p class="h3" style="margin: var(--space-8) 0">{STATUS_LABEL[current().status]}</p>
+            <p class="h3" style="margin: var(--s-8) 0">{STATUS_LABEL[current().status]}</p>
             <p class="caption">Creado el {dateTime(current().createdAt)}</p>
 
-            <ul class="checkout__lines" style="margin-top: var(--space-16)">
+            <ul class="checkout__lines" style="margin-top: var(--s-16)">
               <For each={current().items}>
                 {(item) => (
                   <li class="checkout__line">

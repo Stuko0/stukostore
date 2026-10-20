@@ -59,14 +59,14 @@ export default function SearchStore(props: { tenant: Tenant; initialProducts: Pr
             placeholder="Botella, molino, café…"
             value={query()}
             onInput={(e) => void run(e.currentTarget.value)}
-            style="margin-top: var(--space-16)"
+            style="margin-top: var(--s-16)"
           />
 
           <p class="caption" aria-live="polite">
             {searched() ? `${results().length} resultados para "${query()}"` : 'Escribí para buscar.'}
           </p>
 
-          <div class="products" style="margin-top: var(--space-24)">
+          <div class="products" style="margin-top: var(--s-24)">
             <For each={results()}>
               {(product) => (
                 <ProductCard
@@ -84,7 +84,7 @@ export default function SearchStore(props: { tenant: Tenant; initialProducts: Pr
           </Show>
         </>
       ) : (
-        <div style="margin-top: var(--space-24)">
+        <div style="margin-top: var(--s-24)">
           <Locked feature="search" />
         </div>
       )}

@@ -126,16 +126,25 @@ que los habilita.
 
 ## Sistema de diseño
 
-Monocromo, estructura por hairlines de 1px, radio 3px, cero sombras. La
-fotografía de producto es la única fuente de color. Base tipográfica Helvetica
-Neue con respaldo en la pila del sistema, etiquetas en mayúsculas con tracking
-de +0.015em y wordmark a escala fluida.
+Especificado en [`DESIGN.md`](DESIGN.md) y verificado con `npx @google/design.md
+lint DESIGN.md` (cero errores, cero advertencias).
+
+Lenguaje visual: blanco cálido, negro casi puro y un rojo profundo como único
+acento. **Jost** en encabezados mayúsculas con tracking negativo y **Lato** en
+cuerpo, navegación y botones; ambas auto-alojadas en `public/fonts` (subset
+latino, sin llamadas a Google Fonts). Botones y campos tipo píldora de 30 px,
+tarjetas de 14 px, etiquetas de 3 px, separación por líneas de 1 px y ninguna
+sombra salvo el panel del carrito.
+
+Movimiento: una sola curva (`cubic-bezier(.19, 1, .22, 1)`), revelados de 1,1 s
+al entrar en pantalla, zoom de 1,06 en las fotos al pasar el cursor, banda
+deslizante de marca y transiciones de 0,3 s en los controles. Todo se apaga con
+`prefers-reduced-motion` y, sin JavaScript, el contenido queda visible.
 
 El sistema corrige los problemas medidos en la tienda de referencia: cuerpo de
-texto de 15 px en lugar de 13,3 px, contraste mínimo AA verificado, texto
-alternativo obligatorio en cada imagen (el editor de producto no guarda sin él),
-encabezados reales, sin carrusel automático e imágenes recomprimidas por debajo
-de 300 KB.
+15 px en lugar de 13,3 px, contraste mínimo AA verificado, texto alternativo
+obligatorio en cada imagen (el editor de producto no guarda sin él), encabezados
+reales, sin carrusel automático e imágenes recomprimidas por debajo de 300 KB.
 
 ## Pruebas
 

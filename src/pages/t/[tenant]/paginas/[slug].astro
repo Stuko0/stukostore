@@ -21,11 +21,11 @@ const page = pages.find((p) => p.tenantId === tenant.id && p.slug === slug)!;
   title={`${page.title} — ${tenant.name}`}
   description={page.body.slice(0, 150)}
 >
-  <article class="shell" style="padding: var(--space-40) 0 var(--space-64); max-width: 760px">
+  <article class="shell" style="padding: var(--s-40) 0 var(--s-64); max-width: 760px">
     <p class="eyebrow">Información</p>
-    <h1 class="h2" style="margin: var(--space-8) 0 var(--space-16)">{page.title}</h1>
-    <p style="font-size: var(--text-heading-sm); line-height: 1.5">{page.body}</p>
-    <p style="margin-top: var(--space-40)">
+    <h1 class="h2" style="margin: var(--s-8) 0 var(--s-16)">{page.title}</h1>
+    <p style="font-size: var(--t-lead); line-height: 1.5">{page.body}</p>
+    <p style="margin-top: var(--s-40)">
       <a class="ghost" href={`/t/${tenant.slug}/`}>
         Volver a la tienda <span aria-hidden="true">→</span>
       </a>

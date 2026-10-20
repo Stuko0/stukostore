@@ -98,7 +98,7 @@ export default function PlanUsage(props: { tenant: Tenant }) {
                 {(feature) => <li class="caption">{feature.label}</li>}
               </For>
             </ul>
-            <p style="margin-top: var(--space-16)">
+            <p style="margin-top: var(--s-16)">
               <a class="ghost" href="/precios/">
                 Ver todos los planes <span aria-hidden="true">→</span>
               </a>

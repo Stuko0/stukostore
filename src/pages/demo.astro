@@ -22,11 +22,11 @@ import TenantPicker from '../components/demo/TenantPicker.tsx';
   </section>
 
   <section class="section shell">
-    <div class="section__head">
+    <div class="section__head reveal">
       <h2 class="h2">Cómo leer la demo</h2>
     </div>
     <div class="grid-3">
-      <article>
+      <article class="card-surface reveal">
         <h3 class="h3">Datos reales, no maquetas</h3>
         <p>
           El catálogo de Tienda Express es el suyo: ocho productos con precios en
@@ -34,14 +34,14 @@ import TenantPicker from '../components/demo/TenantPicker.tsx';
           multi-tienda.
         </p>
       </article>
-      <article>
+      <article class="card-surface reveal">
         <h3 class="h3">Cache del navegador</h3>
         <p>
           Las escrituras quedan en IndexedDB. Si cambias un precio y recargas, el
           cambio sigue ahí. El botón de reinicio vuelve a los datos de fábrica.
         </p>
       </article>
-      <article>
+      <article class="card-surface reveal">
         <h3 class="h3">Sin servidor</h3>
         <p>
           La demo no envía datos a ningún lado. La misma interfaz de datos se
@@ -53,14 +53,14 @@ import TenantPicker from '../components/demo/TenantPicker.tsx';
 
   <style>
     .head {
-      padding: var(--space-72) 0 var(--space-40);
-      border-bottom: 1px solid var(--color-ink-black);
+      padding: var(--s-72) 0 var(--s-40);
+      border-bottom: 1px solid var(--c-ink);
     }
 
     .head__title {
-      font-size: var(--text-heading-lg);
-      letter-spacing: var(--tracking-heading-lg);
-      margin: var(--space-16) 0;
+      font-size: var(--t-h2);
+      letter-spacing: var(--ls-heading);
+      margin: var(--s-16) 0;
     }
 
     .head__lede {
@@ -68,7 +68,7 @@ import TenantPicker from '../components/demo/TenantPicker.tsx';
     }
 
     .grid-3 p {
-      margin-top: var(--space-12);
+      margin-top: var(--s-12);
     }
   </style>
 </Base>

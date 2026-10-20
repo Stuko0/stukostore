@@ -1,5 +1,5 @@
-// Marca "Hecho con StukoStore". El plan ESCAPARATE siempre la lleva; desde
-// TIENDA se puede quitar. La barra de plan la muestra u oculta en vivo.
+// Crédito de marca del pie. ESCAPARATE siempre lo lleva; desde TIENDA la
+// tienda puede quitarlo. Enlaza al portafolio, no al producto.
 
 import { createSignal, onMount, Show } from 'solid-js';
 import { hydrateSession, tier } from '../../lib/store';
@@ -16,8 +16,9 @@ export default function BrandCredit(props: { tenantSlug: string; footerBrand: bo
 
   return (
     <Show when={visible()}>
-      <span class="caption credit">
-        Hecho con <a href="/">StukoStore</a>
+      <span class="credit">
+        Hecho por{' '}
+        <a href="https://stuko.dev" target="_blank" rel="noopener noreferrer">Stuko</a>
         {forced() ? ' — plan ESCAPARATE' : ''}
       </span>
     </Show>

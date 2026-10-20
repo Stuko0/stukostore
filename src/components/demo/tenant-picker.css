@@ -1,97 +1,97 @@
 /* Selector de tienda demo */
 
 .picker {
-  border: 1px solid var(--color-ink-black);
-  border-radius: var(--radius);
-  background: var(--color-gallery-white);
-  padding: var(--space-24);
+  border: 1px solid var(--c-ink);
+  border-radius: var(--r-md);
+  background: var(--c-neutral);
+  padding: var(--s-24);
 }
 
 .picker__head {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: var(--space-16);
+  gap: var(--s-16);
   flex-wrap: wrap;
-  border-bottom: 1px solid var(--color-ash-border);
-  padding-bottom: var(--space-16);
-  margin-bottom: var(--space-24);
+  border-bottom: 1px solid var(--c-border);
+  padding-bottom: var(--s-16);
+  margin-bottom: var(--s-24);
 }
 
 .picker__status {
-  font-size: var(--text-body);
-  margin-top: var(--space-4);
+  font-size: var(--t-body);
+  margin-top: var(--s-4);
 }
 
 .picker__error {
-  border: 1px solid var(--color-terracotta-alert);
-  border-radius: var(--radius);
-  padding: var(--space-12);
-  margin-bottom: var(--space-16);
-  font-size: var(--text-small);
+  border: 1px solid var(--c-error);
+  border-radius: var(--r-md);
+  padding: var(--s-12);
+  margin-bottom: var(--s-16);
+  font-size: var(--t-caption);
 }
 
 .picker__skeleton {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-12);
+  gap: var(--s-12);
 }
 
 .picker__ghost {
   height: 220px;
-  background: var(--surface-soft);
-  border: 1px solid var(--color-ash-border);
-  border-radius: var(--radius);
+  background: var(--c-cream);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
 }
 
 .picker__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-12);
+  gap: var(--s-12);
 }
 
 .picker__card {
-  border: 1px solid var(--color-ash-border);
-  border-radius: var(--radius);
-  padding: var(--card-padding);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: var(--s-24);
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: var(--s-8);
 }
 
 .picker__name {
   display: flex;
   align-items: center;
-  gap: var(--space-8);
-  font-size: var(--text-heading-sm);
-  font-weight: var(--weight-bold);
+  gap: var(--s-8);
+  font-size: var(--t-lead);
+  font-weight: var(--w-bold);
   text-transform: uppercase;
   letter-spacing: 0.01em;
 }
 
 .picker__tagline {
-  font-size: var(--text-small);
+  font-size: var(--t-caption);
   line-height: 1.45;
 }
 
 .picker__stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-8) var(--space-12);
-  margin: var(--space-8) 0 var(--space-12);
+  gap: var(--s-8) var(--s-12);
+  margin: var(--s-8) 0 var(--s-12);
 }
 
 .picker__stats dt {
-  font-size: var(--text-label);
+  font-size: var(--t-label);
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  color: var(--color-pewter-caption);
+  color: var(--c-muted);
 }
 
 .picker__stats dd {
   margin: 0;
-  font-size: var(--text-ui);
-  font-weight: var(--weight-bold);
+  font-size: var(--t-caption);
+  font-weight: var(--w-bold);
 }
 
 .picker__card .ghost {
