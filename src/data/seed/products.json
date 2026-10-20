@@ -34,7 +34,7 @@
     "price": 349,
     "compareAt": 399,
     "cost": 215,
-    "barcode": "772636103522",
+    "barcode": "771738836702",
     "active": true
    },
    {
@@ -46,7 +46,7 @@
     "price": 349,
     "compareAt": 399,
     "cost": 215,
-    "barcode": "771080203122",
+    "barcode": "778330858378",
     "active": true
    }
   ],
@@ -54,6 +54,18 @@
    {
     "src": "/img/termo-40oz.jpg",
     "alt": "Botellas térmicas de acero inoxidable alineadas sobre una mesa"
+   },
+   {
+    "src": "/img/termo-32oz.jpg",
+    "alt": "Botella de acero con tapa y pico bebible"
+   },
+   {
+    "src": "/img/taza-14oz.jpg",
+    "alt": "Taza de cerámica esmaltada"
+   },
+   {
+    "src": "/img/termo-16oz.jpg",
+    "alt": "Botella térmica con tapa azul"
    }
   ],
   "seo": {
@@ -95,7 +107,7 @@
     "price": 399,
     "compareAt": null,
     "cost": 250,
-    "barcode": "770045471196",
+    "barcode": "779711618437",
     "active": true
    }
   ],
@@ -103,6 +115,14 @@
    {
     "src": "/img/termo-32oz.jpg",
     "alt": "Botella de acero inoxidable con tapa y pico bebible"
+   },
+   {
+    "src": "/img/taza-14oz.jpg",
+    "alt": "Taza de cerámica esmaltada"
+   },
+   {
+    "src": "/img/termo-16oz.jpg",
+    "alt": "Botella térmica con tapa azul"
    }
   ],
   "seo": {
@@ -145,7 +165,7 @@
     "price": 299,
     "compareAt": null,
     "cost": 190,
-    "barcode": "775445584848",
+    "barcode": "778776791747",
     "active": true
    }
   ],
@@ -153,6 +173,18 @@
    {
     "src": "/img/taza-14oz.jpg",
     "alt": "Taza de cerámica esmaltada sobre superficie clara"
+   },
+   {
+    "src": "/img/termo-32oz.jpg",
+    "alt": "Botella de acero con tapa y pico bebible"
+   },
+   {
+    "src": "/img/termo-16oz.jpg",
+    "alt": "Botella térmica con tapa azul"
+   },
+   {
+    "src": "/img/tetera-cisne.jpg",
+    "alt": "Hervidor de cuello largo"
    }
   ],
   "seo": {
@@ -193,7 +225,7 @@
     "price": 249,
     "compareAt": null,
     "cost": 150,
-    "barcode": "774943465219",
+    "barcode": "776868202555",
     "active": true
    }
   ],
@@ -201,6 +233,14 @@
    {
     "src": "/img/termo-16oz.jpg",
     "alt": "Botella de acero inoxidable con tapa azul sobre una mesa"
+   },
+   {
+    "src": "/img/termo-32oz.jpg",
+    "alt": "Botella de acero con tapa y pico bebible"
+   },
+   {
+    "src": "/img/taza-14oz.jpg",
+    "alt": "Taza de cerámica esmaltada"
    }
   ],
   "seo": {
@@ -233,7 +273,7 @@
     "price": 449,
     "compareAt": null,
     "cost": 280,
-    "barcode": "776780004289",
+    "barcode": "773951311774",
     "active": true
    }
   ],
@@ -241,6 +281,18 @@
    {
     "src": "/img/molino-cafe.jpg",
     "alt": "Molino manual de café con manivela"
+   },
+   {
+    "src": "/img/termo-32oz.jpg",
+    "alt": "Botella de acero con tapa y pico bebible"
+   },
+   {
+    "src": "/img/taza-14oz.jpg",
+    "alt": "Taza de cerámica esmaltada"
+   },
+   {
+    "src": "/img/termo-16oz.jpg",
+    "alt": "Botella térmica con tapa azul"
    }
   ],
   "seo": {
@@ -273,7 +325,7 @@
     "price": 199,
     "compareAt": null,
     "cost": 120,
-    "barcode": "773692474469",
+    "barcode": "779119291530",
     "active": true
    }
   ],
@@ -281,6 +333,14 @@
    {
     "src": "/img/dripper-porcelana.jpg",
     "alt": "Dripper de porcelana blanca sobre base de madera"
+   },
+   {
+    "src": "/img/termo-32oz.jpg",
+    "alt": "Botella de acero con tapa y pico bebible"
+   },
+   {
+    "src": "/img/taza-14oz.jpg",
+    "alt": "Taza de cerámica esmaltada"
    }
   ],
   "seo": {
@@ -313,7 +373,7 @@
     "price": 249,
     "compareAt": null,
     "cost": 160,
-    "barcode": "774070948366",
+    "barcode": "771066507641",
     "active": true
    }
   ],
@@ -321,6 +381,18 @@
    {
     "src": "/img/tetera-cisne.jpg",
     "alt": "Hervidor de cuello largo sobre una hornilla"
+   },
+   {
+    "src": "/img/termo-32oz.jpg",
+    "alt": "Botella de acero con tapa y pico bebible"
+   },
+   {
+    "src": "/img/taza-14oz.jpg",
+    "alt": "Taza de cerámica esmaltada"
+   },
+   {
+    "src": "/img/termo-16oz.jpg",
+    "alt": "Botella térmica con tapa azul"
    }
   ],
   "seo": {
@@ -353,7 +425,7 @@
     "price": 399,
     "compareAt": null,
     "cost": 240,
-    "barcode": "779180789780",
+    "barcode": "774085469734",
     "active": true
    }
   ],
@@ -361,6 +433,14 @@
    {
     "src": "/img/chemex.jpg",
     "alt": "Jarra y filtro de vidrio para café por goteo"
+   },
+   {
+    "src": "/img/termo-32oz.jpg",
+    "alt": "Botella de acero con tapa y pico bebible"
+   },
+   {
+    "src": "/img/taza-14oz.jpg",
+    "alt": "Taza de cerámica esmaltada"
    }
   ],
   "seo": {
@@ -403,7 +483,7 @@
     "price": 65,
     "compareAt": null,
     "cost": 38,
-    "barcode": "775268164784",
+    "barcode": "778415413646",
     "active": true
    },
    {
@@ -415,7 +495,7 @@
     "price": 65,
     "compareAt": null,
     "cost": 38,
-    "barcode": "777246865619",
+    "barcode": "777730117739",
     "active": true
    }
   ],
@@ -423,6 +503,14 @@
    {
     "src": "/img/cafe-grano.jpg",
     "alt": "Granos de café tostado en primer plano"
+   },
+   {
+    "src": "/img/cafe-molido.jpg",
+    "alt": "Café molido sobre superficie oscura"
+   },
+   {
+    "src": "/img/prensa-francesa.jpg",
+    "alt": "Prensa francesa con café preparado"
    }
   ],
   "seo": {
@@ -454,7 +542,7 @@
     "price": 58,
     "compareAt": null,
     "cost": 34,
-    "barcode": "774379932273",
+    "barcode": "776705571589",
     "active": true
    }
   ],
@@ -462,6 +550,18 @@
    {
     "src": "/img/cafe-molido.jpg",
     "alt": "Café molido sobre una superficie oscura"
+   },
+   {
+    "src": "/img/prensa-francesa.jpg",
+    "alt": "Prensa francesa con café preparado"
+   },
+   {
+    "src": "/img/chemex.jpg",
+    "alt": "Jarra de vidrio para café por goteo"
+   },
+   {
+    "src": "/img/dripper-porcelana.jpg",
+    "alt": "Dripper de porcelana con filtro"
    }
   ],
   "seo": {
@@ -494,7 +594,7 @@
     "price": 190,
     "compareAt": 220,
     "cost": 110,
-    "barcode": "770935035000",
+    "barcode": "775405181669",
     "active": true
    }
   ],
@@ -502,6 +602,14 @@
    {
     "src": "/img/prensa-francesa.jpg",
     "alt": "Prensa francesa de vidrio con café preparado"
+   },
+   {
+    "src": "/img/cafe-molido.jpg",
+    "alt": "Café molido sobre superficie oscura"
+   },
+   {
+    "src": "/img/chemex.jpg",
+    "alt": "Jarra de vidrio para café por goteo"
    }
   ],
   "seo": {
@@ -533,7 +641,7 @@
     "price": 380,
     "compareAt": null,
     "cost": 230,
-    "barcode": "779710171840",
+    "barcode": "776233638003",
     "active": true
    }
   ],
@@ -541,6 +649,18 @@
    {
     "src": "/img/chemex.jpg",
     "alt": "Jarra de vidrio con filtro cónico y café"
+   },
+   {
+    "src": "/img/cafe-molido.jpg",
+    "alt": "Café molido sobre superficie oscura"
+   },
+   {
+    "src": "/img/prensa-francesa.jpg",
+    "alt": "Prensa francesa con café preparado"
+   },
+   {
+    "src": "/img/dripper-porcelana.jpg",
+    "alt": "Dripper de porcelana con filtro"
    }
   ],
   "seo": {
@@ -574,7 +694,7 @@
     "price": 320,
     "compareAt": 360,
     "cost": 190,
-    "barcode": "773151307563",
+    "barcode": "771936073916",
     "active": true
    }
   ],
@@ -582,6 +702,14 @@
    {
     "src": "/img/molino-cafe.jpg",
     "alt": "Molino de café con manivela y depósito de madera"
+   },
+   {
+    "src": "/img/cafe-molido.jpg",
+    "alt": "Café molido sobre superficie oscura"
+   },
+   {
+    "src": "/img/prensa-francesa.jpg",
+    "alt": "Prensa francesa con café preparado"
    }
   ],
   "seo": {
@@ -613,7 +741,7 @@
     "price": 70,
     "compareAt": null,
     "cost": 32,
-    "barcode": "771267438136",
+    "barcode": "777172752859",
     "active": true
    }
   ],
@@ -621,6 +749,18 @@
    {
     "src": "/img/taza-14oz.jpg",
     "alt": "Taza de cerámica clara vista desde arriba"
+   },
+   {
+    "src": "/img/cafe-molido.jpg",
+    "alt": "Café molido sobre superficie oscura"
+   },
+   {
+    "src": "/img/prensa-francesa.jpg",
+    "alt": "Prensa francesa con café preparado"
+   },
+   {
+    "src": "/img/chemex.jpg",
+    "alt": "Jarra de vidrio para café por goteo"
    }
   ],
   "seo": {
@@ -653,7 +793,7 @@
     "price": 150,
     "compareAt": null,
     "cost": 80,
-    "barcode": "774881842987",
+    "barcode": "773908390591",
     "active": true
    }
   ],
@@ -661,6 +801,14 @@
    {
     "src": "/img/dripper-porcelana.jpg",
     "alt": "Dripper de cerámica blanca con filtro de papel"
+   },
+   {
+    "src": "/img/cafe-molido.jpg",
+    "alt": "Café molido sobre superficie oscura"
+   },
+   {
+    "src": "/img/prensa-francesa.jpg",
+    "alt": "Prensa francesa con café preparado"
    }
   ],
   "seo": {
@@ -692,7 +840,7 @@
     "price": 230,
     "compareAt": null,
     "cost": 140,
-    "barcode": "774151831981",
+    "barcode": "776136675104",
     "active": true
    }
   ],
@@ -700,6 +848,18 @@
    {
     "src": "/img/tetera-cisne.jpg",
     "alt": "Hervidor metálico sobre una superficie de madera"
+   },
+   {
+    "src": "/img/cafe-molido.jpg",
+    "alt": "Café molido sobre superficie oscura"
+   },
+   {
+    "src": "/img/prensa-francesa.jpg",
+    "alt": "Prensa francesa con café preparado"
+   },
+   {
+    "src": "/img/chemex.jpg",
+    "alt": "Jarra de vidrio para café por goteo"
    }
   ],
   "seo": {
@@ -742,7 +902,7 @@
     "price": 480,
     "compareAt": null,
     "cost": 300,
-    "barcode": "770506458773",
+    "barcode": "773266167991",
     "active": true
    },
    {
@@ -754,7 +914,7 @@
     "price": 480,
     "compareAt": null,
     "cost": 300,
-    "barcode": "772996415632",
+    "barcode": "777838678330",
     "active": true
    }
   ],
@@ -762,6 +922,14 @@
    {
     "src": "/img/mochila-outdoor.jpg",
     "alt": "Mochila de excursionista apoyada en una roca"
+   },
+   {
+    "src": "/img/botella-outdoor.jpg",
+    "alt": "Botella de agua junto a equipo de senderismo"
+   },
+   {
+    "src": "/img/linterna.jpg",
+    "alt": "Linterna frontal encendida"
    }
   ],
   "seo": {
@@ -793,7 +961,7 @@
     "price": 85,
     "compareAt": null,
     "cost": 42,
-    "barcode": "779657493201",
+    "barcode": "777322058240",
     "active": true
    }
   ],
@@ -801,6 +969,18 @@
    {
     "src": "/img/botella-outdoor.jpg",
     "alt": "Botella de agua junto a equipo de senderismo"
+   },
+   {
+    "src": "/img/linterna.jpg",
+    "alt": "Linterna frontal encendida"
+   },
+   {
+    "src": "/img/saco-dormir.jpg",
+    "alt": "Saco de dormir extendido"
+   },
+   {
+    "src": "/img/carpa.jpg",
+    "alt": "Carpa de dos personas armada"
    }
   ],
   "seo": {
@@ -832,7 +1012,7 @@
     "price": 220,
     "compareAt": null,
     "cost": 130,
-    "barcode": "777714384707",
+    "barcode": "776100883772",
     "active": true
    }
   ],
@@ -840,6 +1020,14 @@
    {
     "src": "/img/linterna.jpg",
     "alt": "Linterna frontal encendida en la oscuridad"
+   },
+   {
+    "src": "/img/botella-outdoor.jpg",
+    "alt": "Botella de agua junto a equipo de senderismo"
+   },
+   {
+    "src": "/img/saco-dormir.jpg",
+    "alt": "Saco de dormir extendido"
    }
   ],
   "seo": {
@@ -871,7 +1059,7 @@
     "price": 550,
     "compareAt": null,
     "cost": 340,
-    "barcode": "779381100390",
+    "barcode": "773272889528",
     "active": true
    }
   ],
@@ -879,6 +1067,18 @@
    {
     "src": "/img/saco-dormir.jpg",
     "alt": "Saco de dormir extendido sobre el pasto"
+   },
+   {
+    "src": "/img/botella-outdoor.jpg",
+    "alt": "Botella de agua junto a equipo de senderismo"
+   },
+   {
+    "src": "/img/linterna.jpg",
+    "alt": "Linterna frontal encendida"
+   },
+   {
+    "src": "/img/carpa.jpg",
+    "alt": "Carpa de dos personas armada"
    }
   ],
   "seo": {
@@ -910,7 +1110,7 @@
     "price": 890,
     "compareAt": 990,
     "cost": 560,
-    "barcode": "778377274458",
+    "barcode": "772744249115",
     "active": true
    }
   ],
@@ -918,6 +1118,14 @@
    {
     "src": "/img/carpa.jpg",
     "alt": "Carpa de dos personas armada en el campo"
+   },
+   {
+    "src": "/img/botella-outdoor.jpg",
+    "alt": "Botella de agua junto a equipo de senderismo"
+   },
+   {
+    "src": "/img/linterna.jpg",
+    "alt": "Linterna frontal encendida"
    }
   ],
   "seo": {
@@ -949,7 +1157,7 @@
     "price": 95,
     "compareAt": null,
     "cost": 48,
-    "barcode": "777551382757",
+    "barcode": "770390662447",
     "active": true
    }
   ],
@@ -957,6 +1165,18 @@
    {
     "src": "/img/cantimplora.jpg",
     "alt": "Cantimplora metálica colgada de una rama"
+   },
+   {
+    "src": "/img/botella-outdoor.jpg",
+    "alt": "Botella de agua junto a equipo de senderismo"
+   },
+   {
+    "src": "/img/linterna.jpg",
+    "alt": "Linterna frontal encendida"
+   },
+   {
+    "src": "/img/saco-dormir.jpg",
+    "alt": "Saco de dormir extendido"
    }
   ],
   "seo": {
@@ -988,7 +1208,7 @@
     "price": 210,
     "compareAt": null,
     "cost": 120,
-    "barcode": "773765056867",
+    "barcode": "771167213425",
     "active": true
    }
   ],
@@ -996,6 +1216,14 @@
    {
     "src": "/img/termo-32oz.jpg",
     "alt": "Termo de acero inoxidable sobre una superficie de piedra"
+   },
+   {
+    "src": "/img/botella-outdoor.jpg",
+    "alt": "Botella de agua junto a equipo de senderismo"
+   },
+   {
+    "src": "/img/linterna.jpg",
+    "alt": "Linterna frontal encendida"
    }
   ],
   "seo": {
@@ -1027,7 +1255,7 @@
     "price": 165,
     "compareAt": null,
     "cost": 90,
-    "barcode": "777278069783",
+    "barcode": "778520477998",
     "active": true
    }
   ],
@@ -1035,6 +1263,18 @@
    {
     "src": "/img/termo-16oz.jpg",
     "alt": "Botella térmica de acero con tapa negra"
+   },
+   {
+    "src": "/img/botella-outdoor.jpg",
+    "alt": "Botella de agua junto a equipo de senderismo"
+   },
+   {
+    "src": "/img/linterna.jpg",
+    "alt": "Linterna frontal encendida"
+   },
+   {
+    "src": "/img/saco-dormir.jpg",
+    "alt": "Saco de dormir extendido"
    }
   ],
   "seo": {

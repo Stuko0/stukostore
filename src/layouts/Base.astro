@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import DemoBadge from '../components/demo/DemoBadge.tsx';
 
 interface Props {
   title: string;
@@ -70,6 +71,7 @@ const csp = [
           <a href={`${base}precios/`}>Precios</a>
           <a href={`${base}demo/`}>Demo</a>
           <a href="https://github.com/Stuko0/stukostore" rel="noopener noreferrer">Código</a>
+          <DemoBadge client:load />
         </nav>
       </div>
     </header>

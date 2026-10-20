@@ -21,7 +21,7 @@ body {
   line-height: var(--lh-body);
   font-weight: var(--w-regular);
   min-height: 100vh;
-  background: var(--c-neutral);
+  background: var(--page-surface, var(--c-neutral));
 }
 
 h1,
@@ -73,7 +73,7 @@ button {
 .wm {
   font-family: var(--f-heading);
   font-weight: var(--w-semibold);
-  text-transform: uppercase;
+  text-transform: var(--heading-case, uppercase);
   letter-spacing: var(--ls-heading);
   line-height: 1.08;
 }

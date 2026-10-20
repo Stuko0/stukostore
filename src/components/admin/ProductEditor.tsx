@@ -2,9 +2,10 @@
 // Regla aplicada: no se guarda una imagen sin `alt` (el fallo medido en la
 // tienda original era 11 de 11 sin texto alternativo).
 
-import { createSignal, onMount, For, Show } from 'solid-js';
+import { createSignal, createMemo, onMount, For, Show } from 'solid-js';
 import { prepare } from '../../lib/api/mock';
 import { bob, slugify } from '../../lib/format';
+import { canDo, hydrateAuth } from '../../lib/session';
 import type { Collection, Product, ProductImage, Tenant, Variant } from '../../lib/types';
 import './admin.css';
 
@@ -40,6 +41,7 @@ export default function ProductEditor(props: { tenant: Tenant; productId?: strin
   const [error, setError] = createSignal('');
   const [saved, setSaved] = createSignal('');
   const [loading, setLoading] = createSignal(true);
+  const writable = createMemo(() => canDo('catalog:write'));
 
   const update = (patch: Partial<Product>) => setProduct((p) => ({ ...p, ...patch }));
 
@@ -58,6 +60,7 @@ export default function ProductEditor(props: { tenant: Tenant; productId?: strin
   };
 
   onMount(async () => {
+    hydrateAuth(props.tenant.slug);
     const api = await prepare();
     const id = props.productId ?? new URLSearchParams(window.location.search).get('id') ?? undefined;
     const [cols, existing] = await Promise.all([
@@ -148,6 +151,11 @@ export default function ProductEditor(props: { tenant: Tenant; productId?: strin
       </header>
 
       <Show when={!loading()} fallback={<p class="caption">Cargando producto…</p>}>
+        <Show when={!writable()}>
+          <p class="notice notice--warn">
+            Tu rol no puede editar el catálogo. Cambiá de rol desde la barra de sesión.
+          </p>
+        </Show>
         <Show when={error()}>
           <p class="notice notice--warn" role="alert">{error()}</p>
         </Show>
@@ -352,7 +360,7 @@ export default function ProductEditor(props: { tenant: Tenant; productId?: strin
         </section>
 
         <div class="actions">
-          <button class="ghost" onClick={() => void save()}>
+          <button class="ghost" disabled={!writable()} onClick={() => void save()}>
             Guardar producto <span aria-hidden="true">→</span>
           </button>
           <a class="link-button" href={`/admin/${props.tenant.slug}/productos/`}>Cancelar</a>

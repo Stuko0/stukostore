@@ -20,6 +20,7 @@ const ITEMS: Item[] = [
   { section: 'productos', label: 'Productos', href: (s) => `/admin/${s}/productos/` },
   { section: 'inventario', label: 'Inventario', href: (s) => `/admin/${s}/inventario/`, feature: 'inventory' },
   { section: 'colecciones', label: 'Colecciones', href: (s) => `/admin/${s}/colecciones/`, feature: 'collections' },
+  { section: 'tema', label: 'Tema', href: (s) => `/admin/${s}/tema/`, feature: 'theme' },
   { section: 'clientes', label: 'Clientes', href: (s) => `/admin/${s}/clientes/`, feature: 'customers' },
   { section: 'automatizaciones', label: 'Automatizaciones', href: (s) => `/admin/${s}/automatizaciones/`, feature: 'automations' },
   { section: 'plan', label: 'Plan y uso', href: (s) => `/admin/${s}/plan/` },

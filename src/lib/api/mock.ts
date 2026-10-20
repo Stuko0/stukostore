@@ -22,6 +22,7 @@ export const api: StoreAPI = {
   listTenants: catalog.listTenants,
   getTenant: catalog.getTenant,
   getTenantById: catalog.getTenantById,
+  saveTenant: catalog.saveTenant,
 
   listProducts: catalog.listProducts,
   getProduct: catalog.getProduct,

@@ -1,0 +1,15 @@
+---
+import Admin from '../../../layouts/Admin.astro';
+import ThemeEditor from '../../../components/admin/ThemeEditor.tsx';
+import { tenantBySlug, tenantsPathParams } from '../../../lib/seed-source';
+
+export function getStaticPaths() {
+  return tenantsPathParams();
+}
+
+const tenant = tenantBySlug(Astro.params.tenant!);
+---
+
+<Admin tenant={tenant} title={`Tema — ${tenant.name}`} section="tema">
+  <ThemeEditor client:load tenant={tenant} />
+</Admin>

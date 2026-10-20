@@ -26,6 +26,12 @@ export async function getTenantById(id: string): Promise<Tenant | null> {
   return (await idb.get<Tenant>('tenants', id)) ?? null;
 }
 
+export async function saveTenant(tenant: Tenant): Promise<Tenant> {
+  await tick();
+  await idb.put('tenants', tenant);
+  return tenant;
+}
+
 export async function listProducts(tenantId: string): Promise<Product[]> {
   await tick();
   const products = await idb.byTenant<Product>('products', tenantId);

@@ -5,6 +5,7 @@ import { prepare } from '../../lib/api/mock';
 import { bob, shortDate } from '../../lib/format';
 import { limitFor } from '../../lib/tiers';
 import { hydrateSession, tier } from '../../lib/store';
+import { canDo, hydrateAuth, session } from '../../lib/session';
 import type { Product, Tenant } from '../../lib/types';
 import './admin.css';
 
@@ -14,6 +15,7 @@ export default function ProductTable(props: { tenant: Tenant }) {
   const [status, setStatus] = createSignal<'todos' | Product['status']>('todos');
   const [loading, setLoading] = createSignal(true);
   const [message, setMessage] = createSignal('');
+  const writable = createMemo(() => canDo('catalog:write'));
 
   const load = async () => {
     const api = await prepare();
@@ -23,6 +25,7 @@ export default function ProductTable(props: { tenant: Tenant }) {
 
   onMount(async () => {
     hydrateSession();
+    hydrateAuth(props.tenant.slug);
     await load();
   });
 
@@ -77,20 +80,28 @@ export default function ProductTable(props: { tenant: Tenant }) {
             {published()} publicados
             {Number.isFinite(limit()) ? ` de ${limit()}` : ' · sin límite'}
           </span>
-          <Show
-            when={!atLimit()}
-            fallback={
-              <span class="pill pill--archivado">
-                Límite del plan alcanzado
-              </span>
-            }
-          >
-            <a class="ghost" href={`/admin/${props.tenant.slug}/productos/nuevo/`}>
-              Nuevo producto <span aria-hidden="true">→</span>
-            </a>
+          <Show when={writable()}>
+            <Show
+              when={!atLimit()}
+              fallback={
+                <span class="pill pill--archivado">
+                  Límite del plan alcanzado
+                </span>
+              }
+            >
+              <a class="ghost" href={`/admin/${props.tenant.slug}/productos/nuevo/`}>
+                Nuevo producto <span aria-hidden="true">→</span>
+              </a>
+            </Show>
           </Show>
         </div>
       </header>
+
+      <Show when={!writable()}>
+        <p class="notice">
+          Estás como {session()?.role ?? 'lector'}: el catálogo se ve en solo lectura.
+        </p>
+      </Show>
 
       <Show when={atLimit()}>
         <p class="notice notice--warn">
@@ -157,10 +168,12 @@ export default function ProductTable(props: { tenant: Tenant }) {
                       >
                         Editar
                       </a>
-                      <button class="link-button" onClick={() => void duplicate(product)}>Duplicar</button>
-                      <button class="link-button" onClick={() => void archive(product)}>
-                        {product.status === 'archivado' ? 'Reactivar' : 'Archivar'}
-                      </button>
+                      <Show when={writable()}>
+                        <button class="link-button" onClick={() => void duplicate(product)}>Duplicar</button>
+                        <button class="link-button" onClick={() => void archive(product)}>
+                          {product.status === 'archivado' ? 'Reactivar' : 'Archivar'}
+                        </button>
+                      </Show>
                     </div>
                   </td>
                 </tr>

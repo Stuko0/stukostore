@@ -5,6 +5,8 @@ import '../styles/global.css';
 import type { Collection, Tenant } from '../lib/types';
 import CartWidget from '../components/store/CartWidget.tsx';
 import BrandCredit from '../components/store/BrandCredit.tsx';
+import ThemeApplier from '../components/store/ThemeApplier.tsx';
+import DemoBadge from '../components/demo/DemoBadge.tsx';
 import TierDock from '../components/tier/TierDock.tsx';
 
 interface Props {
@@ -69,7 +71,10 @@ const themeStyle = [
           <a href={`/t/${tenant.slug}/buscar/`}>Buscar</a>
           <a href={`/admin/${tenant.slug}/`}>Panel</a>
         </nav>
-        <CartWidget client:load tenantId={tenant.id} tenantSlug={tenant.slug} />
+        <div class="bar__actions">
+          <DemoBadge client:load />
+          <CartWidget client:load tenantId={tenant.id} tenantSlug={tenant.slug} />
+        </div>
       </div>
     </header>
 
@@ -102,6 +107,7 @@ const themeStyle = [
       </div>
     </footer>
 
+    <ThemeApplier client:load tenantId={tenant.id} />
     <TierDock client:load />
     <script>
       import { initReveal } from '../lib/reveal';

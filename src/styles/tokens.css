@@ -123,10 +123,13 @@
   --dur-reveal: 1.1s;
   --dur-ui: 0.3s;
 
-  /* Tema por tienda (lo sobreescribe el layout del storefront) */
+  /* Tema por tienda: el layout del storefront y el editor de tema los
+     sobreescriben en runtime. */
   --brand-bar-bg: var(--c-secondary);
   --brand-bar-fg: var(--c-neutral);
   --brand-accent: var(--c-primary);
+  --page-surface: var(--c-neutral);
+  --heading-case: uppercase;
 }
 
 /* No hay sombras en el sistema salvo el panel del carrito. */

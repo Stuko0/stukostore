@@ -1,6 +1,6 @@
 // Detalle de producto: variantes, stock real y compra directa.
 
-import { createSignal, onMount, For, Show } from 'solid-js';
+import { createSignal, onMount, onCleanup, For, Show } from 'solid-js';
 import { prepare } from '../../lib/api/mock';
 import { listLocations } from '../../lib/api/mock-inventory';
 import { bob, optionLabel } from '../../lib/format';
@@ -18,6 +18,18 @@ export default function ProductDetail(props: { tenant: Tenant; product: Product 
   const [error, setError] = createSignal('');
   const [locations, setLocations] = createSignal<Location[]>([]);
   const [levels, setLevels] = createSignal<InventoryLevel[]>([]);
+  const [photo, setPhoto] = createSignal(0);
+  const [origin, setOrigin] = createSignal('50% 50%');
+  const [zooming, setZooming] = createSignal(false);
+  const [lightbox, setLightbox] = createSignal(false);
+
+  onMount(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightbox(false);
+    };
+    window.addEventListener('keydown', onKey);
+    onCleanup(() => window.removeEventListener('keydown', onKey));
+  });
 
   onMount(async () => {
     hydrateSession();
@@ -66,16 +78,62 @@ export default function ProductDetail(props: { tenant: Tenant; product: Product 
 
   return (
     <article class="detail shell">
-      <div class="detail__media">
-        <Show when={props.product.images[0]}>
-          <img
-            src={props.product.images[0].src}
-            alt={props.product.images[0].alt}
-            width="800"
-            height="800"
-          />
+      <div class="detail__media gallery">
+        <div
+          class="gallery__main"
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            setOrigin(`${x.toFixed(1)}% ${y.toFixed(1)}%`);
+          }}
+          onMouseEnter={() => setZooming(true)}
+          onMouseLeave={() => setZooming(false)}
+          onClick={() => setLightbox(true)}
+        >
+          <Show when={props.product.images[photo()]}>
+            <img
+              src={props.product.images[photo()].src}
+              alt={props.product.images[photo()].alt}
+              width="800"
+              height="800"
+              classList={{ 'is-zoomed': zooming() }}
+              style={{ 'transform-origin': origin() }}
+            />
+          </Show>
+          <span class="gallery__hint">Clic para ampliar</span>
+        </div>
+
+        <Show when={props.product.images.length > 1}>
+          <div class="gallery__thumbs" role="group" aria-label="Imágenes del producto">
+            <For each={props.product.images}>
+              {(image, index) => (
+                <button
+                  class="gallery__thumb"
+                  aria-pressed={photo() === index()}
+                  aria-label={`Ver imagen ${index() + 1} de ${props.product.images.length}`}
+                  onClick={() => setPhoto(index())}
+                >
+                  <img src={image.src} alt="" width="72" height="72" loading="lazy" />
+                </button>
+              )}
+            </For>
+          </div>
         </Show>
       </div>
+
+      <Show when={lightbox()}>
+        <div
+          class="lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Imagen ampliada"
+          onClick={() => setLightbox(false)}
+        >
+          <button class="lightbox__close" onClick={() => setLightbox(false)}>Cerrar</button>
+          <img src={props.product.images[photo()].src} alt={props.product.images[photo()].alt} />
+        </div>
+      </Show>
 
       <div>
         <p class="detail__crumbs">

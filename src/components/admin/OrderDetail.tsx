@@ -1,9 +1,10 @@
 // Detalle de pedido: estados, notas, comprobante, lista de empaque y devolución.
 
-import { createSignal, onMount, For, Show } from 'solid-js';
+import { createSignal, createMemo, onMount, For, Show } from 'solid-js';
 import { prepare } from '../../lib/api/mock';
 import { bob, dateTime, optionLabel } from '../../lib/format';
 import { STATUS_FLOW, STATUS_LABEL } from '../../lib/api/mock-orders';
+import { canDo, hydrateAuth } from '../../lib/session';
 import type { Order, Tenant } from '../../lib/types';
 import './admin.css';
 
@@ -17,6 +18,7 @@ export default function OrderDetail(props: { tenant: Tenant; orderId?: string })
   const [message, setMessage] = createSignal('');
   const [error, setError] = createSignal('');
   const [loading, setLoading] = createSignal(true);
+  const writable = createMemo(() => canDo('orders:write'));
 
   const orderId = () =>
     props.orderId ?? new URLSearchParams(window.location.search).get('id') ?? '';
@@ -36,6 +38,7 @@ export default function OrderDetail(props: { tenant: Tenant; orderId?: string })
   };
 
   onMount(() => {
+    hydrateAuth(props.tenant.slug);
     void load();
   });
 
@@ -113,7 +116,7 @@ export default function OrderDetail(props: { tenant: Tenant; orderId?: string })
                     Estado: <span class={`pill pill--${current().status}`}>{STATUS_LABEL[current().status]}</span>
                   </h2>
                   <div class="actions">
-                    <For each={next()}>
+                    <For each={writable() ? next() : []}>
                       {(status) => (
                         <button class="ghost" onClick={() => void move(status)}>
                           Marcar {STATUS_LABEL[status]} <span aria-hidden="true">→</span>

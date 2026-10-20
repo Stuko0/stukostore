@@ -11,26 +11,30 @@ pedidos, equipo y automatizaciones.
 ## Estado
 
 Fases 1 a 6 del plan completadas y verificadas con pruebas automatizadas
-(44 comprobaciones, ver "Pruebas").
+(67 comprobaciones, ver "Pruebas").
 
 Lo que ya funciona:
 
 - Portada del producto y página de precios con los cuatro planes en bolivianos.
 - Tres tiendas de demostración con catálogo, colecciones, clientes, pedidos,
   cupones, zonas de envío y automatizaciones.
-- Storefront por tienda: portada por bloques, categorías, ficha de producto con
-  variantes y stock, carrito, checkout con cupón, IVA y envío calculado,
-  confirmación y seguimiento de pedido por código.
-- Panel de administración: resumen con métricas calculadas, catálogo con alta,
-  edición, duplicado y archivado, inventario por ubicación con movimientos,
-  pedidos con estados, notas, comprobante y devolución con reposición de stock,
-  y pantalla de plan y uso.
+- Storefront por tienda: portada por bloques, categorías con filtros por
+  etiqueta, precio, disponibilidad y orden, ficha de producto con galería de
+  miniaturas, zoom al pasar el cursor y ampliación a pantalla completa,
+  carrito, checkout con cupón, IVA y envío calculado, confirmación y
+  seguimiento de pedido por código.
+- Panel de administración con **acceso simulado por rol** (propietario,
+  administrador, operador, lector): cada rol ve y puede hacer cosas distintas.
+  Incluye resumen con métricas calculadas, catálogo con alta, edición, duplicado
+  y archivado, inventario por ubicación con movimientos, pedidos con estados,
+  notas, comprobante y devolución con reposición de stock, **editor de tema en
+  vivo** con validación de contraste, y pantalla de plan y uso.
 - Selector de plan colapsable presente en el storefront y en el panel: cambia la
   experiencia completa en el mismo frame, se refleja en la URL y en el
   navegador.
 - Todo se guarda en el navegador del visitante (IndexedDB). No hay backend, no
-  se envía nada a ningún servidor y el botón "Reiniciar demo" vuelve a los datos
-  de fábrica.
+  se envía nada a ningún servidor y el badge **DEMO** del encabezado lo explica
+  en pantalla, con el botón para reiniciar los datos de fábrica.
 
 Lo que todavía no está: contenido y tema editables en vivo (fase 8),
 automatizaciones ejecutándose de verdad (fase 9), onboarding comercial (fase 10)
@@ -148,7 +152,7 @@ reales, sin carrusel automático e imágenes recomprimidas por debajo de 300 KB.
 
 ## Pruebas
 
-`tests/e2e/run.py` recorre la demo por fase:
+`tests/e2e/run.py` recorre la demo por fase (67 comprobaciones):
 
 | Fase | Qué verifica |
 | --- | --- |
@@ -157,6 +161,7 @@ reales, sin carrusel automático e imágenes recomprimidas por debajo de 300 KB.
 | 4 | Portada, grilla, ficha, carrito, checkout, seguimiento, 404 |
 | 5 | Catálogo, alta y persistencia de producto, ajuste de stock y movimiento |
 | 6 | Pedidos, cambio de estado, notas, comprobante, devolución |
+| 7 | Badge DEMO, galería con zoom y lightbox, filtros de colección, login por rol y editor de tema con contraste |
 | QA | Contraste AA, sin scroll horizontal en 1440 y 390, sin errores de consola |
 
 ## Despliegue

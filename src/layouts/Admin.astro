@@ -4,6 +4,8 @@ import '../styles/global.css';
 import type { Tenant } from '../lib/types';
 import TierDock from '../components/tier/TierDock.tsx';
 import AdminNav from '../components/admin/AdminNav.tsx';
+import AdminSession from '../components/admin/AdminSession.tsx';
+import DemoBadge from '../components/demo/DemoBadge.tsx';
 
 interface Props {
   tenant: Tenant;
@@ -39,10 +41,14 @@ const { tenant, title, section } = Astro.props;
           <span class="mono" aria-hidden="true">{tenant.monogram}</span>
           {tenant.name}
         </a>
+        <AdminSession client:load tenantSlug={tenant.slug} tenantName={tenant.name} />
         <AdminNav client:load tenantSlug={tenant.slug} current={section} />
         <a class="admin__store" href={`/t/${tenant.slug}/`}>
           Ver tienda <span aria-hidden="true">→</span>
         </a>
+        <div style="margin-top: var(--s-12)">
+          <DemoBadge client:load />
+        </div>
       </aside>
 
       <main class="admin__main" id="contenido">

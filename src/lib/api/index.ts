@@ -53,6 +53,7 @@ export interface StoreAPI {
   listTenants(): Promise<Tenant[]>;
   getTenant(slug: string): Promise<Tenant | null>;
   getTenantById(id: string): Promise<Tenant | null>;
+  saveTenant(tenant: Tenant): Promise<Tenant>;
 
   listProducts(tenantId: string): Promise<Product[]>;
   getProduct(id: string): Promise<Product | null>;

@@ -419,6 +419,34 @@ ORDERS = [
 ]
 
 
+# Fotos disponibles para completar la galería de cada producto (misma tienda).
+ALTERNATES = {
+    "te": ["termo-32oz", "taza-14oz", "termo-16oz", "tetera-cisne", "dripper-porcelana", "molino-cafe", "chemex"],
+    "co": ["cafe-molido", "prensa-francesa", "chemex", "dripper-porcelana", "taza-14oz", "tetera-cisne"],
+    "mo": ["botella-outdoor", "linterna", "saco-dormir", "carpa", "cantimplora", "mochila-outdoor", "termo-32oz"],
+}
+
+ALT_TEXT = {
+    "termo-40oz": "Botellas térmicas de acero sobre una mesa",
+    "termo-32oz": "Botella de acero con tapa y pico bebible",
+    "termo-16oz": "Botella térmica con tapa azul",
+    "taza-14oz": "Taza de cerámica esmaltada",
+    "molino-cafe": "Molino manual de café con manivela",
+    "dripper-porcelana": "Dripper de porcelana con filtro",
+    "tetera-cisne": "Hervidor de cuello largo",
+    "chemex": "Jarra de vidrio para café por goteo",
+    "cafe-grano": "Granos de café tostado",
+    "cafe-molido": "Café molido sobre superficie oscura",
+    "prensa-francesa": "Prensa francesa con café preparado",
+    "mochila-outdoor": "Mochila de excursionista",
+    "botella-outdoor": "Botella de agua junto a equipo de senderismo",
+    "linterna": "Linterna frontal encendida",
+    "saco-dormir": "Saco de dormir extendido",
+    "carpa": "Carpa de dos personas armada",
+    "cantimplora": "Cantimplora metálica",
+}
+
+
 def build_products():
     products = []
     for (pid, tenant, slug, title, desc, cols, tags, options, variants, image, alt, status) in P:
@@ -446,7 +474,15 @@ def build_products():
                 }
                 for i, (sku, opts, price, compare, cost) in enumerate(variants)
             ],
-            "images": [{"src": f"/img/{image}.jpg", "alt": alt}],
+            "images": [
+                {"src": f"/img/{image}.jpg", "alt": alt},
+                *[
+                    {"src": f"/img/{extra}.jpg", "alt": ALT_TEXT.get(extra, "Vista adicional del producto")}
+                    for extra in [
+                        x for x in ALTERNATES.get(tenant, []) if x != image
+                    ][: 2 + sum(ord(c) for c in pid) % 2]
+                ],
+            ],
             "seo": {"title": f"{title} | {tenant.upper()}", "description": desc[:150]},
             "createdAt": ts,
             "updatedAt": stamp(int(pid[-1]) + 1, 10),

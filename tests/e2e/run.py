@@ -18,6 +18,20 @@ def check(phase: str, name: str, ok: bool, detail: str = "") -> None:
     print(f"[{'PASS' if ok else 'FAIL'}] {phase} · {name} {('— ' + detail) if detail and not ok else ''}")
 
 
+
+def admin_login(page, role="propietario", name="Prueba QA"):
+    """Si el panel muestra la tarjeta de acceso, entra con el rol pedido."""
+    try:
+        page.wait_for_selector(".auth, .session", timeout=8000)
+    except Exception:
+        return
+    if page.locator(".auth").count():
+        page.fill("#auth-name", name)
+        page.select_option("#auth-role", role)
+        page.click("button:has-text('Entrar')")
+        page.wait_for_selector(".session", timeout=8000)
+
+
 def section(title: str) -> None:
     print(f"\n=== {title} ===")
 
@@ -62,12 +76,14 @@ def main() -> int:
         check("F3", "el estado bloqueado nombra el plan", page.locator(".locked").count() == 0)
 
         page.goto(f"{BASE}/admin/mundo-outdoor/?tier=escaparate", wait_until="networkidle")
-        page.wait_for_timeout(1500)
+        admin_login(page)
+        page.wait_for_timeout(1200)
         locked_links = page.locator(".admin__link--locked").count()
         check("F3", "el panel atenúa los módulos fuera del plan", locked_links >= 3, f"{locked_links} módulos")
 
         page.goto(f"{BASE}/admin/tienda-express/?tier=comercio", wait_until="networkidle")
-        page.wait_for_timeout(1500)
+        admin_login(page)
+        page.wait_for_timeout(1200)
         before_locked = page.locator(".admin__link--locked").count()
         page.click(".dock__toggle")
         page.wait_for_timeout(400)
@@ -197,13 +213,15 @@ def main() -> int:
         # ---------------------------------------------------------------- fase 5
         section("Fase 5 — catálogo e inventario")
         page.goto(f"{BASE}/admin/tienda-express/productos/?tier=comercio", wait_until="networkidle")
+        admin_login(page)
         page.wait_for_selector("table.table tbody tr", timeout=20000)
         rows = page.locator("table.table tbody tr").count()
         check("F5", "la tabla lista el catálogo", rows >= 8, f"{rows} filas")
         check("F5", "el contador de plan es visible", "publicados" in page.inner_text(".pill").lower())
 
         page.goto(f"{BASE}/admin/tienda-express/productos/nuevo/?tier=comercio", wait_until="networkidle")
-        page.wait_for_timeout(1500)
+        admin_login(page)
+        page.wait_for_timeout(1200)
         page.fill("#title", "Producto de Prueba QA")
         page.fill("table.table tbody tr td:nth-child(1) input", "QA-001")
         page.fill("table.table tbody tr td:nth-child(3) input", "123")
@@ -213,6 +231,7 @@ def main() -> int:
         check("F5", "el editor confirma el guardado", page.locator(".notice").count() >= 1)
 
         page.goto(f"{BASE}/admin/tienda-express/productos/?tier=comercio", wait_until="networkidle")
+        admin_login(page)
         page.wait_for_selector("table.table tbody tr", timeout=20000)
         check("F5", "el producto nuevo aparece en la lista", "Producto de Prueba QA" in page.inner_text("table.table"))
         page.reload(wait_until="networkidle")
@@ -220,6 +239,7 @@ def main() -> int:
         check("F5", "el producto persiste tras recargar", "Producto de Prueba QA" in page.inner_text("table.table"))
 
         page.goto(f"{BASE}/admin/tienda-express/inventario/?tier=comercio", wait_until="networkidle")
+        admin_login(page)
         page.wait_for_selector("table.table tbody tr", timeout=20000)
         before = page.locator("table.table tbody tr td:nth-child(4)").first.inner_text()
         page.locator("table.table tbody tr").first.locator("button").first.click()
@@ -231,6 +251,7 @@ def main() -> int:
         # ---------------------------------------------------------------- fase 6
         section("Fase 6 — pedidos y postventa")
         page.goto(f"{BASE}/admin/tienda-express/pedidos/?tier=comercio", wait_until="networkidle")
+        admin_login(page)
         page.wait_for_selector("table.table tbody tr", timeout=20000)
         orders = page.locator("table.table tbody tr").count()
         check("F6", "la lista de pedidos carga", orders >= 5, f"{orders} pedidos")
@@ -263,6 +284,84 @@ def main() -> int:
         body = page.inner_text("body")
         check("F6", "la devolución se registra con reembolso", "Devolución registrada" in body or "devolución" in body.lower())
         check("F6", "el historial del pedido acumula eventos", body.count("·") >= 1)
+
+
+        # ------------------------------------------------- fase 7: demo, roles, tema, galería y filtros
+        section("Fase 7 — badge, roles, tema, galería y filtros")
+
+        page.goto(f"{BASE}/t/tienda-express/?tier=comercio", wait_until="networkidle")
+        page.wait_for_timeout(1500)
+        check("F7", "la tienda muestra el badge DEMO", page.locator(".demo-badge").count() == 1)
+        page.click(".demo-badge")
+        page.wait_for_timeout(400)
+        modal = page.inner_text(".demo-modal__card")
+        check("F7", "el badge explica la persistencia local", "navegador" in modal.lower(), modal[:60])
+        page.click(".demo-modal__close")
+
+        # galería con miniaturas y lightbox
+        page.goto(f"{BASE}/t/tienda-express/p/molino-11-clicks-acero-inoxidable/", wait_until="networkidle")
+        page.wait_for_timeout(1600)
+        thumbs = page.locator(".gallery__thumb").count()
+        check("F7", "la ficha muestra miniaturas", thumbs >= 2, f"{thumbs} miniaturas")
+        first_src = page.get_attribute(".gallery__main img", "src")
+        page.locator(".gallery__thumb").nth(1).click()
+        page.wait_for_timeout(500)
+        check("F7", "la miniatura cambia la imagen principal",
+              page.get_attribute(".gallery__main img", "src") != first_src)
+        page.click(".gallery__main")
+        page.wait_for_timeout(400)
+        check("F7", "la imagen se amplía en un diálogo", page.locator(".lightbox").count() == 1)
+        page.click(".lightbox__close")
+
+        # filtros de colección
+        page.goto(f"{BASE}/t/tienda-express/c/accesorios-de-cafe/", wait_until="networkidle")
+        page.wait_for_timeout(1600)
+        total = page.locator(".product-card").count()
+        chips = page.locator(".filters__chips .tag")
+        check("F7", "la colección ofrece filtros", chips.count() >= 2, f"{chips.count()} etiquetas")
+        chips.nth(1).click()
+        page.wait_for_timeout(600)
+        filtrado = page.locator(".product-card").count()
+        check("F7", "el filtro por etiqueta reduce el catálogo", filtrado <= total, f"{total} → {filtrado}")
+        check("F7", "el filtro queda en la URL", "tag=" in page.url, page.url.split("?")[-1][:40])
+        page.select_option("#sort", "precio-asc")
+        page.wait_for_timeout(500)
+        check("F7", "el orden queda en la URL", "orden=precio-asc" in page.url)
+
+        # login simulado por rol (se limpia la sesión previa del recorrido)
+        page.goto(f"{BASE}/admin/tienda-express/productos/?tier=comercio", wait_until="networkidle")
+        page.evaluate("localStorage.clear()")
+        page.reload(wait_until="networkidle")
+        page.wait_for_selector(".auth, .session", timeout=15000)
+        check("F7", "el panel pide entrar", page.locator(".auth").count() == 1)
+        page.fill("#auth-name", "Ana QA")
+        page.select_option("#auth-role", "lector")
+        page.click("button:has-text('Entrar')")
+        page.wait_for_selector(".session", timeout=15000)
+        page.wait_for_timeout(1200)
+        cuerpo = page.inner_text("body").lower()
+        check("F7", "el lector ve el catálogo en solo lectura", "solo lectura" in cuerpo)
+        check("F7", "el lector no puede crear productos",
+              page.locator('a[href*="productos/nuevo"]').count() == 0)
+        check("F7", "la barra muestra el rol activo", "lector" in page.inner_text(".session").lower())
+
+        # editor de tema
+        page.goto(f"{BASE}/admin/tienda-express/tema/?tier=comercio", wait_until="networkidle")
+        page.wait_for_selector(".session", timeout=15000)
+        page.wait_for_timeout(1200)
+        check("F7", "el editor de tema muestra vista previa", page.locator(".theme-preview").count() == 1)
+        page.select_option("#switch-role", "propietario")
+        page.wait_for_timeout(900)
+        page.fill("#accent", "#1d4ed8")
+        page.wait_for_timeout(400)
+        page.click("button:has-text('Guardar tema')")
+        page.wait_for_timeout(1500)
+        check("F7", "el tema se guarda", "guardado" in page.inner_text("body").lower())
+        check("F7", "el contraste se valida en vivo", "AA" in page.inner_text(".theme-checks"))
+        page.goto(f"{BASE}/t/tienda-express/", wait_until="networkidle")
+        page.wait_for_timeout(2200)
+        accent = page.evaluate("getComputedStyle(document.documentElement).getPropertyValue('--brand-accent').trim()")
+        check("F7", "el tema guardado se aplica en la tienda", accent.lower() == "#1d4ed8", accent)
 
         # ------------------------------------------------------------- accesibilidad
         section("Accesibilidad y errores")
@@ -313,7 +412,8 @@ def main() -> int:
         )
 
         page.goto(f"{BASE}/admin/tienda-express/?tier=comercio", wait_until="networkidle")
-        page.wait_for_timeout(2000)
+        admin_login(page)
+        page.wait_for_timeout(1500)
         page.screenshot(path="/tmp/qa_admin.png", full_page=True)
         page.goto(f"{BASE}/t/tienda-express/", wait_until="networkidle")
         page.wait_for_timeout(1200)

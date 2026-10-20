@@ -8,6 +8,9 @@ export interface TenantTheme {
   barBg: string;
   barFg: string;
   accent: string;
+  surface: string;
+  radius: number;
+  headingCase: 'uppercase' | 'none';
   font: string;
 }
 

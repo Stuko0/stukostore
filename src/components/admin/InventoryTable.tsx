@@ -1,9 +1,10 @@
 // Inventario: stock por variante y ubicación, ajustes con motivo y movimientos.
 
-import { createSignal, onMount, For, Show } from 'solid-js';
+import { createSignal, createMemo, onMount, For, Show } from 'solid-js';
 import { prepare, listLocations } from '../../lib/api/mock';
 import { dateTime } from '../../lib/format';
 import { hydrateSession } from '../../lib/store';
+import { canDo, hydrateAuth } from '../../lib/session';
 import type { InventoryLevel, InventoryMovement, Location, MovementReason, Product, Tenant } from '../../lib/types';
 import TierGate from '../tier/TierGate';
 import './admin.css';
@@ -25,6 +26,7 @@ export default function InventoryTable(props: { tenant: Tenant }) {
   const [note, setNote] = createSignal('Reposición de mercadería');
   const [message, setMessage] = createSignal('');
   const [loading, setLoading] = createSignal(true);
+  const writable = createMemo(() => canDo('inventory:write'));
 
   const load = async () => {
     const api = await prepare();
@@ -41,6 +43,7 @@ export default function InventoryTable(props: { tenant: Tenant }) {
 
   onMount(async () => {
     hydrateSession();
+    hydrateAuth(props.tenant.slug);
     setLocations(await listLocations(props.tenant.id));
     await load();
   });
@@ -132,12 +135,14 @@ export default function InventoryTable(props: { tenant: Tenant }) {
                     <td class="table__num">{level.lowStockAt}</td>
                     <td>
                       <div class="actions">
-                        <button class="link-button" onClick={() => void applyBulk(level)}>
-                          +{qty()}
-                        </button>
-                        <button class="link-button" onClick={() => void adjust(level, -Math.abs(qty()))}>
-                          −{Math.abs(qty())}
-                        </button>
+                        <Show when={writable()} fallback={<span class="caption">solo lectura</span>}>
+                          <button class="link-button" onClick={() => void applyBulk(level)}>
+                            +{qty()}
+                          </button>
+                          <button class="link-button" onClick={() => void adjust(level, -Math.abs(qty()))}>
+                            −{Math.abs(qty())}
+                          </button>
+                        </Show>
                       </div>
                     </td>
                   </tr>
