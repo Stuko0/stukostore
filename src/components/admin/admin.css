@@ -473,3 +473,15 @@
   padding: 4px 8px;
   background: var(--c-neutral);
 }
+
+/* Los selectores de color necesitan altura propia: con el estilo de input de
+   texto quedan como una línea fina y no se ve el color elegido. */
+.field input[type='color'] {
+  height: 42px;
+  width: 100%;
+  padding: 4px;
+  cursor: pointer;
+  background: var(--c-neutral);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+}
