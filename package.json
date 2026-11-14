@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
     "@astrojs/solid-js": "^7.1.0",
-    "astro": "^7.4.0",
+    "astro": "^7.4.7",
     "solid-js": "^1.9.17"
   },
   "devDependencies": {
